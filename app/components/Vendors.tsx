@@ -1,7 +1,9 @@
 // TODO: add sponsor logos/links once collected; update vendor list as needed
 
+type Sponsor = { name: string; url: string | null };
+
 // SPONSORS — tiered. Add/remove tiers as sponsorship structure evolves.
-const sponsors = {
+const sponsors: { platinum: Sponsor[]; silver: Sponsor[]; supporting: Sponsor[] } = {
   platinum: [
     // { name: "Golden Keep Game Co.", url: "https://..." }, // TODO: pending confirmation
   ],
