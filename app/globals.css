@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────
+   BRAND TOKENS — swap these out once design assets are finalized
+   ───────────────────────────────────────────────────────────────── */
+:root {
+  /* Colors — replace hex values with real brand palette */
+  --brand-bg:        #0d0d14;   /* page background          */
+  --brand-surface:   #16161f;   /* card / section bg        */
+  --brand-border:    #2a2a3a;   /* dividers / borders       */
+  --brand-primary:   #7c3aed;   /* primary accent (CTA, links) */
+  --brand-primary-hover: #6d28d9;
+  --brand-secondary: #f59e0b;   /* secondary accent / highlight */
+  --brand-text:      #e2e2ee;   /* body text                */
+  --brand-muted:     #8888aa;   /* secondary text           */
+  --brand-heading:   #ffffff;   /* headings                 */
+
+  /* Typography — replace with real brand fonts */
+  --font-display: var(--font-geist-sans);   /* hero / headings */
+  --font-body:    var(--font-geist-sans);   /* body copy       */
+
+  /* Spacing / radius */
+  --radius-card:  0.75rem;
+  --radius-btn:   0.5rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   TAILWIND v4 THEME EXTENSION
+   ───────────────────────────────────────────────────────────────── */
+@theme inline {
+  --color-brand-bg:        var(--brand-bg);
+  --color-brand-surface:   var(--brand-surface);
+  --color-brand-border:    var(--brand-border);
+  --color-brand-primary:   var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-text:      var(--brand-text);
+  --color-brand-muted:     var(--brand-muted);
+  --color-brand-heading:   var(--brand-heading);
+  --font-sans: var(--font-body);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   BASE
+   ───────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
+  font-family: var(--font-body), Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Focus ring — accessible, brand-colored */
+:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 3px;
+}
