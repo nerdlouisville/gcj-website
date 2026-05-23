@@ -1,10 +1,8 @@
-// TODO: replace placeholder copy with real event description
-
 const stats = [
-  { value: "3", label: "Days of Gaming" },
-  { value: "Nov 6–8", label: "2026" },
-  { value: "20+", label: "Vendors & Artists" },
-  { value: "Louisville", label: "Marriott East" },
+  { value: "800+", label: "Projected attendees" },
+  { value: "95%",  label: "Satisfaction rate" },
+  { value: "94%",  label: "Planning to return" },
+  { value: "40%",  label: "Out-of-state visitors" },
 ];
 
 export default function About() {
