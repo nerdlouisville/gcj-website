@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 // TODO: replace href values with real ticket / vendor submission URLs
 const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a";
@@ -33,13 +34,13 @@ export default function Nav() {
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo / wordmark */}
         <a href="#hero" className="flex items-center gap-2 group">
-          {/* TODO: replace this div with <Image> once logo file is dropped in */}
-          <div className="w-8 h-8 rounded-md bg-[var(--brand-primary)] flex items-center justify-center text-white font-bold text-sm">
-            GCJ
-          </div>
-          <span className="font-semibold text-[var(--brand-heading)] text-sm tracking-wide hidden sm:block">
-            Game Con Junction
-          </span>
+            <Image
+            src="/images/logo-white.png"
+            alt="Game Con Junction"
+            width={120}
+            height={40}
+            className="h-8 w-auto"
+          />
         </a>
 
         {/* Desktop nav */}

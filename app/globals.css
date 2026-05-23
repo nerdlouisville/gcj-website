@@ -1,27 +1,39 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────────
-   BRAND TOKENS — swap these out once design assets are finalized
+   AKIRA DISPLAY FONT
+   ───────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Akira";
+  src: url("/fonts/AkiraExpanded.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   BRAND TOKENS
    ───────────────────────────────────────────────────────────────── */
 :root {
-  /* Colors — replace hex values with real brand palette */
-  --brand-bg:        #0d0d14;   /* page background          */
-  --brand-surface:   #16161f;   /* card / section bg        */
-  --brand-border:    #2a2a3a;   /* dividers / borders       */
-  --brand-primary:   #7c3aed;   /* primary accent (CTA, links) */
-  --brand-primary-hover: #6d28d9;
-  --brand-secondary: #f59e0b;   /* secondary accent / highlight */
-  --brand-text:      #e2e2ee;   /* body text                */
-  --brand-muted:     #8888aa;   /* secondary text           */
-  --brand-heading:   #ffffff;   /* headings                 */
+  /* Colors */
+  --brand-bg:            #130e35;   /* deep navy-purple background  */
+  --brand-surface:       #1a1347;   /* card / section bg            */
+  --brand-border:        #2d2060;   /* dividers / borders           */
+  --brand-primary:       #e8197a;   /* hot pink — primary accent    */
+  --brand-primary-hover: #c8146a;
+  --brand-secondary:     #9933cc;   /* purple — secondary accent    */
+  --brand-grid:          #7b1fa2;   /* retro grid line color        */
+  --brand-text:          #e8e4f0;   /* body text                    */
+  --brand-muted:         #9988bb;   /* secondary text               */
+  --brand-heading:       #ffffff;   /* headings                     */
 
-  /* Typography — replace with real brand fonts */
-  --font-display: var(--font-geist-sans);   /* hero / headings */
-  --font-body:    var(--font-geist-sans);   /* body copy       */
+  /* Typography */
+  --font-display: "Akira", "Arial Black", sans-serif;
+  --font-body:    var(--font-geist-sans), Arial, sans-serif;
 
   /* Spacing / radius */
-  --radius-card:  0.75rem;
-  --radius-btn:   0.5rem;
+  --radius-card: 0.75rem;
+  --radius-btn:  0.5rem;
 }
 
 /* ─────────────────────────────────────────────────────────────────
