@@ -34,7 +34,19 @@ export default function Hero() {
       </div>
 
 
-{/* ── Logo ── */}
+{/* ── Exe mascot ── */}
+      <div className="mb-2">
+        <Image
+          src="/images/exe-mascot.png"
+          alt="Exe the mascot"
+          width={220}
+          height={220}
+          className="w-[140px] sm:w-[180px] md:w-[220px] h-auto drop-shadow-[0_0_20px_rgba(232,25,122,0.6)]"
+          priority
+        />
+      </div>
+
+      {/* ── Logo ── */}
       <div className="mb-6 px-8">
         <Image
           src="/images/logo-white.png"

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
 // TODO: replace href values with real ticket / vendor submission URLs
 const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a";
@@ -31,20 +30,18 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-start justify-between overflow-visible">
-        {/* Exe as home anchor — anchored from top, hangs below nav bar */}
-        <a href="#hero" className="flex items-start group">
-          <Image
-            src="/images/exe-mascot.png"
-            alt="Game Con Junction"
-            width={160}
-            height={160}
-            className="h-36 w-auto object-top drop-shadow-[0_0_8px_rgba(232,25,122,0.5)] group-hover:drop-shadow-[0_0_14px_rgba(232,25,122,0.85)] transition-all"
-          />
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        {/* GCJ26 wordmark as home anchor */}
+        <a
+          href="#hero"
+          className="text-lg font-bold tracking-widest text-[var(--brand-primary)] hover:text-[var(--brand-primary-hover)] transition-colors"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          GCJ26
         </a>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-6 pt-[12px]">
+        <ul className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -58,7 +55,7 @@ export default function Nav() {
         </ul>
 
         {/* CTA */}
-        <div className="flex items-center gap-3 pt-[12px]">
+        <div className="flex items-center gap-3">
           <a
             href={TICKET_URL}
             target="_blank"
