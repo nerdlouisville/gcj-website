@@ -33,25 +33,25 @@ export default function Hero() {
         />
       </div>
 
-      {/* ── Exe mascot — bottom right, larger ── */}
-      <div className="absolute bottom-0 right-0 sm:right-4 md:right-8 w-40 sm:w-56 md:w-72 pointer-events-none" aria-hidden="true">
+      {/* ── Exe mascot — top left ── */}
+      <div className="absolute top-16 left-3 sm:left-6 md:left-10 w-28 sm:w-40 md:w-52 pointer-events-none" aria-hidden="true">
         <Image
           src="/images/exe-mascot.png"
           alt=""
-          width={300}
-          height={300}
+          width={220}
+          height={220}
           className="w-full h-auto drop-shadow-[0_0_32px_rgba(232,25,122,0.7)]"
         />
       </div>
 
       {/* ── Logo ── */}
-      <div className="mb-6">
+      <div className="mb-6 px-8">
         <Image
-          src="/images/logo-main.png"
+          src="/images/logo-white.png"
           alt="Game Con Junction"
           width={480}
-          height={220}
-          className="w-[280px] sm:w-[380px] md:w-[480px] h-auto"
+          height={160}
+          className="w-[220px] sm:w-[320px] md:w-[440px] h-auto"
           priority
         />
       </div>

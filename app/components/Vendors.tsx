@@ -36,7 +36,7 @@ const vendors = [
   "The Art of Jessy",
   "Wet Ink Games",
   "Bloat Games",
-  "Lurker's Lore",
+  "Lurker's Loot",
   "Mischief Loot",
   "ninety6proof / Gnarled Barnacle",
 ];
