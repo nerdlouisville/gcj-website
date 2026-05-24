@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
 // TODO: replace href values with real ticket / vendor submission URLs
 const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a";
@@ -32,15 +31,13 @@ export default function Nav() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Exe as home anchor */}
-        <a href="#hero" className="flex items-center group">
-          <Image
-            src="/images/exe-mascot.png"
-            alt="Game Con Junction"
-            width={48}
-            height={48}
-            className="h-10 w-auto drop-shadow-[0_0_8px_rgba(232,25,122,0.6)] group-hover:drop-shadow-[0_0_14px_rgba(232,25,122,0.9)] transition-all"
-          />
+        {/* Home anchor */}
+        <a
+          href="#hero"
+          className="text-sm font-bold tracking-widest text-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors uppercase"
+          style={{ fontFamily: "var(--font-display)", fontSize: "0.7rem" }}
+        >
+          GCJ
         </a>
 
         {/* Desktop nav */}
