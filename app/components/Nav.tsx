@@ -44,7 +44,7 @@ export default function Nav() {
         </a>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-6">
+        <ul className="hidden md:flex items-center gap-6 pt-[12px]">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -58,7 +58,7 @@ export default function Nav() {
         </ul>
 
         {/* CTA */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 pt-[12px]">
           <a
             href={TICKET_URL}
             target="_blank"
