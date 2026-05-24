@@ -32,14 +32,14 @@ export default function Nav() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Logo / wordmark */}
-        <a href="#hero" className="flex items-center gap-2 group">
-            <Image
-            src="/images/logo-white.png"
+        {/* Exe as home anchor */}
+        <a href="#hero" className="flex items-center group">
+          <Image
+            src="/images/exe-mascot.png"
             alt="Game Con Junction"
-            width={120}
-            height={40}
-            className="h-8 w-auto"
+            width={48}
+            height={48}
+            className="h-10 w-auto drop-shadow-[0_0_8px_rgba(232,25,122,0.6)] group-hover:drop-shadow-[0_0_14px_rgba(232,25,122,0.9)] transition-all"
           />
         </a>
 
