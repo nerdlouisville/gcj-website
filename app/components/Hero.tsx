@@ -9,45 +9,38 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 pb-24 overflow-hidden"
     >
-      {/* ── Retro synthwave grid background ── */}
+      {/* ── Background ── */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
-        {/* Base gradient */}
+        {/* Retro grid image */}
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, #0a0820 0%, #130e35 40%, #1a0d3a 100%)",
+            backgroundImage: "url('/images/hero-bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.85,
           }}
         />
-        {/* Grid floor — pure CSS perspective grid */}
+        {/* Dark overlay so text stays readable */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-[55%]"
-          style={{
-            backgroundImage: `
-              linear-gradient(var(--brand-grid) 1px, transparent 1px),
-              linear-gradient(90deg, var(--brand-grid) 1px, transparent 1px)
-            `,
-            backgroundSize: "60px 60px",
-            opacity: 0.35,
-            transform: "perspective(600px) rotateX(55deg)",
-            transformOrigin: "bottom center",
-            maskImage: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%)",
-          }}
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to bottom, rgba(13,8,32,0.45) 0%, rgba(13,8,32,0.2) 40%, rgba(13,8,32,0.55) 100%)" }}
         />
-        {/* Glow orb behind logo */}
+        {/* Pink glow behind content */}
         <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full blur-3xl"
-          style={{ background: "radial-gradient(ellipse, rgba(232,25,122,0.18) 0%, transparent 70%)" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-3xl pointer-events-none"
+          style={{ background: "radial-gradient(ellipse, rgba(232,25,122,0.15) 0%, transparent 70%)" }}
         />
       </div>
 
-      {/* ── Exe mascot — top right ── */}
-      <div className="absolute top-16 right-4 sm:right-8 md:right-16 w-24 sm:w-32 md:w-40 pointer-events-none" aria-hidden="true">
+      {/* ── Exe mascot — bottom right, larger ── */}
+      <div className="absolute bottom-0 right-0 sm:right-4 md:right-8 w-40 sm:w-56 md:w-72 pointer-events-none" aria-hidden="true">
         <Image
           src="/images/exe-mascot.png"
           alt=""
-          width={160}
-          height={160}
-          className="w-full h-auto drop-shadow-[0_0_20px_rgba(232,25,122,0.6)]"
+          width={300}
+          height={300}
+          className="w-full h-auto drop-shadow-[0_0_32px_rgba(232,25,122,0.7)]"
         />
       </div>
 
@@ -100,21 +93,23 @@ export default function Hero() {
           className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-btn)] text-white text-base font-bold transition-all shadow-lg hover:scale-105"
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "0.75rem",
-            letterSpacing: "0.05em",
+            fontSize: "0.8rem",
+            fontWeight: 900,
+            letterSpacing: "0.08em",
             background: "var(--brand-primary)",
-            boxShadow: "0 0 24px rgba(232,25,122,0.5)",
+            boxShadow: "0 0 32px rgba(232,25,122,0.65)",
           }}
         >
           GET YOUR TICKETS
         </a>
         <a
           href="#about"
-          className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-btn)] border text-base font-medium transition-colors"
+          className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-btn)] border text-base transition-colors"
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "0.75rem",
-            letterSpacing: "0.05em",
+            fontSize: "0.8rem",
+            fontWeight: 900,
+            letterSpacing: "0.08em",
             borderColor: "var(--brand-secondary)",
             color: "var(--brand-text)",
           }}
