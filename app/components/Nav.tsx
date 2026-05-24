@@ -31,15 +31,15 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Exe as home anchor */}
-        <a href="#hero" className="flex items-center group">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-start justify-between overflow-visible">
+        {/* Exe as home anchor — anchored from top, hangs below nav bar */}
+        <a href="#hero" className="flex items-start group">
           <Image
             src="/images/exe-mascot.png"
             alt="Game Con Junction"
-            width={48}
-            height={48}
-            className="h-36 w-auto drop-shadow-[0_0_8px_rgba(232,25,122,0.5)] group-hover:drop-shadow-[0_0_14px_rgba(232,25,122,0.85)] transition-all"
+            width={160}
+            height={160}
+            className="h-36 w-auto object-top drop-shadow-[0_0_8px_rgba(232,25,122,0.5)] group-hover:drop-shadow-[0_0_14px_rgba(232,25,122,0.85)] transition-all"
           />
         </a>
 
