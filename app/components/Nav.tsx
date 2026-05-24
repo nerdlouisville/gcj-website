@@ -39,7 +39,7 @@ export default function Nav() {
             alt="Game Con Junction"
             width={48}
             height={48}
-            className="h-10 w-auto drop-shadow-[0_0_8px_rgba(232,25,122,0.5)] group-hover:drop-shadow-[0_0_14px_rgba(232,25,122,0.85)] transition-all"
+            className="h-36 w-auto drop-shadow-[0_0_8px_rgba(232,25,122,0.5)] group-hover:drop-shadow-[0_0_14px_rgba(232,25,122,0.85)] transition-all"
           />
         </a>
 

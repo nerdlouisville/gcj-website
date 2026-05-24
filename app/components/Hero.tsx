@@ -33,18 +33,8 @@ export default function Hero() {
         />
       </div>
 
-      {/* ── Exe mascot — top left ── */}
-      <div className="absolute top-16 left-3 sm:left-6 md:left-10 w-28 sm:w-40 md:w-52 pointer-events-none" aria-hidden="true">
-        <Image
-          src="/images/exe-mascot.png"
-          alt=""
-          width={220}
-          height={220}
-          className="w-full h-auto drop-shadow-[0_0_32px_rgba(232,25,122,0.7)]"
-        />
-      </div>
 
-      {/* ── Logo ── */}
+{/* ── Logo ── */}
       <div className="mb-6 px-8">
         <Image
           src="/images/logo-white.png"
