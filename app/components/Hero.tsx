@@ -11,25 +11,68 @@ export default function Hero() {
     >
       {/* ── Background ── */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
-        {/* Retro grid image */}
+        {/* Base dark fill */}
+        <div className="absolute inset-0" style={{ background: "#0d0820" }} />
+
+        {/* Retro synthwave grid — perspective floor */}
+        <div className="absolute inset-x-0 bottom-0" style={{ height: "65%", overflow: "hidden" }}>
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              backgroundImage: `
+                linear-gradient(rgba(153,51,204,0.55) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(232,25,122,0.35) 1px, transparent 1px)
+              `,
+              backgroundSize: "80px 80px",
+              transform: "perspective(600px) rotateX(55deg)",
+              transformOrigin: "50% 0%",
+              maskImage: "linear-gradient(to bottom, transparent 0%, black 30%, black 80%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 30%, black 80%, transparent 100%)",
+            }}
+          />
+        </div>
+
+        {/* Retro synthwave grid — horizon ceiling */}
+        <div className="absolute inset-x-0 top-0" style={{ height: "50%", overflow: "hidden" }}>
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              backgroundImage: `
+                linear-gradient(rgba(153,51,204,0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(232,25,122,0.25) 1px, transparent 1px)
+              `,
+              backgroundSize: "80px 80px",
+              transform: "perspective(600px) rotateX(-55deg)",
+              transformOrigin: "50% 100%",
+              maskImage: "linear-gradient(to top, transparent 0%, black 30%, black 80%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 30%, black 80%, transparent 100%)",
+            }}
+          />
+        </div>
+
+        {/* Horizon glow line */}
         <div
-          className="absolute inset-0"
+          className="absolute left-0 right-0"
           style={{
-            backgroundImage: "url('/images/hero-bg.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.85,
+            top: "50%",
+            height: "2px",
+            background: "linear-gradient(90deg, transparent 0%, rgba(232,25,122,0.8) 20%, rgba(232,25,122,1) 50%, rgba(232,25,122,0.8) 80%, transparent 100%)",
+            boxShadow: "0 0 20px 4px rgba(232,25,122,0.5), 0 0 60px 10px rgba(153,51,204,0.3)",
           }}
         />
-        {/* Dark overlay so text stays readable */}
+
+        {/* Dark overlay — keeps text readable without killing the grid */}
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(to bottom, rgba(13,8,32,0.45) 0%, rgba(13,8,32,0.2) 40%, rgba(13,8,32,0.55) 100%)" }}
+          style={{ background: "linear-gradient(to bottom, rgba(13,8,32,0.3) 0%, rgba(13,8,32,0.0) 40%, rgba(13,8,32,0.0) 60%, rgba(13,8,32,0.3) 100%)" }}
         />
+
         {/* Pink glow behind content */}
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-3xl pointer-events-none"
-          style={{ background: "radial-gradient(ellipse, rgba(232,25,122,0.15) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse, rgba(232,25,122,0.18) 0%, transparent 70%)" }}
         />
       </div>
 
