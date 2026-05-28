@@ -35,27 +35,6 @@ export default function About() {
                 and a community that genuinely loves playing games together.
               </p>
             </div>
-
-            {/* Hotel block */}
-            <div className="mt-8 p-4 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)]">
-              <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider mb-1">
-                Hotel Block Available
-              </p>
-              <p className="text-[var(--brand-text)] font-medium">
-                Louisville Marriott East — $129/night
-              </p>
-              <p className="text-[var(--brand-muted)] text-sm mb-3">
-                Rate available Nov 5–9 · Book by October 16, 2026
-              </p>
-              <a
-                href="https://app.marriott.com/reslink?id=1768408077017&key=GRP&app=resvlink"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-[var(--brand-primary)] hover:underline"
-              >
-                Book the group rate →
-              </a>
-            </div>
           </div>
 
           {/* Stats grid */}

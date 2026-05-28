@@ -1,48 +1,6 @@
 const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a";
 const TERMS_URL = "https://nerdlouisville.org/gcj-policies-releases-and-waiver/";
 
-const tiers = [
-  {
-    name: "Weekend",
-    label: "All 3 Days",
-    price: "$55",
-    description: "Full access to Game Con Junction — Friday, Saturday, and Sunday.",
-    highlight: true,
-    badge: "Best Value",
-  },
-  {
-    name: "Friday Only",
-    label: "Single Day",
-    price: "$35",
-    description: "Entry to Game Con Junction on Friday.",
-    highlight: false,
-    badge: null,
-  },
-  {
-    name: "Saturday Only",
-    label: "Single Day",
-    price: "$45",
-    description: "Entry to Game Con Junction on Saturday.",
-    highlight: false,
-    badge: null,
-  },
-  {
-    name: "Sunday Only",
-    label: "Single Day",
-    price: "$35",
-    description: "Entry to Game Con Junction on Sunday.",
-    highlight: false,
-    badge: null,
-  },
-  {
-    name: "Kids Weekend",
-    label: "Ages 6–12",
-    price: "$15",
-    description: "Full 3-day access for kids ages 6–12.",
-    highlight: false,
-    badge: null,
-  },
-];
 
 export default function Tickets() {
   return (
@@ -63,49 +21,53 @@ export default function Tickets() {
           </p>
         </div>
 
-        {/* Badge cards — Weekend featured top row, day passes + kids below */}
+        {/* Badge cards */}
         <div className="space-y-6 max-w-4xl mx-auto mb-10">
-          {/* Weekend — full width featured card */}
-          {tiers.filter((t) => t.highlight).map((tier) => (
-            <div
-              key={tier.name}
-              className="relative p-6 rounded-[var(--radius-card)] border border-[var(--brand-primary)] bg-[var(--brand-surface)] flex flex-col sm:flex-row sm:items-center gap-6"
-              style={{ boxShadow: "0 0 24px rgba(232,25,122,0.15)" }}
-            >
-              {tier.badge && (
-                <span className="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-[var(--brand-primary)] text-white text-xs font-semibold">
-                  {tier.badge}
-                </span>
-              )}
-              <div className="flex-1">
-                <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest mb-1">{tier.label}</p>
-                <h3 className="text-xl font-bold text-[var(--brand-heading)]">{tier.name}</h3>
-                <p className="text-sm text-[var(--brand-muted)] mt-1">{tier.description}</p>
-              </div>
-              <div className="text-4xl font-bold text-[var(--brand-primary)] shrink-0">{tier.price}</div>
-              <a
-                href={TICKET_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 block text-center py-3 px-6 rounded-[var(--radius-btn)] text-sm font-semibold bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white transition-colors"
-              >
-                Get Badge
-              </a>
-            </div>
-          ))}
 
-          {/* Day passes + Kids — 2-col on sm, 4-col on lg */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {tiers.filter((t) => !t.highlight).map((tier) => (
+          {/* Weekend — full width featured card */}
+          <div
+            className="relative p-6 rounded-[var(--radius-card)] border border-[var(--brand-primary)] bg-[var(--brand-surface)] flex flex-col sm:flex-row sm:items-center gap-6"
+            style={{ boxShadow: "0 0 24px rgba(232,25,122,0.15)" }}
+          >
+            <span className="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-[var(--brand-primary)] text-white text-xs font-semibold">
+              Best Value
+            </span>
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-1">
+                <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest">All 3 Days</p>
+                <span className="px-2 py-0.5 rounded-full border border-[var(--brand-secondary)] text-[var(--brand-secondary)] text-xs font-medium">Early Bird</span>
+              </div>
+              <h3 className="text-xl font-bold text-[var(--brand-heading)]">Weekend</h3>
+              <p className="text-sm text-[var(--brand-muted)] mt-1">Full access to Game Con Junction — Friday, Saturday, and Sunday.</p>
+            </div>
+            <div className="text-4xl font-bold text-[var(--brand-primary)] shrink-0">$55</div>
+            <a
+              href={TICKET_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 block text-center py-3 px-6 rounded-[var(--radius-btn)] text-sm font-semibold bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white transition-colors"
+            >
+              Get Badge
+            </a>
+          </div>
+
+          {/* Single-day passes — 3 columns */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { name: "Friday Only", price: "$35", description: "Entry to Game Con Junction on Friday." },
+              { name: "Saturday Only", price: "$45", description: "Entry to Game Con Junction on Saturday." },
+              { name: "Sunday Only", price: "$35", description: "Entry to Game Con Junction on Sunday." },
+            ].map((tier) => (
               <div
                 key={tier.name}
                 className="relative p-5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-surface)] flex flex-col"
               >
-                <div className="flex-1">
-                  <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest mb-1">{tier.label}</p>
-                  <h3 className="text-base font-semibold text-[var(--brand-heading)]">{tier.name}</h3>
-                  <p className="text-xs text-[var(--brand-muted)] mt-1">{tier.description}</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest">Single Day</p>
+                  <span className="px-2 py-0.5 rounded-full border border-[var(--brand-secondary)] text-[var(--brand-secondary)] text-xs font-medium">Early Bird</span>
                 </div>
+                <h3 className="text-base font-semibold text-[var(--brand-heading)]">{tier.name}</h3>
+                <p className="text-xs text-[var(--brand-muted)] mt-1 flex-1">{tier.description}</p>
                 <div className="text-2xl font-bold text-[var(--brand-secondary)] my-3">{tier.price}</div>
                 <a
                   href={TICKET_URL}
@@ -118,6 +80,30 @@ export default function Tickets() {
               </div>
             ))}
           </div>
+
+          {/* Kids — its own row, centered */}
+          <div className="flex justify-center">
+            <div className="relative p-5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-surface)] flex flex-col sm:flex-row sm:items-center gap-4 w-full sm:max-w-md">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest">Ages 6–12</p>
+                  <span className="px-2 py-0.5 rounded-full border border-[var(--brand-secondary)] text-[var(--brand-secondary)] text-xs font-medium">Early Bird</span>
+                </div>
+                <h3 className="text-base font-semibold text-[var(--brand-heading)]">Kids Weekend</h3>
+                <p className="text-xs text-[var(--brand-muted)] mt-1">Full 3-day access for kids ages 6–12.</p>
+              </div>
+              <div className="text-2xl font-bold text-[var(--brand-secondary)] shrink-0">$15</div>
+              <a
+                href={TICKET_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 block text-center py-2 px-4 rounded-[var(--radius-btn)] text-xs font-semibold border border-[var(--brand-border)] text-[var(--brand-text)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors"
+              >
+                Get Badge
+              </a>
+            </div>
+          </div>
+
         </div>
 
         {/* Footer notes */}
