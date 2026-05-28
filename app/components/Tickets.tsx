@@ -1,34 +1,47 @@
-// TODO: confirm pricing tiers and amounts with the team, then replace placeholders
-
 const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a";
+const TERMS_URL = "https://nerdlouisville.org/gcj-policies-releases-and-waiver/";
 
 const tiers = [
   {
-    name: "Early Bird",
-    price: "$XX",
-    note: "Through October 5, 2026",
+    name: "Weekend",
+    label: "All 3 Days",
+    price: "$55",
+    description: "Full access to Game Con Junction — Friday, Saturday, and Sunday.",
     highlight: true,
     badge: "Best Value",
-    perks: [
-      "Full 3-day access",
-      "All open gaming",
-      "CCG tournament entry",
-      // TODO: add any early bird extras
-    ],
   },
   {
-    name: "Regular",
-    price: "$XX",
-    note: "From October 6, 2026",
+    name: "Friday Only",
+    label: "Single Day",
+    price: "$35",
+    description: "Entry to Game Con Junction on Friday.",
     highlight: false,
     badge: null,
-    perks: [
-      "Full 3-day access",
-      "All open gaming",
-      "CCG tournament entry",
-    ],
   },
-  // TODO: add day passes, VIP tier, or any other ticket types as needed
+  {
+    name: "Saturday Only",
+    label: "Single Day",
+    price: "$45",
+    description: "Entry to Game Con Junction on Saturday.",
+    highlight: false,
+    badge: null,
+  },
+  {
+    name: "Sunday Only",
+    label: "Single Day",
+    price: "$35",
+    description: "Entry to Game Con Junction on Sunday.",
+    highlight: false,
+    badge: null,
+  },
+  {
+    name: "Kids Weekend",
+    label: "Ages 6–12",
+    price: "$15",
+    description: "Full 3-day access for kids ages 6–12.",
+    highlight: false,
+    badge: null,
+  },
 ];
 
 export default function Tickets() {
@@ -50,68 +63,78 @@ export default function Tickets() {
           </p>
         </div>
 
-        {/* Tier cards */}
-        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
-          {tiers.map((tier) => (
+        {/* Badge cards — Weekend featured top row, day passes + kids below */}
+        <div className="space-y-6 max-w-4xl mx-auto mb-10">
+          {/* Weekend — full width featured card */}
+          {tiers.filter((t) => t.highlight).map((tier) => (
             <div
               key={tier.name}
-              className={`relative p-6 rounded-[var(--radius-card)] border flex flex-col ${
-                tier.highlight
-                  ? "border-[var(--brand-primary)] bg-[var(--brand-surface)]"
-                  : "border-[var(--brand-border)] bg-[var(--brand-surface)]"
-              }`}
+              className="relative p-6 rounded-[var(--radius-card)] border border-[var(--brand-primary)] bg-[var(--brand-surface)] flex flex-col sm:flex-row sm:items-center gap-6"
+              style={{ boxShadow: "0 0 24px rgba(232,25,122,0.15)" }}
             >
               {tier.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[var(--brand-primary)] text-white text-xs font-semibold">
+                <span className="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-[var(--brand-primary)] text-white text-xs font-semibold">
                   {tier.badge}
                 </span>
               )}
-              <div className="mb-4">
-                <h3 className="text-lg font-semibold text-[var(--brand-heading)]">
-                  {tier.name}
-                </h3>
-                <div className="text-3xl font-bold text-[var(--brand-secondary)] my-1">
-                  {tier.price}
-                </div>
-                <p className="text-xs text-[var(--brand-muted)]">{tier.note}</p>
+              <div className="flex-1">
+                <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest mb-1">{tier.label}</p>
+                <h3 className="text-xl font-bold text-[var(--brand-heading)]">{tier.name}</h3>
+                <p className="text-sm text-[var(--brand-muted)] mt-1">{tier.description}</p>
               </div>
-              <ul className="flex-1 space-y-2 mb-6">
-                {tier.perks.map((perk) => (
-                  <li key={perk} className="flex items-center gap-2 text-sm text-[var(--brand-text)]">
-                    <span className="text-[var(--brand-primary)]">✓</span>
-                    {perk}
-                  </li>
-                ))}
-              </ul>
+              <div className="text-4xl font-bold text-[var(--brand-primary)] shrink-0">{tier.price}</div>
               <a
                 href={TICKET_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block text-center py-3 px-4 rounded-[var(--radius-btn)] text-sm font-semibold transition-colors ${
-                  tier.highlight
-                    ? "bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white"
-                    : "border border-[var(--brand-border)] text-[var(--brand-text)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)]"
-                }`}
+                className="shrink-0 block text-center py-3 px-6 rounded-[var(--radius-btn)] text-sm font-semibold bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white transition-colors"
               >
-                Buy on AfterGame
+                Get Badge
               </a>
             </div>
           ))}
+
+          {/* Day passes + Kids — 2-col on sm, 4-col on lg */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {tiers.filter((t) => !t.highlight).map((tier) => (
+              <div
+                key={tier.name}
+                className="relative p-5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-surface)] flex flex-col"
+              >
+                <div className="flex-1">
+                  <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest mb-1">{tier.label}</p>
+                  <h3 className="text-base font-semibold text-[var(--brand-heading)]">{tier.name}</h3>
+                  <p className="text-xs text-[var(--brand-muted)] mt-1">{tier.description}</p>
+                </div>
+                <div className="text-2xl font-bold text-[var(--brand-secondary)] my-3">{tier.price}</div>
+                <a
+                  href={TICKET_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center py-2 px-3 rounded-[var(--radius-btn)] text-xs font-semibold border border-[var(--brand-border)] text-[var(--brand-text)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors"
+                >
+                  Get Badge
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Note about platform */}
-        <p className="text-center text-xs text-[var(--brand-muted)]">
-          Tickets are handled through{" "}
-          <a
-            href={TICKET_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[var(--brand-primary)] hover:underline"
-          >
-            AfterGame
-          </a>
-          . Questions about your order? Use the contact section below.
-        </p>
+        {/* Footer notes */}
+        <div className="text-center space-y-2">
+          <p className="text-xs text-[var(--brand-muted)]">
+            🎟 Early bird pricing ends{" "}
+            <strong className="text-[var(--brand-primary)]">October 5, 2026</strong>
+            {" "}— prices increase after that date.
+          </p>
+          <p className="text-xs text-[var(--brand-muted)]">
+            All purchases processed through{" "}
+            <a href={TICKET_URL} target="_blank" rel="noopener noreferrer" className="text-[var(--brand-primary)] hover:underline">AfterGame</a>
+            . By purchasing you agree to our{" "}
+            <a href={TERMS_URL} target="_blank" rel="noopener noreferrer" className="text-[var(--brand-primary)] hover:underline">Terms & Conditions</a>
+            .
+          </p>
+        </div>
       </div>
     </section>
   );
