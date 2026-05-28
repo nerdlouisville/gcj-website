@@ -18,11 +18,14 @@ const sponsors: { platinum: Sponsor[]; silver: Sponsor[]; supporting: Sponsor[] 
   ],
 };
 
+type Tier = "primo" | "artist" | undefined;
+
 type Vendor = {
   name: string;
   logo?: string;
   url?: string;
   description?: string;
+  tier?: Tier;
 };
 
 // Vendors with logos — shown as cards
@@ -38,12 +41,14 @@ const vendorsWithLogos: Vendor[] = [
     logo: "/images/vendors/archania-workshop.png",
     url: "https://archaniaworkshop.com",
     description: "Precision-built custom gaming tables, cabinets, and tabletop RPG accessories.",
+    tier: "primo",
   },
   {
     name: "Creature Curation",
     logo: "/images/vendors/creature-curation.png",
     url: "https://creaturecuration.com",
     description: "Creature Curation makes all the weird stuff we would have wanted as kids.",
+    tier: "primo",
   },
   {
     name: "Fairy Special Creations",
@@ -56,24 +61,28 @@ const vendorsWithLogos: Vendor[] = [
     logo: "/images/vendors/gnarled-barnacle.png",
     url: "https://gnarledbarnacle.com",
     description: "Eclectic electric art crafted from upcycled and sustainable materials.",
+    tier: "primo",
   },
   {
     name: "Lyneartt",
     logo: "/images/vendors/lyneartt.png",
     url: "https://www.artstation.com/lyneartt",
     description: "Bold lines and comic-style character art for indie tabletop game creators.",
+    tier: "artist",
   },
   {
     name: "Mischief Loot",
     logo: "/images/vendors/mischief-loot.jpeg",
     url: "https://www.mischiefloot.com",
     description: "Handmade dice bags, candles, and soaps.",
+    tier: "primo",
   },
   {
     name: "ninety6proof",
     logo: "/images/vendors/ninety6proof.png",
     url: "https://www.instagram.com/ninety6proof/",
     description: "Custom hand-painted miniatures, terrain, and tabletop accessories — one-of-a-kind commissions.",
+    tier: "primo",
   },
   {
     name: "Wet Ink Games",
@@ -84,22 +93,22 @@ const vendorsWithLogos: Vendor[] = [
 ];
 
 // Remaining vendors — shown as name chips
-const vendorNames: { name: string; url?: string }[] = [
+const vendorNames: { name: string; url?: string; tier?: Tier }[] = [
   { name: "A Critical Hit",             url: "https://acriticalhit.net" },
-  { name: "Bloat Games" },
-  { name: "Death By Dice",              url: "https://www.facebook.com/deathbydice666" },
-  { name: "Derby Comics & Games",       url: "https://www.derbycomicsandgames.com" },
-  { name: "Dirty Woods",                url: "https://dirtywoods.net" },
+  { name: "Bloat Games",                tier: "primo" },
+  { name: "Death By Dice",              url: "https://www.facebook.com/deathbydice666", tier: "primo" },
+  { name: "Derby Comics & Games",       url: "https://www.derbycomicsandgames.com",     tier: "primo" },
+  { name: "Dirty Woods",                url: "https://dirtywoods.net",                  tier: "primo" },
   { name: "DMing the World Press" },
   { name: "Eagle Gryphon Games",        url: "https://www.eagle-gryphon.com" },
-  { name: "Golden Keep Game Co.",       url: "https://www.goldenkeepgameco.com" },
-  { name: "Grey Loft Crafting Company" },
-  { name: "Infinite Horizon",           url: "https://infinitehorizonart.com" },
-  { name: "KatBat Media",               url: "https://www.katbatmedia.com" },
+  { name: "Golden Keep Game Co.",       url: "https://www.goldenkeepgameco.com",        tier: "primo" },
+  { name: "Grey Loft Crafting Company",                                                 tier: "primo" },
+  { name: "Infinite Horizon",           url: "https://infinitehorizonart.com",          tier: "artist" },
+  { name: "KatBat Media",               url: "https://www.katbatmedia.com",             tier: "primo" },
   { name: "Level Up Sabers" },
-  { name: "Lurker's Loot" },
-  { name: "Minx Manx Monks" },
-  { name: "Stellar Cardboard",          url: "https://www.stellarcardboard.com" },
+  { name: "Lurker's Loot",                                                              tier: "primo" },
+  { name: "Minx Manx Monks",                                                            tier: "primo" },
+  { name: "Stellar Cardboard",          url: "https://www.stellarcardboard.com",        tier: "primo" },
   { name: "The Art of Jessy" },
   { name: "Wobbly Stitches",            url: "https://wobblystitches.etsy.com" },
 ];
@@ -249,8 +258,18 @@ export default function Vendors() {
                 href={vendor.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors"
+                className="group relative flex flex-col rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors"
               >
+                {/* Tier badge */}
+                {vendor.tier && (
+                  <span className={`absolute top-2 right-2 z-10 px-2 py-0.5 rounded-full text-xs font-semibold ${
+                    vendor.tier === "artist"
+                      ? "bg-[var(--brand-primary)] text-white"
+                      : "bg-[var(--brand-secondary)] text-white"
+                  }`}>
+                    {vendor.tier === "artist" ? "Artist Alley" : "Primo"}
+                  </span>
+                )}
                 {/* Logo area — white bg so logos read cleanly */}
                 <div className="bg-white flex items-center justify-center p-4 h-32">
                   <Image
@@ -273,26 +292,26 @@ export default function Vendors() {
 
           {/* Name chips for remaining vendors */}
           <div className="flex flex-wrap gap-2 mb-10">
-            {vendorNames.map((vendor) =>
-              vendor.url ? (
-                <a
-                  key={vendor.name}
-                  href={vendor.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-text)] text-sm hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors"
-                >
-                  {vendor.name}
+            {vendorNames.map((vendor) => {
+              const badge = vendor.tier === "artist"
+                ? <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-[var(--brand-primary)] text-white text-xs font-semibold">Artist</span>
+                : vendor.tier === "primo"
+                ? <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-[var(--brand-secondary)] text-white text-xs font-semibold">Primo</span>
+                : null;
+
+              const className = "inline-flex items-center px-3 py-1.5 rounded-[var(--radius-card)] border bg-[var(--brand-bg)] text-sm " +
+                (vendor.url ? "border-[var(--brand-border)] text-[var(--brand-text)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors" : "border-[var(--brand-border)] text-[var(--brand-text)]");
+
+              return vendor.url ? (
+                <a key={vendor.name} href={vendor.url} target="_blank" rel="noopener noreferrer" className={className}>
+                  {vendor.name}{badge}
                 </a>
               ) : (
-                <span
-                  key={vendor.name}
-                  className="px-3 py-1.5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-text)] text-sm"
-                >
-                  {vendor.name}
+                <span key={vendor.name} className={className}>
+                  {vendor.name}{badge}
                 </span>
-              )
-            )}
+              );
+            })}
           </div>
 
           {/* Single CTA for vendor + artist alley */}
