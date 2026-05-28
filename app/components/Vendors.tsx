@@ -1,44 +1,107 @@
-// TODO: add logo images for sponsors once collected via the logo submission form
+import Image from "next/image";
 
 type Sponsor = { name: string; url: string | null };
 
 const sponsors: { platinum: Sponsor[]; silver: Sponsor[]; supporting: Sponsor[] } = {
   platinum: [
-    // { name: "Golden Keep Game Co.", url: "https://..." }, // TODO: pending confirmation
+    // { name: "Golden Keep Game Co.", url: "https://www.goldenkeepgameco.com" }, // TODO: pending confirmation
   ],
   silver: [
     { name: "Benji Simmons", url: null },
   ],
   supporting: [
-    { name: "Amanda Penix", url: null },
-    { name: "Anthony Lakas", url: null },
-    { name: "Justin Ishmael", url: null },
-    { name: "Lyn Redder", url: null },
-    { name: "Chris Beals", url: null },
+    { name: "Amanda Penix", url: "https://www.facebook.com/share/1E86jVgFs2/" },
+    { name: "Anthony Lakas", url: "https://www.derbycomicsandgames.com" },
+    { name: "Justin Ishmael", url: "https://www.stellarcardboard.com" },
+    { name: "Lyn Redder", url: "https://www.artstation.com/lyneartt" },
+    { name: "Chris Beals", url: "https://www.katbatmedia.com" },
   ],
 };
 
-const vendors = [
-  "A Critical Hit",
-  "Archania's Workshop",
-  "KatBat Media",
-  "Grey Loft Crafting Company",
-  "Derby Comics & Games",
-  "Lyneartt",
-  "Wobbly Stitches",
-  "Stellar Cardboard",
-  "Eagle Gryphon Games",
-  "Infinite Horizon",
-  "Creature Curation",
-  "Dirty Woods",
-  "Death By Dice",
-  "9th Level Games",
-  "The Art of Jessy",
-  "Wet Ink Games",
-  "Bloat Games",
-  "Lurker's Loot",
-  "Mischief Loot",
-  "ninety6proof / Gnarled Barnacle",
+type Vendor = {
+  name: string;
+  logo?: string;
+  url?: string;
+  description?: string;
+};
+
+// Vendors with logos — shown as cards
+const vendorsWithLogos: Vendor[] = [
+  {
+    name: "9th Level Games",
+    logo: "/images/vendors/9th-level-games.png",
+    url: "https://9thlevel.com",
+    description: "Fun and easy Tabletop RPGs with fast simple rules — great for new players and veterans alike.",
+  },
+  {
+    name: "Archania's Workshop",
+    logo: "/images/vendors/archania-workshop.png",
+    url: "https://archaniaworkshop.com",
+    description: "Precision-built custom gaming tables, cabinets, and tabletop RPG accessories.",
+  },
+  {
+    name: "Creature Curation",
+    logo: "/images/vendors/creature-curation.png",
+    url: "https://creaturecuration.com",
+    description: "Creature Curation makes all the weird stuff we would have wanted as kids.",
+  },
+  {
+    name: "Fairy Special Creations",
+    logo: "/images/vendors/fairy-special-creations.png",
+    url: "https://www.facebook.com/fairyspecialcreations",
+    description: "Hand-painted, lasercut goods for tabletop gaming — for 'fairy' special people.",
+  },
+  {
+    name: "Gnarled Barnacle",
+    logo: "/images/vendors/gnarled-barnacle.png",
+    url: "https://gnarledbarnacle.com",
+    description: "Eclectic electric art crafted from upcycled and sustainable materials.",
+  },
+  {
+    name: "Lyneartt",
+    logo: "/images/vendors/lyneartt.png",
+    url: "https://www.artstation.com/lyneartt",
+    description: "Bold lines and comic-style character art for indie tabletop game creators.",
+  },
+  {
+    name: "Mischief Loot",
+    logo: "/images/vendors/mischief-loot.jpeg",
+    url: "https://www.mischiefloot.com",
+    description: "Handmade dice bags, candles, and soaps.",
+  },
+  {
+    name: "ninety6proof",
+    logo: "/images/vendors/ninety6proof.png",
+    url: "https://www.instagram.com/ninety6proof/",
+    description: "Custom hand-painted miniatures, terrain, and tabletop accessories — one-of-a-kind commissions.",
+  },
+  {
+    name: "Wet Ink Games",
+    logo: "/images/vendors/wet-ink-games.png",
+    url: "https://www.wetinkgames.com",
+    description: "",
+  },
+];
+
+// Remaining vendors — shown as name chips
+const vendorNames: { name: string; url?: string }[] = [
+  { name: "A Critical Hit",             url: "https://acriticalhit.net" },
+  { name: "Bloat Games" },
+  { name: "Death By Dice",              url: "https://www.facebook.com/deathbydice666" },
+  { name: "Derby Comics & Games",       url: "https://www.derbycomicsandgames.com" },
+  { name: "Dirty Woods",                url: "https://dirtywoods.net" },
+  { name: "DMing the World Press" },
+  { name: "Eagle Gryphon Games",        url: "https://www.eagle-gryphon.com" },
+  { name: "Golden Keep Game Co.",       url: "https://www.goldenkeepgameco.com" },
+  { name: "Grey Loft Crafting Company" },
+  { name: "Infinite Horizon",           url: "https://infinitehorizonart.com" },
+  { name: "KatBat Media",               url: "https://www.katbatmedia.com" },
+  { name: "Level Up Sabers" },
+  { name: "Lurker's Loot" },
+  { name: "Minx Manx Monks" },
+  { name: "Stellar Cardboard",          url: "https://www.stellarcardboard.com" },
+  { name: "The Art of Jessy" },
+  { name: "Wobbly Stitches",            url: "https://wobblystitches.etsy.com" },
 ];
 
 const VENDOR_FORM_URL = "https://tally.so/r/lblxBV";
@@ -178,15 +241,58 @@ export default function Vendors() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-10">
-            {vendors.map((vendor) => (
-              <div
-                key={vendor}
-                className="p-3 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-text)] text-sm text-center"
+          {/* Logo cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
+            {vendorsWithLogos.map((vendor) => (
+              <a
+                key={vendor.name}
+                href={vendor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors"
               >
-                {vendor}
-              </div>
+                {/* Logo area — white bg so logos read cleanly */}
+                <div className="bg-white flex items-center justify-center p-4 h-32">
+                  <Image
+                    src={vendor.logo!}
+                    alt={vendor.name}
+                    width={160}
+                    height={96}
+                    className="max-h-24 w-auto object-contain"
+                  />
+                </div>
+                <div className="p-3 flex-1 flex flex-col">
+                  <p className="text-sm font-semibold text-[var(--brand-heading)] mb-1">{vendor.name}</p>
+                  {vendor.description && (
+                    <p className="text-xs text-[var(--brand-muted)] leading-relaxed">{vendor.description}</p>
+                  )}
+                </div>
+              </a>
             ))}
+          </div>
+
+          {/* Name chips for remaining vendors */}
+          <div className="flex flex-wrap gap-2 mb-10">
+            {vendorNames.map((vendor) =>
+              vendor.url ? (
+                <a
+                  key={vendor.name}
+                  href={vendor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-text)] text-sm hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors"
+                >
+                  {vendor.name}
+                </a>
+              ) : (
+                <span
+                  key={vendor.name}
+                  className="px-3 py-1.5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-text)] text-sm"
+                >
+                  {vendor.name}
+                </span>
+              )
+            )}
           </div>
 
           {/* Single CTA for vendor + artist alley */}
