@@ -1,9 +1,9 @@
 const currentYear = new Date().getFullYear();
 
 const footerLinks = [
-  { label: "Terms & Conditions", href: "/terms" },
-  { label: "Privacy Policy",     href: "/privacy" },
-  { label: "Code of Conduct",    href: "/conduct" },
+  { label: "Policies & Waiver", href: "https://nerdlouisville.org/gcj-policies-releases-and-waiver/" },
+  { label: "Code of Conduct",   href: "https://nerdlouisville.org/gcj-policies-releases-and-waiver/" },
+  { label: "Privacy Policy",    href: "https://nerdlouisville.org/privacy-policy/" },
 ];
 
 const socials = [
@@ -68,7 +68,7 @@ export default function Footer() {
           <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {footerLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="hover:text-[var(--brand-heading)] transition-colors">
+                <a href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--brand-heading)] transition-colors">
                   {link.label}
                 </a>
               </li>

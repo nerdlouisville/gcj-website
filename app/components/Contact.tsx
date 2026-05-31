@@ -1,21 +1,34 @@
-// TODO: wire up a real form handler (Netlify Forms is the easiest option here — just add
-//       data-netlify="true" to the <form> element once deployed, no backend needed).
-//       Alternatively, a Tally embed or mailto fallback works fine for launch.
+"use client";
 
-// TODO: replace with real social links
-const socials = [
-  { label: "Facebook",  href: "#", icon: "f" },
-  { label: "Instagram", href: "#", icon: "ig" },
-  { label: "Twitter/X", href: "#", icon: "x" },
-  { label: "Discord",   href: "#", icon: "d" },
-];
+import Script from "next/script";
 
-// TODO: replace with real inquiry email
 const INQUIRY_EMAIL = "info@gameconjunction.com";
+
+const socials = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/gameconjunction?utm_source=gcj-website&utm_medium=social&utm_campaign=gcj2026",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/gameconjunction?utm_source=gcj-website&utm_medium=social&utm_campaign=gcj2026",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+      </svg>
+    ),
+  },
+];
 
 export default function Contact() {
   return (
     <section id="contact" className="py-20 sm:py-28 px-4">
+      <Script async src="https://tally.so/widgets/embed.js" />
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12">
 
@@ -28,7 +41,6 @@ export default function Contact() {
               Questions?
             </h2>
             <p className="text-[var(--brand-muted)] mb-6 leading-relaxed">
-              {/* TODO: flesh out contact copy */}
               Have a question about tickets, accessibility, scheduling, or anything else?
               Drop us a line and we'll get back to you.
             </p>
@@ -41,11 +53,11 @@ export default function Contact() {
             </a>
 
             {/* Socials */}
-            <div>
+            <div className="mt-10">
               <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider mb-4">
                 Follow Along
               </p>
-              <div className="flex gap-3 flex-wrap">
+              <div className="flex gap-3">
                 {socials.map((s) => (
                   <a
                     key={s.label}
@@ -53,78 +65,29 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="w-10 h-10 rounded-full border border-[var(--brand-border)] bg-[var(--brand-surface)] flex items-center justify-center text-[var(--brand-muted)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors text-xs font-bold uppercase"
+                    className="w-10 h-10 rounded-full border border-[var(--brand-border)] bg-[var(--brand-surface)] flex items-center justify-center text-[var(--brand-muted)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors"
                   >
                     {s.icon}
                   </a>
                 ))}
               </div>
-              {/* TODO: replace icon letters with real SVG icons (lucide-react or heroicons) */}
             </div>
           </div>
 
-          {/* ── INQUIRY FORM ─────────────────────── */}
-          {/* NOTE: add data-netlify="true" and name="contact" to <form> once deployed to Netlify */}
-          <form
-            name="contact"
-            method="POST"
-            className="space-y-4"
-            /* data-netlify="true" — uncomment after first Netlify deploy */
-          >
-            {/* Required hidden field for Netlify Forms */}
-            <input type="hidden" name="form-name" value="contact" />
+          {/* ── TALLY FORM ───────────────────────── */}
+          <div>
+            <iframe
+              data-tally-src="https://tally.so/embed/Xxz1gV?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
+              loading="lazy"
+              width="100%"
+              height="300"
+              frameBorder={0}
+              marginHeight={0}
+              marginWidth={0}
+              title="Contact form"
+            />
+          </div>
 
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-[var(--brand-text)] mb-1">
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                autoComplete="name"
-                required
-                placeholder="Your name"
-                className="w-full px-4 py-3 rounded-[var(--radius-btn)] bg-[var(--brand-surface)] border border-[var(--brand-border)] text-[var(--brand-text)] placeholder:text-[var(--brand-muted)] focus:outline-none focus:border-[var(--brand-primary)] transition-colors text-sm"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-[var(--brand-text)] mb-1">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                placeholder="you@example.com"
-                className="w-full px-4 py-3 rounded-[var(--radius-btn)] bg-[var(--brand-surface)] border border-[var(--brand-border)] text-[var(--brand-text)] placeholder:text-[var(--brand-muted)] focus:outline-none focus:border-[var(--brand-primary)] transition-colors text-sm"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-[var(--brand-text)] mb-1">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-                placeholder="What's on your mind?"
-                className="w-full px-4 py-3 rounded-[var(--radius-btn)] bg-[var(--brand-surface)] border border-[var(--brand-border)] text-[var(--brand-text)] placeholder:text-[var(--brand-muted)] focus:outline-none focus:border-[var(--brand-primary)] transition-colors text-sm resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full py-3 px-6 rounded-[var(--radius-btn)] bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white font-semibold transition-colors text-sm"
-            >
-              Send Message
-            </button>
-          </form>
         </div>
       </div>
     </section>
