@@ -1,5 +1,5 @@
-const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a";
-const TERMS_URL = "https://nerdlouisville.org/gcj-policies-releases-and-waiver/";
+const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a?utm_source=gcj-website&utm_medium=tickets&utm_campaign=gcj2026";
+const TERMS_URL = "https://nerdlouisville.org/gcj-policies-releases-and-waiver/?utm_source=gcj-website&utm_medium=tickets&utm_campaign=gcj2026";
 
 
 export default function Tickets() {

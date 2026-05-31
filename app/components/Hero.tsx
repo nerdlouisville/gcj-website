@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a";
+const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a?utm_source=gcj-website&utm_medium=tickets&utm_campaign=gcj2026";
+const EVENTS_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a?utm_source=gcj-website&utm_medium=events&utm_campaign=gcj2026";
 const EARLY_BIRD_DATE = "October 5, 2026";
 
 export default function Hero() {
@@ -148,7 +149,7 @@ export default function Hero() {
           GET YOUR TICKETS
         </a>
         <a
-          href="#about"
+          href="#events"
           className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-btn)] border text-base transition-colors"
           style={{
             fontFamily: "var(--font-display)",
@@ -157,6 +158,20 @@ export default function Hero() {
             letterSpacing: "0.08em",
             borderColor: "var(--brand-secondary)",
             color: "var(--brand-text)",
+          }}
+        >
+          RUN A GAME
+        </a>
+        <a
+          href="#about"
+          className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-btn)] border text-base transition-colors"
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "0.8rem",
+            fontWeight: 900,
+            letterSpacing: "0.08em",
+            borderColor: "var(--brand-border)",
+            color: "var(--brand-muted)",
           }}
         >
           LEARN MORE

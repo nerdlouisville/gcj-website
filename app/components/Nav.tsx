@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from "react";
 
-// TODO: replace href values with real ticket / vendor submission URLs
-const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a";
+const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a?utm_source=gcj-website&utm_medium=tickets&utm_campaign=gcj2026";
 
 const navLinks = [
-  { label: "About",    href: "#about"    },
-  { label: "Tickets",  href: "#tickets"  },
-  { label: "Vendors",  href: "#vendors"  },
-  { label: "Contact",  href: "#contact"  },
+  { label: "About",   href: "#about"   },
+  { label: "Tickets", href: "#tickets" },
+  { label: "Events",  href: "#events"  },
+  { label: "Vendors", href: "#vendors" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Nav() {

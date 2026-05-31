@@ -2,6 +2,7 @@ import Nav     from "./components/Nav";
 import Hero    from "./components/Hero";
 import About   from "./components/About";
 import Tickets from "./components/Tickets";
+import Events  from "./components/Events";
 import Hotel   from "./components/Hotel";
 import Vendors from "./components/Vendors";
 import Contact from "./components/Contact";
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <About />
         <Tickets />
+        <Events />
         <Hotel />
         <Vendors />
         <Contact />

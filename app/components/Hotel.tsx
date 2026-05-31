@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const HOTEL_URL = "https://app.marriott.com/reslink?id=1768408077017&key=GRP&app=resvlink";
+const HOTEL_URL = "https://app.marriott.com/reslink?id=1768408077017&key=GRP&app=resvlink&utm_source=gcj-website&utm_medium=hotel&utm_campaign=gcj2026";
 
 export default function Hotel() {
   return (
