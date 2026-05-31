@@ -48,6 +48,10 @@ type Vendor = {
   tier?: Tier;
 };
 
+const VENDOR_UTM     = "?utm_source=gcj-website&utm_medium=vendor-hall&utm_campaign=gcj2026";
+const VENDOR_FORM_URL = `https://tally.so/r/lblxBV${VENDOR_UTM}`;
+const SPONSOR_EMAIL   = "devin@gameconjunction.com";
+
 const u = (url: string) => `${url}${VENDOR_UTM}`;
 
 // Logo card vendors — split by tier
@@ -95,10 +99,6 @@ const regularChipVendors: { name: string; url?: string }[] = [
 const artistChipVendors:  { name: string; url?: string }[] = [
   { name: "Infinite Horizon", url: u("https://infinitehorizonart.com") },
 ];
-
-const VENDOR_UTM = "?utm_source=gcj-website&utm_medium=vendor-hall&utm_campaign=gcj2026";
-const VENDOR_FORM_URL = `https://tally.so/r/lblxBV${VENDOR_UTM}`;
-const SPONSOR_EMAIL   = "devin@gameconjunction.com";
 
 
 function VendorCard({ vendor }: { vendor: Vendor }) {
