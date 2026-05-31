@@ -46,12 +46,13 @@ const u = (url: string) => `${url}${VENDOR_UTM}`;
 
 // Logo card vendors — split by tier
 const primoLogoVendors: Vendor[] = [
+  { name: "Golden Keep Game Co.", logo: "/images/sponsors/golden-keep.png",      url: u("https://goldenkeepgameco.com"),             description: "Louisville's premier tabletop gaming destination — TCGs, RPGs, miniatures, board games, and more." },
   { name: "Archania's Workshop",  logo: "/images/vendors/archania-workshop.png", url: u("https://archaniaworkshop.com"),            description: "Precision-built custom gaming tables, cabinets, and tabletop RPG accessories." },
   { name: "Creature Curation",    logo: "/images/vendors/creature-curation.png", url: u("https://creaturecuration.com"),             description: "Creature Curation makes all the weird stuff we would have wanted as kids." },
-  { name: "Derby Comics & Games", logo: "/images/vendors/derby-comics.jpg",       url: u("https://www.derbycomicsandgames.com"),     description: "" },
+  { name: "Derby Comics & Games", logo: "/images/vendors/derby-comics.jpg",       url: u("https://www.derbycomicsandgames.com"),     description: "A multi-faceted game store housing TCG games, board games, comics, and so much more." },
   { name: "Gnarled Barnacle",     logo: "/images/vendors/gnarled-barnacle.png",  url: u("https://gnarledbarnacle.com"),              description: "Eclectic electric art crafted from upcycled and sustainable materials." },
-  { name: "KatBat Media",         logo: "/images/vendors/katbat-media.png",       url: u("https://www.katbatmedia.com"),             description: "" },
-  { name: "Lurker's Loot",        logo: "/images/vendors/lurkers-loot.png",       url: u("https://lurkingfears.com"),                description: "" },
+  { name: "KatBat Media",         logo: "/images/vendors/katbat-media.png",       url: u("https://www.katbatmedia.com"),             description: "A wife & husband duo mixing art and gaming. Adventure Packs, Pen Packs, KatBat Attack board game, Tarot Packs, bookmarks, and stickers." },
+  { name: "Lurker's Loot",        logo: "/images/vendors/lurkers-loot.png",       url: u("https://lurkingfears.com"),                description: "A convention booth service helping publishers get their books and games onto tables and into players' hands." },
   { name: "Mischief Loot",        logo: "/images/vendors/mischief-loot.jpeg",    url: u("https://www.mischiefloot.com"),             description: "Handmade dice bags, candles, and soaps." },
   { name: "ninety6proof",         logo: "/images/vendors/ninety6proof.png",       url: u("https://www.instagram.com/ninety6proof/"), description: "Custom hand-painted miniatures, terrain, and tabletop accessories — one-of-a-kind commissions." },
 ];
@@ -71,7 +72,6 @@ const primoChipVendors:   { name: string; url?: string }[] = [
   { name: "Bloat Games" },
   { name: "Death By Dice",              url: u("https://www.facebook.com/deathbydice666") },
   { name: "Dirty Woods",                url: u("https://dirtywoods.net") },
-  { name: "Golden Keep Game Co.",       url: u("https://www.goldenkeepgameco.com") },
   { name: "Grey Loft Crafting Company" },
   { name: "Minx Manx Monks" },
   { name: "Stellar Cardboard",          url: u("https://www.stellarcardboard.com") },
@@ -168,7 +168,7 @@ export default function Vendors() {
           {/* Silver — logo cards in a row */}
           <div className="mb-10">
             <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Silver Sponsors</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
               {silverSponsors.map((s) => (
                 <a
                   key={s.name}
@@ -177,16 +177,16 @@ export default function Vendors() {
                   rel="noopener noreferrer"
                   className="flex flex-col items-center gap-3 p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] hover:border-[var(--brand-secondary)] transition-colors"
                 >
-                  <div className="bg-white rounded-[var(--radius-card)] p-3 w-full flex items-center justify-center h-20">
+                  <div className="bg-white rounded-[var(--radius-card)] p-4 w-full flex items-center justify-center h-32">
                     <Image
                       src={s.logo}
                       alt={s.name}
-                      width={160}
-                      height={64}
-                      className="max-h-14 w-auto object-contain"
+                      width={200}
+                      height={128}
+                      className="max-h-24 w-auto object-contain"
                     />
                   </div>
-                  <p className="text-sm font-medium text-[var(--brand-heading)] text-center">{s.name}</p>
+                  <p className="text-base font-semibold text-[var(--brand-heading)] text-center">{s.name}</p>
                 </a>
               ))}
             </div>
