@@ -27,16 +27,6 @@ const silverSponsors = [
   },
 ];
 
-type SupportingSponsor = { name: string; url: string | null };
-
-const supportingSponsors: SupportingSponsor[] = [
-  { name: "Amanda Penix",   url: "https://www.facebook.com/share/1E86jVgFs2/" },
-  { name: "Anthony Lakas",  url: "https://www.derbycomicsandgames.com" },
-  { name: "Benji Simmons",  url: null },
-  { name: "Chris Beals",    url: "https://www.katbatmedia.com" },
-  { name: "Justin Ishmael", url: "https://www.stellarcardboard.com" },
-  { name: "Lyn Redder",     url: "https://www.artstation.com/lyneartt" },
-];
 
 type Tier = "primo" | "artist" | undefined;
 
@@ -56,11 +46,14 @@ const u = (url: string) => `${url}${VENDOR_UTM}`;
 
 // Logo card vendors — split by tier
 const primoLogoVendors: Vendor[] = [
-  { name: "Archania's Workshop", logo: "/images/vendors/archania-workshop.png", url: u("https://archaniaworkshop.com"),           description: "Precision-built custom gaming tables, cabinets, and tabletop RPG accessories." },
-  { name: "Creature Curation",   logo: "/images/vendors/creature-curation.png", url: u("https://creaturecuration.com"),            description: "Creature Curation makes all the weird stuff we would have wanted as kids." },
-  { name: "Gnarled Barnacle",    logo: "/images/vendors/gnarled-barnacle.png",  url: u("https://gnarledbarnacle.com"),             description: "Eclectic electric art crafted from upcycled and sustainable materials." },
-  { name: "Mischief Loot",       logo: "/images/vendors/mischief-loot.jpeg",    url: u("https://www.mischiefloot.com"),            description: "Handmade dice bags, candles, and soaps." },
-  { name: "ninety6proof",        logo: "/images/vendors/ninety6proof.png",       url: u("https://www.instagram.com/ninety6proof/"), description: "Custom hand-painted miniatures, terrain, and tabletop accessories — one-of-a-kind commissions." },
+  { name: "Archania's Workshop",  logo: "/images/vendors/archania-workshop.png", url: u("https://archaniaworkshop.com"),            description: "Precision-built custom gaming tables, cabinets, and tabletop RPG accessories." },
+  { name: "Creature Curation",    logo: "/images/vendors/creature-curation.png", url: u("https://creaturecuration.com"),             description: "Creature Curation makes all the weird stuff we would have wanted as kids." },
+  { name: "Derby Comics & Games", logo: "/images/vendors/derby-comics.jpg",       url: u("https://www.derbycomicsandgames.com"),     description: "" },
+  { name: "Gnarled Barnacle",     logo: "/images/vendors/gnarled-barnacle.png",  url: u("https://gnarledbarnacle.com"),              description: "Eclectic electric art crafted from upcycled and sustainable materials." },
+  { name: "KatBat Media",         logo: "/images/vendors/katbat-media.png",       url: u("https://www.katbatmedia.com"),             description: "" },
+  { name: "Lurker's Loot",        logo: "/images/vendors/lurkers-loot.png",       url: u("https://lurkingfears.com"),                description: "" },
+  { name: "Mischief Loot",        logo: "/images/vendors/mischief-loot.jpeg",    url: u("https://www.mischiefloot.com"),             description: "Handmade dice bags, candles, and soaps." },
+  { name: "ninety6proof",         logo: "/images/vendors/ninety6proof.png",       url: u("https://www.instagram.com/ninety6proof/"), description: "Custom hand-painted miniatures, terrain, and tabletop accessories — one-of-a-kind commissions." },
 ];
 
 const regularLogoVendors: Vendor[] = [
@@ -77,12 +70,9 @@ const artistLogoVendors: Vendor[] = [
 const primoChipVendors:   { name: string; url?: string }[] = [
   { name: "Bloat Games" },
   { name: "Death By Dice",              url: u("https://www.facebook.com/deathbydice666") },
-  { name: "Derby Comics & Games",       url: u("https://www.derbycomicsandgames.com") },
   { name: "Dirty Woods",                url: u("https://dirtywoods.net") },
   { name: "Golden Keep Game Co.",       url: u("https://www.goldenkeepgameco.com") },
   { name: "Grey Loft Crafting Company" },
-  { name: "KatBat Media",               url: u("https://www.katbatmedia.com") },
-  { name: "Lurker's Loot" },
   { name: "Minx Manx Monks" },
   { name: "Stellar Cardboard",          url: u("https://www.stellarcardboard.com") },
 ];
@@ -199,26 +189,6 @@ export default function Vendors() {
                   <p className="text-sm font-medium text-[var(--brand-heading)] text-center">{s.name}</p>
                 </a>
               ))}
-            </div>
-          </div>
-
-          {/* Supporting sponsors */}
-          <div className="mb-10 text-center">
-            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider mb-4">Supporting Sponsors</p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {supportingSponsors.map((s) =>
-                s.url ? (
-                  <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer"
-                    className="px-4 py-1.5 rounded-full border border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-muted)] text-xs hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors">
-                    {s.name}
-                  </a>
-                ) : (
-                  <span key={s.name}
-                    className="px-4 py-1.5 rounded-full border border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-muted)] text-xs">
-                    {s.name}
-                  </span>
-                )
-              )}
             </div>
           </div>
 
