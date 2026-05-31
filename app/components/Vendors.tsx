@@ -1,22 +1,42 @@
 import Image from "next/image";
 
-type Sponsor = { name: string; url: string | null };
+const UTM = "?utm_source=gcj-website&utm_medium=sponsor&utm_campaign=gcj2026";
 
-const sponsors: { platinum: Sponsor[]; silver: Sponsor[]; supporting: Sponsor[] } = {
-  platinum: [
-    // { name: "Golden Keep Game Co.", url: "https://www.goldenkeepgameco.com" }, // TODO: pending confirmation
-  ],
-  silver: [
-    { name: "Benji Simmons", url: null },
-  ],
-  supporting: [
-    { name: "Amanda Penix", url: "https://www.facebook.com/share/1E86jVgFs2/" },
-    { name: "Anthony Lakas", url: "https://www.derbycomicsandgames.com" },
-    { name: "Justin Ishmael", url: "https://www.stellarcardboard.com" },
-    { name: "Lyn Redder", url: "https://www.artstation.com/lyneartt" },
-    { name: "Chris Beals", url: "https://www.katbatmedia.com" },
-  ],
+const platinumSponsor = {
+  name: "Golden Keep Game Co.",
+  logo: "/images/sponsors/golden-keep.png",
+  url: `https://goldenkeepgameco.com/${UTM}`,
+  blurb: "Golden Keep Game Co. is Louisville's premier tabletop gaming destination, dedicated to providing an accessible, safe, and fun environment for players of all ages and experience levels. As a community-focused business, GKGC strives to build connections through shared gaming experiences, mutual respect, and friendly competition. The store's knowledgeable and passionate staff create a welcoming atmosphere that helps foster a vibrant local gaming community. GKGC offers an extensive selection of tabletop gaming products, including popular trading card games such as Magic: The Gathering and Pokémon, roleplaying games like Dungeons & Dragons and Pathfinder, miniature wargames including Warhammer 40,000, and a wide variety of board games.",
 };
+
+const silverSponsors = [
+  {
+    name: "Archania's Workshop",
+    logo: "/images/sponsors/archania-workshop.jpg",
+    url: `https://archaniaworkshop.com/${UTM}`,
+  },
+  {
+    name: "Lurking Fears",
+    logo: "/images/sponsors/lurking-fears.png",
+    url: `https://lurkingfears.com/${UTM}`,
+  },
+  {
+    name: "Nightfall",
+    logo: "/images/sponsors/nightfall.png",
+    url: `https://nightfallmusic.live/${UTM}`,
+  },
+];
+
+type SupportingSponsor = { name: string; url: string | null };
+
+const supportingSponsors: SupportingSponsor[] = [
+  { name: "Amanda Penix",   url: "https://www.facebook.com/share/1E86jVgFs2/" },
+  { name: "Anthony Lakas",  url: "https://www.derbycomicsandgames.com" },
+  { name: "Benji Simmons",  url: null },
+  { name: "Chris Beals",    url: "https://www.katbatmedia.com" },
+  { name: "Justin Ishmael", url: "https://www.stellarcardboard.com" },
+  { name: "Lyn Redder",     url: "https://www.artstation.com/lyneartt" },
+];
 
 type Tier = "primo" | "artist" | undefined;
 
@@ -116,16 +136,6 @@ const vendorNames: { name: string; url?: string; tier?: Tier }[] = [
 const VENDOR_FORM_URL = "https://tally.so/r/lblxBV";
 const SPONSOR_EMAIL   = "devin@gameconjunction.com";
 
-const sponsorTiers = [
-  { name: "Title Sponsor",      price: "$5,000", note: "Exclusive — 1 available",         highlight: true  },
-  { name: "Platinum Sponsor",   price: "$2,000", note: "2 available",                     highlight: false },
-  { name: "Lanyard Sponsor",    price: "$750",   note: null,                              highlight: false },
-  { name: "Gold Sponsor",       price: "$1,000", note: null,                              highlight: false },
-  { name: "Game Champion",      price: "$500–$750", note: null,                           highlight: false },
-  { name: "Badge Sponsor",      price: "$500",   note: null,                              highlight: false },
-  { name: "Wi-Fi Sponsor",      price: "$300",   note: null,                              highlight: false },
-  { name: "Community Partner",  price: "$300",   note: "Local businesses — 10 available", highlight: false },
-];
 
 export default function Vendors() {
   return (
@@ -146,55 +156,80 @@ export default function Vendors() {
             </p>
           </div>
 
-          {/* Confirmed sponsors */}
-          {sponsors.platinum.length > 0 && (
-            <div className="mb-8 text-center">
-              <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider mb-4">Platinum</p>
-              <div className="flex flex-wrap justify-center gap-4">
-                {sponsors.platinum.map((s) =>
-                  s.url ? (
-                    <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer"
-                      className="px-6 py-3 rounded-[var(--radius-card)] border-2 border-[var(--brand-secondary)] bg-[var(--brand-bg)] text-[var(--brand-heading)] font-semibold hover:border-[var(--brand-primary)] transition-colors">
-                      {s.name}
-                    </a>
-                  ) : (
-                    <span key={s.name}
-                      className="px-6 py-3 rounded-[var(--radius-card)] border-2 border-[var(--brand-secondary)] bg-[var(--brand-bg)] text-[var(--brand-heading)] font-semibold">
-                      {s.name}
-                    </span>
-                  )
-                )}
+          {/* Platinum — full width featured */}
+          <div className="mb-10">
+            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Platinum Sponsor</p>
+            <a
+              href={platinumSponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block max-w-3xl mx-auto p-8 rounded-[var(--radius-card)] border-2 border-[var(--brand-secondary)] bg-[var(--brand-bg)] hover:border-[var(--brand-primary)] transition-colors"
+              style={{ boxShadow: "0 0 32px rgba(153,51,204,0.12)" }}
+            >
+              <div className="flex flex-col sm:flex-row items-center gap-8">
+                <div className="bg-white rounded-[var(--radius-card)] p-4 shrink-0">
+                  <Image
+                    src={platinumSponsor.logo}
+                    alt={platinumSponsor.name}
+                    width={160}
+                    height={160}
+                    className="w-32 h-32 object-contain"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[var(--brand-heading)] mb-2">{platinumSponsor.name}</h3>
+                  <p className="text-sm text-[var(--brand-muted)] leading-relaxed">{platinumSponsor.blurb}</p>
+                </div>
               </div>
-            </div>
-          )}
+            </a>
+          </div>
 
-          {sponsors.silver.length > 0 && (
-            <div className="mb-8 text-center">
-              <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider mb-4">Silver</p>
-              <div className="flex flex-wrap justify-center gap-3">
-                {sponsors.silver.map((s) => (
-                  <span key={s.name}
-                    className="px-5 py-2 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-text)] text-sm">
+          {/* Silver — logo cards in a row */}
+          <div className="mb-10">
+            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Silver Sponsors</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+              {silverSponsors.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center gap-3 p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] hover:border-[var(--brand-secondary)] transition-colors"
+                >
+                  <div className="bg-white rounded-[var(--radius-card)] p-3 w-full flex items-center justify-center h-20">
+                    <Image
+                      src={s.logo}
+                      alt={s.name}
+                      width={160}
+                      height={64}
+                      className="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                  <p className="text-sm font-medium text-[var(--brand-heading)] text-center">{s.name}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Supporting sponsors */}
+          <div className="mb-10 text-center">
+            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider mb-4">Supporting Sponsors</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {supportingSponsors.map((s) =>
+                s.url ? (
+                  <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer"
+                    className="px-4 py-1.5 rounded-full border border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-muted)] text-xs hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors">
                     {s.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {sponsors.supporting.length > 0 && (
-            <div className="mb-10 text-center">
-              <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider mb-4">Supporting Sponsors</p>
-              <div className="flex flex-wrap justify-center gap-2">
-                {sponsors.supporting.map((s) => (
+                  </a>
+                ) : (
                   <span key={s.name}
                     className="px-4 py-1.5 rounded-full border border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-muted)] text-xs">
                     {s.name}
                   </span>
-                ))}
-              </div>
+                )
+              )}
             </div>
-          )}
+          </div>
 
           {/* Become a sponsor CTA */}
           <div className="max-w-2xl mx-auto p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)]">
@@ -215,25 +250,6 @@ export default function Vendors() {
             </div>
           </div>
 
-          {/* Tier names — no pricing shown publicly */}
-          <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto">
-            {sponsorTiers.map((tier) => (
-              <div
-                key={tier.name}
-                className={`p-3 rounded-[var(--radius-card)] border text-center ${
-                  tier.highlight
-                    ? "border-[var(--brand-primary)] bg-[var(--brand-primary)]/10"
-                    : "border-[var(--brand-border)] bg-[var(--brand-bg)]"
-                }`}
-              >
-                <div className={`text-base font-bold mb-0.5 ${tier.highlight ? "text-[var(--brand-primary)]" : "text-[var(--brand-secondary)]"}`}>
-                  {tier.price}
-                </div>
-                <div className="text-xs font-medium text-[var(--brand-heading)]">{tier.name}</div>
-                {tier.note && <div className="text-xs text-[var(--brand-muted)] mt-0.5">{tier.note}</div>}
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* ── VENDORS ────────────────────────────────── */}
