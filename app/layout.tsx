@@ -27,6 +27,14 @@ export const metadata: Metadata = {
       "Louisville's tabletop gaming convention. Nov 6–8, 2026 at the Louisville Marriott East.",
     url: "https://gameconjunction.com",
     siteName: "Game Con Junction",
+    images: [
+      {
+        url: "https://gameconjunction.com/BizCard_Front--splash.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Game Con Junction 2026 — Louisville's Tabletop Gaming Convention",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
