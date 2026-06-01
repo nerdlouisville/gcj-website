@@ -264,7 +264,7 @@ export default function Vendors() {
           <div className="max-w-md mx-auto p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-center">
             <h3 className="font-semibold text-[var(--brand-heading)] mb-2">Want a table?</h3>
             <p className="text-sm text-[var(--brand-muted)] mb-4">
-              Artist Alley spots are still open. Vendor tables are sold out but you can join the waitlist.
+              <strong className="text-[var(--brand-heading)]">Artist Alley spots are still available.</strong> Vendor tables are sold out, but a waitlist is open — primarily for spots that open up if a current vendor drops out.
             </p>
             <a href={VENDOR_FORM_URL} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 rounded-[var(--radius-btn)] border border-[var(--brand-border)] text-[var(--brand-text)] text-sm font-medium hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors">

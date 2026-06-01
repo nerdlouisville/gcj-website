@@ -92,7 +92,7 @@ export default function Events() {
               </div>
               <h3 className="text-lg font-bold text-[var(--brand-heading)]">GM Submission</h3>
               <p className="text-sm text-[var(--brand-muted)] mt-1">
-                Planning to run 12 or more hours of games? You earn a complimentary GM badge — no purchase needed.
+                Planning to run 12 or more hours of <strong className="text-[var(--brand-heading)]">approved</strong> games? You earn a complimentary GM badge — no purchase needed. The free badge is granted once your submitted events have been reviewed and approved by GCJ organizers.
               </p>
             </div>
             <ol className="flex-1 space-y-3">

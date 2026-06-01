@@ -15,6 +15,7 @@ const highlights = [
   "Blood on the Clocktower running non-stop",
   "Vendor & arts hall packed with games and merch",
   "Youth-friendly programming for new gamers",
+  "Speed puzzling competitions",
 ];
 
 const hours = [
