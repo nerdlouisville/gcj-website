@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Game Con Junction 2026",
     description:
-      "Louisville's tabletop gaming convention. Nov 6–8, 2026 at the Louisville Marriott East.",
+      "Louisville's ultimate gaming weekend returns Nov 6–8, 2026 to the Louisville Marriott East.",
     url: "https://gameconjunction.com",
     siteName: "Game Con Junction",
     images: [
