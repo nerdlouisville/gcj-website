@@ -12,13 +12,21 @@ export const metadata: Metadata = {
   title: "Game Con Junction 2026 | Louisville's Tabletop Gaming Convention",
   description:
     "Game Con Junction — November 6–8, 2026 at the Louisville Marriott East. Three days of tabletop gaming, vendors, tournaments, and community.",
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/favicon/apple-touch-icon.png",
+  },
+  manifest: "/favicon/site.webmanifest",
   openGraph: {
     title: "Game Con Junction 2026",
     description:
       "Louisville's tabletop gaming convention. Nov 6–8, 2026 at the Louisville Marriott East.",
     url: "https://gameconjunction.com",
     siteName: "Game Con Junction",
-    // TODO: add og:image once brand assets are ready
     locale: "en_US",
     type: "website",
   },

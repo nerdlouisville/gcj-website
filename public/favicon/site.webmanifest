@@ -1,0 +1,21 @@
+{
+  "name": "Game Con Junction 2026",
+  "short_name": "GCJ26",
+  "icons": [
+    {
+      "src": "/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#e8197a",
+  "background_color": "#130e35",
+  "display": "standalone"
+}
