@@ -50,6 +50,7 @@ const primoLogoVendors: Vendor[] = [
   { name: "Archania's Workshop",  logo: "/images/vendors/archania-workshop.png", url: u("https://archaniaworkshop.com"),            description: "Precision-built custom gaming tables, cabinets, and tabletop RPG accessories." },
   { name: "Creature Curation",    logo: "/images/vendors/creature-curation.png", url: u("https://creaturecuration.com"),             description: "Creature Curation makes all the weird stuff we would have wanted as kids." },
   { name: "Derby Comics & Games", logo: "/images/vendors/derby-comics.jpg",       url: u("https://www.derbycomicsandgames.com"),     description: "A multi-faceted game store housing TCG games, board games, comics, and so much more." },
+  { name: "Dirty Woods",          logo: "/images/vendors/dirty-woods.png",       url: u("https://dirtywoods.net"),                  description: "Wood and resin dice boxes and rolling towers." },
   { name: "Gnarled Barnacle",     logo: "/images/vendors/gnarled-barnacle.png",  url: u("https://gnarledbarnacle.com"),              description: "Eclectic electric art crafted from upcycled and sustainable materials." },
   { name: "KatBat Media",         logo: "/images/vendors/katbat-media.png",       url: u("https://www.katbatmedia.com"),             description: "A wife & husband duo mixing art and gaming. Adventure Packs, Pen Packs, KatBat Attack board game, Tarot Packs, bookmarks, and stickers." },
   { name: "Lurker's Loot",        logo: "/images/vendors/lurkers-loot.png",       url: u("https://lurkingfears.com"),                description: "A convention booth service helping publishers get their books and games onto tables and into players' hands." },
@@ -60,7 +61,8 @@ const primoLogoVendors: Vendor[] = [
 const regularLogoVendors: Vendor[] = [
   { name: "9th Level Games",        logo: "/images/vendors/9th-level-games.png",        url: u("https://9thlevel.com"),                        description: "Fun and easy Tabletop RPGs with fast simple rules — great for new players and veterans alike." },
   { name: "Fairy Special Creations", logo: "/images/vendors/fairy-special-creations.png", url: u("https://www.facebook.com/fairyspecialcreations"), description: "Hand-painted, lasercut goods for tabletop gaming — for 'fairy' special people." },
-  { name: "Wet Ink Games",          logo: "/images/vendors/wet-ink-games.png",          url: u("https://www.wetinkgames.com"),                 description: "" },
+  { name: "Wet Ink Games",          logo: "/images/vendors/wet-ink-games.png",          url: u("https://www.wetinkgames.com"),                 description: "Fresh, indie games before the ink dries." },
+  { name: "DarkSpace",              logo: "/images/vendors/darkspace.png",              url: u("https://dmingtheworld.com/darkspace"),         description: "A rules-lite sci-fi RPG based on the Shadowdark engine. Journey into the shadows of space for fortune and glory!" },
 ];
 
 const artistLogoVendors: Vendor[] = [
@@ -71,7 +73,6 @@ const artistLogoVendors: Vendor[] = [
 const primoChipVendors:   { name: string; url?: string }[] = [
   { name: "Bloat Games" },
   { name: "Death By Dice",              url: u("https://www.facebook.com/deathbydice666") },
-  { name: "Dirty Woods",                url: u("https://dirtywoods.net") },
   { name: "Grey Loft Crafting Company" },
   { name: "Minx Manx Monks" },
   { name: "Stellar Cardboard",          url: u("https://www.stellarcardboard.com") },
@@ -79,7 +80,6 @@ const primoChipVendors:   { name: string; url?: string }[] = [
 
 const regularChipVendors: { name: string; url?: string }[] = [
   { name: "A Critical Hit",      url: u("https://acriticalhit.net") },
-  { name: "DMing the World Press" },
   { name: "Eagle Gryphon Games", url: u("https://www.eagle-gryphon.com") },
   { name: "Level Up Sabers" },
   { name: "The Art of Jessy" },
