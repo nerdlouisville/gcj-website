@@ -8,7 +8,7 @@ const casualSteps = [
   "Return to the main GCJ 2026 page.",
   "Click +New… → Submit an 'Official' Game.",
   "Select the game from the list (use the search bar if needed).",
-  "Add a description (optional), preferred start time, duration, and player limit.",
+  "Add a description of your event (and scenario, if applicable), preferred start time, duration, and player limit.",
   "Click Submit Game. Your submission will be pending approval.",
 ];
 
@@ -17,7 +17,7 @@ const gmSteps = [
   "Sign in or create a new account.",
   "Click +New… → Submit an 'Official' Game.",
   "Select the game from the list (use the search bar if needed).",
-  "Add a description (optional), preferred start time, duration, and player limit.",
+  "Add a description of your event (and scenario, if applicable), preferred start time, duration, and player limit.",
   "Click Submit Game. Repeat for each event you plan to run.",
 ];
 
