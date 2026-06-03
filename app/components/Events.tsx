@@ -7,7 +7,7 @@ const casualSteps = [
   "Click Get Tickets and purchase any badge.",
   "Return to the main GCJ 2026 page.",
   "Click +New… → Submit an 'Official' Game.",
-  "Search for your game in the list.",
+  "Select the game from the list (use the search bar if needed).",
   "Add a description (optional), preferred start time, duration, and player limit.",
   "Click Submit Game. Your submission will be pending approval.",
 ];
@@ -15,13 +15,29 @@ const casualSteps = [
 const gmSteps = [
   "Go to the GCJ 2026 AfterGame page (button below).",
   "Sign in or create a new account.",
-  "Click Get Tickets.",
-  "Click Enter Code and enter: EventSubmissions",
-  "Add Badge: Pending GM to your cart and click Reserve Tickets.",
-  "Return to the main GCJ 2026 page.",
   "Click +New… → Submit an 'Official' Game.",
-  "Search for your game, add details, and click Submit Game. Repeat for each event.",
+  "Select the game from the list (use the search bar if needed).",
+  "Add a description (optional), preferred start time, duration, and player limit.",
+  "Click Submit Game. Repeat for each event you plan to run.",
 ];
+
+function StepList({ steps, color }: { steps: string[]; color: string }) {
+  return (
+    <ol className="flex-1 space-y-3">
+      {steps.map((step, i) => (
+        <li key={i} className="flex gap-3 text-sm text-[var(--brand-text)]">
+          <span
+            className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white"
+            style={{ background: color }}
+          >
+            {i + 1}
+          </span>
+          <span className="pt-0.5">{step}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
 
 export default function Events() {
   return (
@@ -46,7 +62,7 @@ export default function Events() {
         {/* Two paths */}
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-10">
 
-          {/* Casual — standard badge */}
+          {/* Standard — buy a badge first */}
           <div className="p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] flex flex-col">
             <div className="mb-5">
               <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest mb-1">Running less than 12 hours</p>
@@ -55,30 +71,10 @@ export default function Events() {
                 Purchase any badge first, then submit your events.
               </p>
             </div>
-            <ol className="flex-1 space-y-3">
-              {casualSteps.map((step, i) => (
-                <li key={i} className="flex gap-3 text-sm text-[var(--brand-text)]">
-                  <span
-                    className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                    style={{ background: "var(--brand-secondary)" }}
-                  >
-                    {i + 1}
-                  </span>
-                  <span className="pt-0.5">
-                    {step.includes("EventSubmissions") ? (
-                      <>
-                        {step.split("EventSubmissions")[0]}
-                        <code className="px-1.5 py-0.5 rounded bg-[var(--brand-surface)] border border-[var(--brand-border)] text-[var(--brand-primary)] font-mono text-xs">EventSubmissions</code>
-                        {step.split("EventSubmissions")[1]}
-                      </>
-                    ) : step}
-                  </span>
-                </li>
-              ))}
-            </ol>
+            <StepList steps={casualSteps} color="var(--brand-secondary)" />
           </div>
 
-          {/* GM — free badge */}
+          {/* GM — free badge after approval */}
           <div
             className="p-6 rounded-[var(--radius-card)] border border-[var(--brand-primary)] bg-[var(--brand-bg)] flex flex-col"
             style={{ boxShadow: "0 0 24px rgba(232,25,122,0.10)" }}
@@ -92,30 +88,10 @@ export default function Events() {
               </div>
               <h3 className="text-lg font-bold text-[var(--brand-heading)]">GM Submission</h3>
               <p className="text-sm text-[var(--brand-muted)] mt-1">
-                Planning to run 12 or more hours of <strong className="text-[var(--brand-heading)]">approved</strong> games? You earn a complimentary GM badge — no purchase needed. The free badge is granted once your submitted events have been reviewed and approved by GCJ organizers.
+                Planning to run 12 or more hours of games? Skip buying a badge — submit your events directly. Once your submissions are reviewed and <strong className="text-[var(--brand-heading)]">approved</strong>, we'll issue you a complimentary GM badge as our thanks.
               </p>
             </div>
-            <ol className="flex-1 space-y-3">
-              {gmSteps.map((step, i) => (
-                <li key={i} className="flex gap-3 text-sm text-[var(--brand-text)]">
-                  <span
-                    className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                    style={{ background: "var(--brand-primary)" }}
-                  >
-                    {i + 1}
-                  </span>
-                  <span className="pt-0.5">
-                    {step.includes("EventSubmissions") ? (
-                      <>
-                        {step.split("EventSubmissions")[0]}
-                        <code className="px-1.5 py-0.5 rounded bg-[var(--brand-surface)] border border-[var(--brand-border)] text-[var(--brand-primary)] font-mono text-xs">EventSubmissions</code>
-                        {step.split("EventSubmissions")[1]}
-                      </>
-                    ) : step}
-                  </span>
-                </li>
-              ))}
-            </ol>
+            <StepList steps={gmSteps} color="var(--brand-primary)" />
           </div>
 
         </div>
@@ -123,7 +99,7 @@ export default function Events() {
         {/* Notes + CTA */}
         <div className="max-w-5xl mx-auto space-y-4">
           <div className="p-4 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-sm text-[var(--brand-muted)]">
-            <strong className="text-[var(--brand-heading)]">After submitting:</strong> Your game will be pending approval. If it's denied, check the response from GCJ organizers — we may ask for more detail or suggest a different time slot. Questions? Use the contact section below.
+            <strong className="text-[var(--brand-heading)]">After submitting:</strong> Your game will be pending approval. If it's denied, check the response from GCJ organizers — we may ask for more detail or a different time slot. Questions? Use the contact section below.
           </div>
           <div className="text-center pt-2">
             <a
