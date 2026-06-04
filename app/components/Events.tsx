@@ -59,6 +59,19 @@ export default function Events() {
           </p>
         </div>
 
+        {/* Tutorial video */}
+        <div className="max-w-3xl mx-auto mb-10">
+          <div className="relative w-full rounded-[var(--radius-card)] overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              src="https://www.youtube.com/embed/FFqruy3jgmo"
+              title="How to submit events for Game Con Junction 2026"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </div>
+
         {/* Two paths */}
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-10">
 
