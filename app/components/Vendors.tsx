@@ -68,6 +68,7 @@ const primoLogoVendors: Vendor[] = [
   { name: "Lurker's Loot",        logo: "/images/vendors/lurkers-loot.png",       url: u("https://lurkingfears.com"),                description: "A convention booth service helping publishers get their books and games onto tables and into players' hands." },
   { name: "Mischief Loot",        logo: "/images/vendors/mischief-loot.jpeg",    url: u("https://www.mischiefloot.com"),             description: "Handmade dice bags, candles, and soaps." },
   { name: "ninety6proof",         logo: "/images/vendors/ninety6proof.png",       url: u("https://www.instagram.com/ninety6proof/"), description: "Custom hand-painted miniatures, terrain, and tabletop accessories — one-of-a-kind commissions." },
+  { name: "Stellar Cardboard",   logo: "/images/sponsors/stellar_cardboard.jpeg", url: u("https://www.stellarcardboard.com") },
 ];
 
 const regularLogoVendors: Vendor[] = [
@@ -87,7 +88,6 @@ const primoChipVendors:   { name: string; url?: string }[] = [
   { name: "Death By Dice",              url: u("https://www.facebook.com/deathbydice666") },
   { name: "Grey Loft Crafting Company" },
   { name: "Minx Manx Monks" },
-  { name: "Stellar Cardboard",          url: u("https://www.stellarcardboard.com") },
 ];
 
 const regularChipVendors: { name: string; url?: string }[] = [
