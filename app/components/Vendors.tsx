@@ -9,6 +9,13 @@ const platinumSponsor = {
   blurb: "Golden Keep Game Co. is Louisville's premier tabletop gaming destination, dedicated to providing an accessible, safe, and fun environment for players of all ages and experience levels. As a community-focused business, GKGC strives to build connections through shared gaming experiences, mutual respect, and friendly competition. The store's knowledgeable and passionate staff create a welcoming atmosphere that helps foster a vibrant local gaming community. GKGC offers an extensive selection of tabletop gaming products, including popular trading card games such as Magic: The Gathering and Pokémon, roleplaying games like Dungeons & Dragons and Pathfinder, miniature wargames including Warhammer 40,000, and a wide variety of board games.",
 };
 
+const goldSponsor = {
+  name: "Rio Grande Games",
+  logo: "/images/sponsors/rio-grande-games-logo.svg",
+  url: `https://www.riograndegames.com/${UTM}`,
+  blurb: "Rio Grande Games was built on a simple belief: strategy games that reward good choices over lucky dice deserve a place in every home. They've spent decades bringing the best of German-style game design to English-speaking players, with a focus on games families can enjoy together — because the lessons learned at the table have a way of sticking around long after the game is put away.",
+};
+
 const silverSponsors = [
   {
     name: "Archania's Workshop",
@@ -24,6 +31,11 @@ const silverSponsors = [
     name: "Nightfall",
     logo: "/images/sponsors/nightfall.png",
     url: `https://nightfallmusic.live/${UTM}`,
+  },
+  {
+    name: "Thieves Run",
+    logo: "/images/sponsors/Thieves_Run_black.png",
+    url: `https://www.thievesrun.com/${UTM}`,
   },
 ];
 
@@ -87,7 +99,8 @@ const regularChipVendors: { name: string; url?: string }[] = [
 ];
 
 const artistChipVendors:  { name: string; url?: string }[] = [
-  { name: "Infinite Horizon", url: u("https://infinitehorizonart.com") },
+  { name: "Infinite Horizon",  url: u("https://infinitehorizonart.com") },
+  { name: "Connan Bell Arts",  url: u("https://cara.app/connanbell") },
 ];
 
 
@@ -165,10 +178,38 @@ export default function Vendors() {
             </a>
           </div>
 
+          {/* Gold — full width featured */}
+          <div className="mb-10">
+            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Gold Sponsor</p>
+            <a
+              href={goldSponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block max-w-3xl mx-auto p-8 rounded-[var(--radius-card)] border-2 bg-[var(--brand-bg)] hover:opacity-90 transition-opacity"
+              style={{ borderColor: "#c9a227", boxShadow: "0 0 32px rgba(201,162,39,0.12)" }}
+            >
+              <div className="flex flex-col sm:flex-row items-center gap-8">
+                <div className="bg-white rounded-[var(--radius-card)] p-4 shrink-0">
+                  <Image
+                    src={goldSponsor.logo}
+                    alt={goldSponsor.name}
+                    width={160}
+                    height={160}
+                    className="w-32 h-32 object-contain"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[var(--brand-heading)] mb-2">{goldSponsor.name}</h3>
+                  <p className="text-sm text-[var(--brand-muted)] leading-relaxed">{goldSponsor.blurb}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
           {/* Silver — logo cards in a row */}
           <div className="mb-10">
             <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Silver Sponsors</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
               {silverSponsors.map((s) => (
                 <a
                   key={s.name}
