@@ -9,12 +9,20 @@ const platinumSponsor = {
   blurb: "Golden Keep Game Co. is Louisville's premier tabletop gaming destination, dedicated to providing an accessible, safe, and fun environment for players of all ages and experience levels. As a community-focused business, GKGC strives to build connections through shared gaming experiences, mutual respect, and friendly competition. The store's knowledgeable and passionate staff create a welcoming atmosphere that helps foster a vibrant local gaming community. GKGC offers an extensive selection of tabletop gaming products, including popular trading card games such as Magic: The Gathering and Pokémon, roleplaying games like Dungeons & Dragons and Pathfinder, miniature wargames including Warhammer 40,000, and a wide variety of board games.",
 };
 
-const goldSponsor = {
-  name: "Rio Grande Games",
-  logo: "/images/sponsors/rio-grande-games-logo.svg",
-  url: `https://www.riograndegames.com/${UTM}`,
-  blurb: "Rio Grande Games was built on a simple belief: strategy games that reward good choices over lucky dice deserve a place in every home. They've spent decades bringing the best of German-style game design to English-speaking players, with a focus on games families can enjoy together — because the lessons learned at the table have a way of sticking around long after the game is put away.",
-};
+const goldSponsors = [
+  {
+    name: "Rio Grande Games",
+    logo: "/images/sponsors/rio-grande-games-logo.svg",
+    url: `https://www.riograndegames.com/${UTM}`,
+    blurb: "Rio Grande Games was built on a simple belief: strategy games that reward good choices over lucky dice deserve a place in every home. They've spent decades bringing the best of German-style game design to English-speaking players, with a focus on games families can enjoy together, because the lessons learned at the table have a way of sticking around long after the game is put away.",
+  },
+  {
+    name: "Cobble Hill Puzzles",
+    logo: "/images/sponsors/cobble-hill-logo.png",
+    url: `https://www.cobblehillpuzzles.com/${UTM}`,
+    blurb: "Cobble Hill Puzzles has spent years crafting premium jigsaw experiences for puzzlers of every age and ambition. Their signature formula of rich linen print texture, thick blue board, and quirky shaped pieces makes every puzzle something you can feel the quality of before you've placed a single piece. With hundreds of titles and piece counts ranging from 100 to 2,000, they're also a leading force in competitive puzzling. If you've spotted speed puzzling on the GCJ 2026 schedule, Cobble Hill is a big part of why, and we're thrilled to have them at Game Con Junction.",
+  },
+];
 
 const silverSponsors = [
   {
@@ -178,32 +186,27 @@ export default function Vendors() {
             </a>
           </div>
 
-          {/* Gold — full width featured */}
+          {/* Gold — 2-col grid */}
           <div className="mb-10">
-            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Gold Sponsor</p>
-            <a
-              href={goldSponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block max-w-3xl mx-auto p-8 rounded-[var(--radius-card)] border-2 bg-[var(--brand-bg)] hover:opacity-90 transition-opacity"
-              style={{ borderColor: "#c9a227", boxShadow: "0 0 32px rgba(201,162,39,0.12)" }}
-            >
-              <div className="flex flex-col sm:flex-row items-center gap-8">
-                <div className="bg-white rounded-[var(--radius-card)] p-4 shrink-0">
-                  <Image
-                    src={goldSponsor.logo}
-                    alt={goldSponsor.name}
-                    width={160}
-                    height={160}
-                    className="w-32 h-32 object-contain"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-[var(--brand-heading)] mb-2">{goldSponsor.name}</h3>
-                  <p className="text-sm text-[var(--brand-muted)] leading-relaxed">{goldSponsor.blurb}</p>
-                </div>
-              </div>
-            </a>
+            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Gold Sponsors</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {goldSponsors.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col p-6 rounded-[var(--radius-card)] border-2 bg-[var(--brand-bg)] hover:opacity-90 transition-opacity"
+                  style={{ borderColor: "#c9a227", boxShadow: "0 0 24px rgba(201,162,39,0.10)" }}
+                >
+                  <div className="bg-white rounded-[var(--radius-card)] p-4 flex items-center justify-center h-32 mb-4">
+                    <Image src={s.logo} alt={s.name} width={160} height={96} className="max-h-24 w-auto object-contain" />
+                  </div>
+                  <h3 className="text-base font-bold text-[var(--brand-heading)] mb-2">{s.name}</h3>
+                  <p className="text-sm text-[var(--brand-muted)] leading-relaxed">{s.blurb}</p>
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Silver — logo cards in a row */}
