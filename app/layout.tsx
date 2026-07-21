@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 // TODO: swap Geist for brand fonts once finalized
@@ -48,6 +49,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">{children}</body>
+      <Script
+        id="sender-js"
+        src="https://cdn.sender.net/accounts_resources/universal.js"
+        strategy="lazyOnload"
+        onLoad={() => {
+          (window as any).sender?.("f14efec0093187");
+        }}
+      />
     </html>
   );
 }
