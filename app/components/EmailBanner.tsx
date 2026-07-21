@@ -8,24 +8,17 @@ export default function EmailBanner() {
   useEffect(() => {
     setMounted(true);
 
-    const w = window as any;
-
-    // Set up Sender queue
-    w["Sender"] = "sender";
-    w["sender"] = w["sender"] || function (...args: unknown[]) {
-      (w["sender"].q = w["sender"].q || []).push(args);
-    };
-    w["sender"].l = Date.now();
-    w["sender"].on = function (event: string, cb: () => void) {
-      w["sender"].listeners = w["sender"].listeners || {};
-      (w["sender"].listeners[event] = w["sender"].listeners[event] || []).push(cb);
-    };
-
-    // Load SDK, then call sender once it's ready
     const script = document.createElement("script");
     script.src = "https://cdn.sender.net/accounts_resources/universal.js";
     script.async = true;
-    script.onload = () => w["sender"]("f14efec0093187");
+    script.onload = () => {
+      requestAnimationFrame(() => {
+        const w = window as any;
+        if (typeof w.sender === "function") {
+          w.sender("f14efec0093187");
+        }
+      });
+    };
     document.head.appendChild(script);
   }, []);
 
