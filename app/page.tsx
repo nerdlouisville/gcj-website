@@ -1,5 +1,6 @@
-import Nav        from "./components/Nav";
-import Hero       from "./components/Hero";
+import Nav         from "./components/Nav";
+import EmailBanner from "./components/EmailBanner";
+import Hero        from "./components/Hero";
 import About      from "./components/About";
 import Tickets    from "./components/Tickets";
 import Events     from "./components/Events";
@@ -15,6 +16,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <EmailBanner />
         <About />
         <Tickets />
         <Events />
