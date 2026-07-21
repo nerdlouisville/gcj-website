@@ -8,18 +8,30 @@ export default function EmailBanner() {
   useEffect(() => {
     setMounted(true);
 
+    const w = window as any;
+
+    // Mirror Sender's official embed exactly
+    w["Sender"] = "sender";
+    if (!w.sender) {
+      w.sender = function () {
+        // eslint-disable-next-line prefer-rest-params
+        (w.sender.q = w.sender.q || []).push(arguments);
+      };
+      w.sender.l = 1 * +new Date();
+      w.sender.on = function (event: string, cb: () => void) {
+        w.sender.listeners = w.sender.listeners || {};
+        (w.sender.listeners[event] = w.sender.listeners[event] || []).push(cb);
+      };
+    }
+
     const script = document.createElement("script");
-    script.src = "https://cdn.sender.net/accounts_resources/universal.js";
     script.async = true;
-    script.onload = () => {
-      requestAnimationFrame(() => {
-        const w = window as any;
-        if (typeof w.sender === "function") {
-          w.sender("f14efec0093187");
-        }
-      });
-    };
-    document.head.appendChild(script);
+    script.src = "https://cdn.sender.net/accounts_resources/universal.js";
+    const first = document.getElementsByTagName("script")[0];
+    first.parentNode!.insertBefore(script, first);
+
+    // Queue account ID — SDK replays this on load
+    w.sender("f14efec0093187");
   }, []);
 
   return (
