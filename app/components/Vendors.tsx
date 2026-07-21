@@ -45,6 +45,11 @@ const silverSponsors = [
     logo: "/images/sponsors/Thieves_Run_black.png",
     url: `https://www.thievesrun.com/${UTM}`,
   },
+  {
+    name: "Louisville Tourism",
+    logo: "/images/sponsors/Louisville-Tourism-Logo-Black.png",
+    url: `https://www.gotolouisville.com/${UTM}`,
+  },
 ];
 
 
@@ -212,7 +217,7 @@ export default function Vendors() {
           {/* Silver — logo cards in a row */}
           <div className="mb-10">
             <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Silver Sponsors</p>
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
               {silverSponsors.map((s) => (
                 <a
                   key={s.name}
