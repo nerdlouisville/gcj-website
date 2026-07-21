@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 // TODO: swap Geist for brand fonts once finalized
@@ -49,28 +48,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">{children}</body>
-      <Script
-        id="sender-js"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `(function (s, e, n, d, er) {
-  s['Sender'] = er;
-  s[er] = s[er] || function () {
-    (s[er].q = s[er].q || []).push(arguments)
-  }, s[er].l = 1 * new Date();
-  s[er].on = function(event, callback) {
-    s[er].listeners = s[er].listeners || {};
-    (s[er].listeners[event] = s[er].listeners[event] || []).push(callback);
-  };
-  var a = e.createElement(n),
-      m = e.getElementsByTagName(n)[0];
-  a.async = 1;
-  a.src = 'https://cdn.sender.net/accounts_resources/universal.js';
-  m.parentNode.insertBefore(a, m)
-})(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
-sender('f14efec0093187')`,
-        }}
-      />
     </html>
   );
 }
