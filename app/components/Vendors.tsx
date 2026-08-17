@@ -11,6 +11,12 @@ const platinumSponsor = {
 
 const goldSponsors = [
   {
+    name: "Game Weaver Games",
+    logo: "/images/sponsors/gameweaver-games-logo.svg",
+    url: `https://www.gameweavergames.com/${UTM}`,
+    blurb: "GameWeaver Games is dedicated to serving individuals who are creating tabletop board games. They meet creators in the middle of their ideation and publication, helping playtest, refine, and guide their vision into the best reality possible. Their focus is on bringing joy into the process and being highly collaborative — a coalition of game developers and artists whose honed playtesting skills, dynamic content creation, and accessibility sense help creators craft amazing products that weave players together!",
+  },
+  {
     name: "Rio Grande Games",
     logo: "/images/sponsors/rio-grande-games-logo.svg",
     url: `https://www.riograndegames.com/${UTM}`,
@@ -49,6 +55,16 @@ const silverSponsors = [
     name: "Louisville Tourism",
     logo: "/images/sponsors/Louisville-Tourism-Logo-Black.png",
     url: `https://www.gotolouisville.com/${UTM}`,
+  },
+  {
+    name: "Devir",
+    logo: "/images/sponsors/devir-logo.jpg",
+    url: `https://devirgames.com/${UTM}`,
+  },
+  {
+    name: "AllPlay",
+    logo: "/images/sponsors/allplay-logo.svg",
+    url: `https://www.allplay.com/${UTM}`,
   },
 ];
 
@@ -114,6 +130,7 @@ const regularChipVendors: { name: string; url?: string }[] = [
 const artistChipVendors:  { name: string; url?: string }[] = [
   { name: "Infinite Horizon",  url: u("https://infinitehorizonart.com") },
   { name: "Connan Bell Arts",  url: u("https://cara.app/connanbell") },
+  { name: "Naomi Fowler" },
 ];
 
 
