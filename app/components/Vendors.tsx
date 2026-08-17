@@ -105,6 +105,8 @@ const regularLogoVendors: Vendor[] = [
   { name: "Fairy Special Creations", logo: "/images/vendors/fairy-special-creations.png", url: u("https://www.facebook.com/fairyspecialcreations"), description: "Hand-painted, lasercut goods for tabletop gaming — for 'fairy' special people." },
   { name: "Wet Ink Games",          logo: "/images/vendors/wet-ink-games.png",          url: u("https://www.wetinkgames.com"),                 description: "Fresh, indie games before the ink dries." },
   { name: "DarkSpace",              logo: "/images/vendors/darkspace.png",              url: u("https://dmingtheworld.com/darkspace"),         description: "A rules-lite sci-fi RPG based on the Shadowdark engine. Journey into the shadows of space for fortune and glory!" },
+  { name: "The Art of Jessy",       logo: "/images/vendors/the-art-of-jessy.png" },
+  { name: "Wobbly Stitches",        logo: "/images/vendors/wobbly-stitches-logo.jpeg",  url: u("https://wobblystitches.etsy.com") },
 ];
 
 const artistLogoVendors: Vendor[] = [
@@ -123,8 +125,6 @@ const regularChipVendors: { name: string; url?: string }[] = [
   { name: "A Critical Hit",      url: u("https://acriticalhit.net") },
   { name: "Eagle Gryphon Games", url: u("https://www.eagle-gryphon.com") },
   { name: "Level Up Sabers" },
-  { name: "The Art of Jessy" },
-  { name: "Wobbly Stitches",     url: u("https://wobblystitches.etsy.com") },
 ];
 
 const artistChipVendors:  { name: string; url?: string }[] = [
