@@ -2,12 +2,20 @@ import Image from "next/image";
 
 const UTM = "?utm_source=gcj-website&utm_medium=sponsor&utm_campaign=gcj2026";
 
-const platinumSponsor = {
-  name: "Golden Keep Game Co.",
-  logo: "/images/sponsors/golden-keep.png",
-  url: `https://goldenkeepgameco.com/${UTM}`,
-  blurb: "Golden Keep Game Co. is Louisville's premier tabletop gaming destination, dedicated to providing an accessible, safe, and fun environment for players of all ages and experience levels. As a community-focused business, GKGC strives to build connections through shared gaming experiences, mutual respect, and friendly competition. The store's knowledgeable and passionate staff create a welcoming atmosphere that helps foster a vibrant local gaming community. GKGC offers an extensive selection of tabletop gaming products, including popular trading card games such as Magic: The Gathering and Pokémon, roleplaying games like Dungeons & Dragons and Pathfinder, miniature wargames including Warhammer 40,000, and a wide variety of board games.",
-};
+const platinumSponsors = [
+  {
+    name: "Golden Keep Game Co.",
+    logo: "/images/sponsors/golden-keep.png",
+    url: `https://goldenkeepgameco.com/${UTM}`,
+    blurb: "Golden Keep Game Co. is Louisville's premier tabletop gaming destination, dedicated to providing an accessible, safe, and fun environment for players of all ages and experience levels. As a community-focused business, GKGC strives to build connections through shared gaming experiences, mutual respect, and friendly competition. The store's knowledgeable and passionate staff create a welcoming atmosphere that helps foster a vibrant local gaming community. GKGC offers an extensive selection of tabletop gaming products, including popular trading card games such as Magic: The Gathering and Pokémon, roleplaying games like Dungeons & Dragons and Pathfinder, miniature wargames including Warhammer 40,000, and a wide variety of board games.",
+  },
+  {
+    name: "Do502",
+    logo: "/images/sponsors/do502-logo.png",
+    url: `https://do502.com/${UTM}`,
+    blurb: "Do502 is Louisville's go-to guide for music, nightlife, and events, connecting locals to everything happening around the city — concerts, festivals, food, and more. As part of the DoStuff Network, spanning more than 20 cities nationwide, Do502 reaches a passionate, plugged-in local audience through their website, newsletter, and social channels. As Game Con Junction's platinum sponsor, Do502 is putting the word out to their 30,000-person email list, helping bring even more of Louisville's gaming community through our doors — and they're running a giveaway in the lead-up to the con, so keep an eye on their channels for your chance to win. We're thrilled to have Do502 in our corner, championing local events like GCJ and helping Louisville discover its next favorite thing to do.",
+  },
+];
 
 const goldSponsors = [
   {
@@ -182,30 +190,35 @@ export default function Vendors() {
 
           {/* Platinum — full width featured */}
           <div className="mb-10">
-            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Platinum Sponsor</p>
-            <a
-              href={platinumSponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block max-w-3xl mx-auto p-8 rounded-[var(--radius-card)] border-2 border-[var(--brand-secondary)] bg-[var(--brand-bg)] hover:border-[var(--brand-primary)] transition-colors"
-              style={{ boxShadow: "0 0 32px rgba(153,51,204,0.12)" }}
-            >
-              <div className="flex flex-col sm:flex-row items-center gap-8">
-                <div className="bg-white rounded-[var(--radius-card)] p-4 shrink-0">
-                  <Image
-                    src={platinumSponsor.logo}
-                    alt={platinumSponsor.name}
-                    width={160}
-                    height={160}
-                    className="w-32 h-32 object-contain"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-[var(--brand-heading)] mb-2">{platinumSponsor.name}</h3>
-                  <p className="text-sm text-[var(--brand-muted)] leading-relaxed">{platinumSponsor.blurb}</p>
-                </div>
-              </div>
-            </a>
+            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Platinum Sponsors</p>
+            <div className="flex flex-col gap-6 max-w-3xl mx-auto">
+              {platinumSponsors.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-8 rounded-[var(--radius-card)] border-2 border-[var(--brand-secondary)] bg-[var(--brand-bg)] hover:border-[var(--brand-primary)] transition-colors"
+                  style={{ boxShadow: "0 0 32px rgba(153,51,204,0.12)" }}
+                >
+                  <div className="flex flex-col sm:flex-row items-center gap-8">
+                    <div className="bg-white rounded-[var(--radius-card)] p-4 shrink-0">
+                      <Image
+                        src={s.logo}
+                        alt={s.name}
+                        width={160}
+                        height={160}
+                        className="w-32 h-32 object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-[var(--brand-heading)] mb-2">{s.name}</h3>
+                      <p className="text-sm text-[var(--brand-muted)] leading-relaxed">{s.blurb}</p>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Gold — 2-col grid */}
