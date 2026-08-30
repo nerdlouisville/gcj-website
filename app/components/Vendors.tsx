@@ -106,6 +106,8 @@ const primoLogoVendors: Vendor[] = [
   { name: "Mischief Loot",        logo: "/images/vendors/mischief-loot.jpeg",    url: u("https://www.mischiefloot.com"),             description: "Handmade dice bags, candles, and soaps." },
   { name: "ninety6proof",         logo: "/images/vendors/ninety6proof.png",       url: u("https://www.instagram.com/ninety6proof/"), description: "Custom hand-painted miniatures, terrain, and tabletop accessories — one-of-a-kind commissions." },
   { name: "Stellar Cardboard",   logo: "/images/sponsors/stellar_cardboard.jpeg", url: u("https://www.stellarcardboard.com") },
+  { name: "Bloat Games",          logo: "/images/vendors/bloat-games-logo.webp", url: u("https://bloatgames.squarespace.com") },
+  { name: "Minx Manx Monks",      logo: "/images/vendors/minx-manx-monks-logo.jpg", url: u("https://www.etsy.com/shop/MinxManxMonks") },
 ];
 
 const regularLogoVendors: Vendor[] = [
@@ -115,6 +117,8 @@ const regularLogoVendors: Vendor[] = [
   { name: "DarkSpace",              logo: "/images/vendors/darkspace.png",              url: u("https://dmingtheworld.com/darkspace"),         description: "A rules-lite sci-fi RPG based on the Shadowdark engine. Journey into the shadows of space for fortune and glory!" },
   { name: "The Art of Jessy",       logo: "/images/vendors/the-art-of-jessy.png" },
   { name: "Wobbly Stitches",        logo: "/images/vendors/wobbly-stitches-logo.jpeg",  url: u("https://wobblystitches.etsy.com") },
+  { name: "Eagle Gryphon Games",    logo: "/images/vendors/eagle-gryphon-games-logo.png", url: u("https://www.eagle-gryphon.com") },
+  { name: "Level Up Sabers",        logo: "/images/vendors/level-up-sabers-logo.png",   url: u("https://levelupsabers.com") },
 ];
 
 const artistLogoVendors: Vendor[] = [
@@ -123,16 +127,12 @@ const artistLogoVendors: Vendor[] = [
 
 // Name chip vendors — split by tier
 const primoChipVendors:   { name: string; url?: string }[] = [
-  { name: "Bloat Games" },
   { name: "Death By Dice",              url: u("https://www.facebook.com/deathbydice666") },
   { name: "Grey Loft Crafting Company" },
-  { name: "Minx Manx Monks" },
 ];
 
 const regularChipVendors: { name: string; url?: string }[] = [
   { name: "A Critical Hit",      url: u("https://acriticalhit.net") },
-  { name: "Eagle Gryphon Games", url: u("https://www.eagle-gryphon.com") },
-  { name: "Level Up Sabers" },
 ];
 
 const artistChipVendors:  { name: string; url?: string }[] = [
