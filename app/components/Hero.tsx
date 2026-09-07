@@ -15,7 +15,7 @@ export default function Hero() {
         {/* Base dark fill */}
         <div className="absolute inset-0" style={{ background: "#0d0820" }} />
 
-        {/* Retro synthwave grid — perspective floor */}
+        {/* Retro synthwave grid: perspective floor */}
         <div className="absolute inset-x-0 bottom-0" style={{ height: "65%", overflow: "hidden" }}>
           <div
             style={{
@@ -34,7 +34,7 @@ export default function Hero() {
           />
         </div>
 
-        {/* Retro synthwave grid — horizon ceiling */}
+        {/* Retro synthwave grid: horizon ceiling */}
         <div className="absolute inset-x-0 top-0" style={{ height: "50%", overflow: "hidden" }}>
           <div
             style={{
@@ -64,7 +64,7 @@ export default function Hero() {
           }}
         />
 
-        {/* Dark overlay — keeps text readable without killing the grid */}
+        {/* Dark overlay: keeps text readable without killing the grid */}
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(to bottom, rgba(13,8,32,0.3) 0%, rgba(13,8,32,0.0) 40%, rgba(13,8,32,0.0) 60%, rgba(13,8,32,0.3) 100%)" }}

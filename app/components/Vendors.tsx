@@ -13,7 +13,7 @@ const platinumSponsors = [
     name: "Do502",
     logo: "/images/sponsors/do502-logo.png",
     url: `https://do502.com/${UTM}`,
-    blurb: "Do502 is Louisville's go-to guide for music, nightlife, and events, connecting locals to everything happening around the city — concerts, festivals, food, and more. As part of the DoStuff Network, spanning more than 20 cities nationwide, Do502 reaches a passionate, plugged-in local audience through their website, newsletter, and social channels. As Game Con Junction's platinum sponsor, Do502 is putting the word out to their 30,000-person email list, helping bring even more of Louisville's gaming community through our doors — and they're running a giveaway in the lead-up to the con, so keep an eye on their channels for your chance to win. We're thrilled to have Do502 in our corner, championing local events like GCJ and helping Louisville discover its next favorite thing to do.",
+    blurb: "Do502 is Louisville's go-to guide for music, nightlife, and events, connecting locals to everything happening around the city: concerts, festivals, food, and more. As part of the DoStuff Network, spanning more than 20 cities nationwide, Do502 reaches a passionate, plugged-in local audience through their website, newsletter, and social channels. As Game Con Junction's platinum sponsor, Do502 is putting the word out to their 30,000-person email list, helping bring even more of Louisville's gaming community through our doors, and they're running a giveaway in the lead-up to the con, so keep an eye on their channels for your chance to win. We're thrilled to have Do502 in our corner, championing local events like GCJ and helping Louisville discover its next favorite thing to do.",
   },
 ];
 
@@ -22,7 +22,7 @@ const goldSponsors = [
     name: "Game Weaver Games",
     logo: "/images/sponsors/gameweaver-games-logo.svg",
     url: `https://www.gameweavergames.com/${UTM}`,
-    blurb: "GameWeaver Games is dedicated to serving individuals who are creating tabletop board games. They meet creators in the middle of their ideation and publication, helping playtest, refine, and guide their vision into the best reality possible. Their focus is on bringing joy into the process and being highly collaborative — a coalition of game developers and artists whose honed playtesting skills, dynamic content creation, and accessibility sense help creators craft amazing products that weave players together!",
+    blurb: "GameWeaver Games is dedicated to serving individuals who are creating tabletop board games. They meet creators in the middle of their ideation and publication, helping playtest, refine, and guide their vision into the best reality possible. Their focus is on bringing joy into the process and being highly collaborative: a coalition of game developers and artists whose honed playtesting skills, dynamic content creation, and accessibility sense help creators craft amazing products that weave players together!",
   },
   {
     name: "Rio Grande Games",
@@ -93,9 +93,9 @@ const SPONSOR_EMAIL   = "devin@gameconjunction.com";
 
 const u = (url: string) => `${url}${VENDOR_UTM}`;
 
-// Logo card vendors — split by tier
+// Logo card vendors: split by tier
 const primoLogoVendors: Vendor[] = [
-  { name: "Golden Keep Game Co.", logo: "/images/sponsors/golden-keep.png",      url: u("https://goldenkeepgameco.com"),             description: "Louisville's premier tabletop gaming destination — TCGs, RPGs, miniatures, board games, and more." },
+  { name: "Golden Keep Game Co.", logo: "/images/sponsors/golden-keep.png",      url: u("https://goldenkeepgameco.com"),             description: "Louisville's premier tabletop gaming destination: TCGs, RPGs, miniatures, board games, and more." },
   { name: "Archania's Workshop",  logo: "/images/vendors/archania-workshop.png", url: u("https://archaniaworkshop.com"),            description: "Precision-built custom gaming tables, cabinets, and tabletop RPG accessories." },
   { name: "Creature Curation",    logo: "/images/vendors/creature-curation.png", url: u("https://creaturecuration.com"),             description: "Creature Curation makes all the weird stuff we would have wanted as kids." },
   { name: "Derby Comics & Games", logo: "/images/vendors/derby-comics.jpg",       url: u("https://www.derbycomicsandgames.com"),     description: "A multi-faceted game store housing TCG games, board games, comics, and so much more." },
@@ -104,15 +104,15 @@ const primoLogoVendors: Vendor[] = [
   { name: "KatBat Media",         logo: "/images/vendors/katbat-media.png",       url: u("https://www.katbatmedia.com"),             description: "A wife & husband duo mixing art and gaming. Adventure Packs, Pen Packs, KatBat Attack board game, Tarot Packs, bookmarks, and stickers." },
   { name: "Lurker's Loot",        logo: "/images/vendors/lurkers-loot.png",       url: u("https://lurkingfears.com"),                description: "A convention booth service helping publishers get their books and games onto tables and into players' hands." },
   { name: "Mischief Loot",        logo: "/images/vendors/mischief-loot.jpeg",    url: u("https://www.mischiefloot.com"),             description: "Handmade dice bags, candles, and soaps." },
-  { name: "ninety6proof",         logo: "/images/vendors/ninety6proof.png",       url: u("https://www.instagram.com/ninety6proof/"), description: "Custom hand-painted miniatures, terrain, and tabletop accessories — one-of-a-kind commissions." },
+  { name: "ninety6proof",         logo: "/images/vendors/ninety6proof.png",       url: u("https://www.instagram.com/ninety6proof/"), description: "Custom hand-painted miniatures, terrain, and tabletop accessories: one-of-a-kind commissions." },
   { name: "Stellar Cardboard",   logo: "/images/sponsors/stellar_cardboard.jpeg", url: u("https://www.stellarcardboard.com") },
   { name: "Bloat Games",          logo: "/images/vendors/bloat-games-logo.webp", url: u("https://bloatgames.squarespace.com") },
   { name: "Minx Manx Monks",      logo: "/images/vendors/minx-manx-monks-logo.jpg", url: u("https://www.etsy.com/shop/MinxManxMonks") },
 ];
 
 const regularLogoVendors: Vendor[] = [
-  { name: "9th Level Games",        logo: "/images/vendors/9th-level-games.png",        url: u("https://9thlevel.com"),                        description: "Fun and easy Tabletop RPGs with fast simple rules — great for new players and veterans alike." },
-  { name: "Fairy Special Creations", logo: "/images/vendors/fairy-special-creations.png", url: u("https://www.facebook.com/fairyspecialcreations"), description: "Hand-painted, lasercut goods for tabletop gaming — for 'fairy' special people." },
+  { name: "9th Level Games",        logo: "/images/vendors/9th-level-games.png",        url: u("https://9thlevel.com"),                        description: "Fun and easy Tabletop RPGs with fast simple rules, great for new players and veterans alike." },
+  { name: "Fairy Special Creations", logo: "/images/vendors/fairy-special-creations.png", url: u("https://www.facebook.com/fairyspecialcreations"), description: "Hand-painted, lasercut goods for tabletop gaming, for 'fairy' special people." },
   { name: "Wet Ink Games",          logo: "/images/vendors/wet-ink-games.png",          url: u("https://www.wetinkgames.com"),                 description: "Fresh, indie games before the ink dries." },
   { name: "DarkSpace",              logo: "/images/vendors/darkspace.png",              url: u("https://dmingtheworld.com/darkspace"),         description: "A rules-lite sci-fi RPG based on the Shadowdark engine. Journey into the shadows of space for fortune and glory!" },
   { name: "The Art of Jessy",       logo: "/images/vendors/the-art-of-jessy.png" },
@@ -123,12 +123,12 @@ const regularLogoVendors: Vendor[] = [
 
 const artistLogoVendors: Vendor[] = [
   { name: "Lyneartt", logo: "/images/vendors/lyneartt.png", url: u("https://www.artstation.com/lyneartt"), description: "Bold lines and comic-style character art for indie tabletop game creators." },
-  { name: "Teltaine Trading Co.", logo: "/images/vendors/teltaine-trading-co-logo.png", url: u("https://teltainetradingcompany.com"), description: "Handmade TTRPG-inspired crafts — dice, jewelry, buttons, and art for every adventurer." },
+  { name: "Teltaine Trading Co.", logo: "/images/vendors/teltaine-trading-co-logo.png", url: u("https://teltainetradingcompany.com"), description: "Handmade TTRPG-inspired crafts: dice, jewelry, buttons, and art for every adventurer." },
   { name: "Wisenheimer Art",      logo: "/images/vendors/wisenheimer-art-icon.jpg",     url: u("https://vrslaski.com"), description: "Louisville-based illustrator and CG artist bringing visuals to film, games, and beyond." },
-  { name: "Cams Creations",       logo: "/images/vendors/cams-creations-logo.jpg",      url: u("http://shop-cams-creations.square.site"), description: "Handmade crocheted plushies, bags, and car plants — cozy, playful crafts for every gamer's shelf." },
+  { name: "Cams Creations",       logo: "/images/vendors/cams-creations-logo.jpg",      url: u("http://shop-cams-creations.square.site"), description: "Handmade crocheted plushies, bags, and car plants: cozy, playful crafts for every gamer's shelf." },
 ];
 
-// Name chip vendors — split by tier
+// Name chip vendors: split by tier
 const primoChipVendors:   { name: string; url?: string }[] = [
   { name: "Death By Dice",              url: u("https://www.facebook.com/deathbydice666") },
   { name: "Grey Loft Crafting Company" },
@@ -191,7 +191,7 @@ export default function Vendors() {
             </p>
           </div>
 
-          {/* Platinum — full width featured */}
+          {/* Platinum: full width featured */}
           <div className="mb-10">
             <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Platinum Sponsors</p>
             <div className="flex flex-col gap-6 max-w-3xl mx-auto">
@@ -224,7 +224,7 @@ export default function Vendors() {
             </div>
           </div>
 
-          {/* Gold — 2-col grid */}
+          {/* Gold: 2-col grid */}
           <div className="mb-10">
             <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Gold Sponsors</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -247,7 +247,7 @@ export default function Vendors() {
             </div>
           </div>
 
-          {/* Silver — logo cards in a row */}
+          {/* Silver: logo cards in a row */}
           <div className="mb-10">
             <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Silver Sponsors</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
@@ -280,7 +280,7 @@ export default function Vendors() {
               <div>
                 <h3 className="font-semibold text-[var(--brand-heading)] mb-1">Interested in sponsoring?</h3>
                 <p className="text-sm text-[var(--brand-muted)]">
-                  Multiple tiers available — Title, Platinum, Gold, Community Partner, and more.
+                  Multiple tiers available: Title, Platinum, Gold, Community Partner, and more.
                   Reach 800+ passionate tabletop gamers.
                 </p>
               </div>
@@ -346,7 +346,7 @@ export default function Vendors() {
           <div className="max-w-md mx-auto p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-center">
             <h3 className="font-semibold text-[var(--brand-heading)] mb-2">Want a table?</h3>
             <p className="text-sm text-[var(--brand-muted)] mb-4">
-              <strong className="text-[var(--brand-heading)]">Artist Alley spots are still available.</strong> Vendor tables are sold out, but a waitlist is open — primarily for spots that open up if a current vendor drops out.
+              <strong className="text-[var(--brand-heading)]">Artist Alley spots are still available.</strong> Vendor tables are sold out, but a waitlist is open, primarily for spots that open up if a current vendor drops out.
             </p>
             <a href={VENDOR_FORM_URL} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 rounded-[var(--radius-btn)] border border-[var(--brand-border)] text-[var(--brand-text)] text-sm font-medium hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors">

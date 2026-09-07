@@ -30,7 +30,7 @@ export default function EmailBanner() {
     const first = document.getElementsByTagName("script")[0];
     first.parentNode!.insertBefore(script, first);
 
-    // Queue account ID — SDK replays this on load
+    // Queue account ID: SDK replays this on load
     w.sender("f14efec0093187");
   }, []);
 

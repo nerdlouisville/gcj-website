@@ -75,7 +75,7 @@ export default function Events() {
         {/* Two paths */}
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-10">
 
-          {/* Standard — buy a badge first */}
+          {/* Standard: buy a badge first */}
           <div className="p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] flex flex-col">
             <div className="mb-5">
               <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest mb-1">Running less than 12 hours</p>
@@ -87,7 +87,7 @@ export default function Events() {
             <StepList steps={casualSteps} color="var(--brand-secondary)" />
           </div>
 
-          {/* GM — free badge after approval */}
+          {/* GM: free badge after approval */}
           <div
             className="p-6 rounded-[var(--radius-card)] border border-[var(--brand-primary)] bg-[var(--brand-bg)] flex flex-col"
             style={{ boxShadow: "0 0 24px rgba(232,25,122,0.10)" }}
@@ -101,7 +101,7 @@ export default function Events() {
               </div>
               <h3 className="text-lg font-bold text-[var(--brand-heading)]">GM Submission</h3>
               <p className="text-sm text-[var(--brand-muted)] mt-1">
-                Planning to run 12 or more hours of games? Skip buying a badge — submit your events directly. Once your submissions are reviewed and <strong className="text-[var(--brand-heading)]">approved</strong>, we'll issue you a complimentary GM badge as our thanks.
+                Planning to run 12 or more hours of games? Skip buying a badge. Submit your events directly. Once your submissions are reviewed and <strong className="text-[var(--brand-heading)]">approved</strong>, we'll issue you a complimentary GM badge as our thanks.
               </p>
             </div>
             <StepList steps={gmSteps} color="var(--brand-primary)" />
@@ -112,7 +112,7 @@ export default function Events() {
         {/* Notes + CTA */}
         <div className="max-w-5xl mx-auto space-y-4">
           <div className="p-4 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-sm text-[var(--brand-muted)]">
-            <strong className="text-[var(--brand-heading)]">After submitting:</strong> Your game will be pending approval. If it's denied, check the response from GCJ organizers — we may ask for more detail or a different time slot. Questions? Use the contact section below.
+            <strong className="text-[var(--brand-heading)]">After submitting:</strong> Your game will be pending approval. If it's denied, check the response from GCJ organizers. We may ask for more detail or a different time slot. Questions? Use the contact section below.
           </div>
           <div className="text-center pt-2">
             <a

@@ -16,15 +16,15 @@ export default function Tickets() {
           </h2>
           <p className="text-[var(--brand-muted)] max-w-xl mx-auto">
             Tickets are sold through AfterGame. Early bird pricing is available
-            through <strong className="text-[var(--brand-secondary)]">October 5, 2026</strong> —
-            don't wait.
+            through <strong className="text-[var(--brand-secondary)]">October 5, 2026</strong>.
+            Don't wait.
           </p>
         </div>
 
         {/* Badge cards */}
         <div className="space-y-6 max-w-4xl mx-auto mb-10">
 
-          {/* VIP — top featured card */}
+          {/* VIP: top featured card */}
           <div
             className="relative p-6 rounded-[var(--radius-card)] border-2 border-[var(--brand-secondary)] bg-[var(--brand-surface)] flex flex-col sm:flex-row sm:items-start gap-6"
             style={{ boxShadow: "0 0 32px rgba(153,51,204,0.2)" }}
@@ -44,7 +44,7 @@ export default function Tickets() {
                   "Coffee, donuts & chill-out space access",
                   "Exclusive GCJ T-shirt",
                   "Early access to event tickets",
-                  "Swag bag — dice, stickers, games & more",
+                  "Swag bag: dice, stickers, games & more",
                   "Our unending thanks ♥",
                 ].map((perk) => (
                   <li key={perk} className="flex items-start gap-2 text-sm text-[var(--brand-text)]">
@@ -67,7 +67,7 @@ export default function Tickets() {
             </div>
           </div>
 
-          {/* Weekend — full width featured card */}
+          {/* Weekend: full width featured card */}
           <div
             className="relative p-6 rounded-[var(--radius-card)] border border-[var(--brand-primary)] bg-[var(--brand-surface)] flex flex-col sm:flex-row sm:items-center gap-6"
             style={{ boxShadow: "0 0 24px rgba(232,25,122,0.15)" }}
@@ -81,7 +81,7 @@ export default function Tickets() {
                 <span className="px-2 py-0.5 rounded-full border border-[var(--brand-secondary)] text-[var(--brand-secondary)] text-xs font-medium">Early Bird</span>
               </div>
               <h3 className="text-xl font-bold text-[var(--brand-heading)]">Weekend</h3>
-              <p className="text-sm text-[var(--brand-muted)] mt-1">Full access to Game Con Junction — Friday, Saturday, and Sunday.</p>
+              <p className="text-sm text-[var(--brand-muted)] mt-1">Full access to Game Con Junction: Friday, Saturday, and Sunday.</p>
             </div>
             <div className="text-4xl font-bold text-[var(--brand-primary)] shrink-0">$55</div>
             <a
@@ -94,7 +94,7 @@ export default function Tickets() {
             </a>
           </div>
 
-          {/* Single-day passes — 3 columns */}
+          {/* Single-day passes: 3 columns */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               { name: "Friday Only", price: "$35", description: "Entry to Game Con Junction on Friday." },
@@ -124,7 +124,7 @@ export default function Tickets() {
             ))}
           </div>
 
-          {/* Kids — its own row, centered */}
+          {/* Kids: its own row, centered */}
           <div className="flex justify-center">
             <div className="relative p-5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-surface)] flex flex-col sm:flex-row sm:items-center gap-4 w-full sm:max-w-md">
               <div className="flex-1">
@@ -153,8 +153,8 @@ export default function Tickets() {
         <div className="text-center space-y-2">
           <p className="text-xs text-[var(--brand-muted)]">
             🎟 Early bird pricing ends{" "}
-            <strong className="text-[var(--brand-primary)]">October 5, 2026</strong>
-            {" "}— prices increase after that date.
+            <strong className="text-[var(--brand-primary)]">October 5, 2026</strong>.
+            Prices increase after that date.
           </p>
           <p className="text-xs text-[var(--brand-muted)]">
             All purchases processed through{" "}

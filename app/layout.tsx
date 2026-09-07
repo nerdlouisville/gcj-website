@@ -12,7 +12,7 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "Game Con Junction 2026 | Louisville's Tabletop Gaming Convention",
   description:
-    "Game Con Junction — November 6–8, 2026 at the Louisville Marriott East. Three days of tabletop gaming, vendors, tournaments, and community.",
+    "Game Con Junction: November 6–8, 2026 at the Louisville Marriott East. Three days of tabletop gaming, vendors, tournaments, and community.",
   icons: {
     icon: [
       { url: "/favicon/favicon.ico" },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: "https://gameconjunction.com/BizCard_Front--splash.jpg",
         width: 1200,
         height: 630,
-        alt: "Game Con Junction 2026 — Louisville's Tabletop Gaming Convention",
+        alt: "Game Con Junction 2026: Louisville's Tabletop Gaming Convention",
       },
     ],
     locale: "en_US",

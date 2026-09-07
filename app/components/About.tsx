@@ -8,7 +8,7 @@ const stats = [
 const highlights = [
   "Tabletop RPGs for new and experienced players",
   "Board game library with hundreds of titles",
-  "Megagames — unforgettable large-group play",
+  "Megagames: unforgettable large-group play",
   "Play-to-win board games",
   "CCG / TCG tournaments",
   "Hot Games demos featuring new & trending titles",
@@ -41,13 +41,13 @@ export default function About() {
             <div className="space-y-4 text-[var(--brand-muted)] leading-relaxed">
               <p>
                 Game Con Junction is Louisville's dedicated tabletop gaming convention,
-                brought to you by Nerd Louisville and Dukes of Highland — two local organizations
+                brought to you by Nerd Louisville and Dukes of Highland, two local organizations
                 committed to growing inclusive, community-driven gaming experiences.
               </p>
               <p>
                 Whether you love immersive roleplaying, competitive tabletop strategy, or just want
                 to discover your next favorite game, GCJ has something for you. Your badge does more
-                than get you in the door — it helps support free and reduced-cost community gaming
+                than get you in the door. It helps support free and reduced-cost community gaming
                 events throughout the year, right here in Louisville.
               </p>
             </div>
