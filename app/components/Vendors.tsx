@@ -123,8 +123,6 @@ const regularLogoVendors: Vendor[] = [
 
 const artistLogoVendors: Vendor[] = [
   { name: "Lyneartt", logo: "/images/vendors/lyneartt.png", url: u("https://www.artstation.com/lyneartt"), description: "Bold lines and comic-style character art for indie tabletop game creators." },
-  { name: "Teltaine Trading Co.", logo: "/images/vendors/teltaine-trading-co-logo.png", url: u("https://teltainetradingcompany.com"), description: "Handmade TTRPG-inspired crafts: dice, jewelry, buttons, and art for every adventurer." },
-  { name: "Wisenheimer Art",      logo: "/images/vendors/wisenheimer-art-icon.jpg",     url: u("https://vrslaski.com"), description: "Louisville-based illustrator and CG artist bringing visuals to film, games, and beyond." },
   { name: "Cams Creations",       logo: "/images/vendors/cams-creations-logo.jpg",      url: u("http://shop-cams-creations.square.site"), description: "Handmade crocheted plushies, bags, and car plants: cozy, playful crafts for every gamer's shelf." },
 ];
 
