@@ -3,13 +3,15 @@
 import { useState, useEffect } from "react";
 
 const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a?utm_source=gcj-website&utm_medium=tickets&utm_campaign=gcj2026";
+const BROWSE_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a/schedule?utm_source=gcj-website&utm_medium=nav&utm_campaign=gcj2026";
 
 const navLinks = [
-  { label: "About",   href: "#about"   },
-  { label: "Tickets", href: "#tickets" },
-  { label: "Events",  href: "#events"  },
-  { label: "Vendors", href: "#vendors" },
-  { label: "Contact", href: "#contact" },
+  { label: "About",          href: "#about"   },
+  { label: "Tickets",        href: "#tickets" },
+  { label: "Browse Events",  href: BROWSE_URL, external: true },
+  { label: "Submit Events",  href: "#events"  },
+  { label: "Vendors",        href: "#vendors" },
+  { label: "Contact",        href: "#contact" },
 ];
 
 export default function Nav() {
@@ -46,6 +48,7 @@ export default function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
+                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="text-sm text-[var(--brand-muted)] hover:text-[var(--brand-heading)] transition-colors"
               >
                 {link.label}
@@ -87,6 +90,7 @@ export default function Nav() {
               <li key={link.href}>
                 <a
                   href={link.href}
+                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="block text-[var(--brand-text)] hover:text-[var(--brand-heading)] transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >

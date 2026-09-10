@@ -1,5 +1,7 @@
 const AFTERGAME_URL =
   "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a?utm_source=gcj-website&utm_medium=events&utm_campaign=gcj2026";
+const BROWSE_URL =
+  "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a/schedule?utm_source=gcj-website&utm_medium=events&utm_campaign=gcj2026";
 
 const casualSteps = [
   "Go to the GCJ 2026 AfterGame page (button below).",
@@ -57,6 +59,24 @@ export default function Events() {
             <strong className="text-[var(--brand-heading)]">October 1, 2026</strong>.
             Games are submitted through our AfterGame event page.
           </p>
+        </div>
+
+        {/* Just want to see what's playing? */}
+        <div className="max-w-2xl mx-auto mb-10 p-5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h3 className="font-semibold text-[var(--brand-heading)] mb-1">Just want to see what's playing?</h3>
+            <p className="text-sm text-[var(--brand-muted)]">
+              This section is for submitting your own games. To browse the full schedule of events at GCJ 2026, head to the link below instead.
+            </p>
+          </div>
+          <a
+            href={BROWSE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 inline-flex items-center px-5 py-2.5 rounded-[var(--radius-btn)] border border-[var(--brand-border)] text-[var(--brand-text)] text-sm font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors whitespace-nowrap"
+          >
+            Browse the Schedule
+          </a>
         </div>
 
         {/* Tutorial video */}
