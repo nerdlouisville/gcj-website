@@ -62,7 +62,7 @@ export default function Events() {
         </div>
 
         {/* Just want to see what's playing? */}
-        <div className="max-w-2xl mx-auto mb-10 p-5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="max-w-5xl mx-auto mb-10 p-5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h3 className="font-semibold text-[var(--brand-heading)] mb-1">Just want to see what's playing?</h3>
             <p className="text-sm text-[var(--brand-muted)]">
@@ -73,7 +73,7 @@ export default function Events() {
             href={BROWSE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center px-5 py-2.5 rounded-[var(--radius-btn)] border border-[var(--brand-border)] text-[var(--brand-text)] text-sm font-semibold hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors whitespace-nowrap"
+            className="shrink-0 inline-flex items-center px-5 py-2.5 rounded-[var(--radius-btn)] bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white text-sm font-semibold transition-colors whitespace-nowrap"
           >
             Browse the Schedule
           </a>
