@@ -77,12 +77,11 @@ export default function Tickets() {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
                 <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest">All 3 Days</p>
-                <span className="px-2 py-0.5 rounded-full border border-[var(--brand-secondary)] text-[var(--brand-secondary)] text-xs font-medium">Early Bird</span>
               </div>
               <h3 className="text-xl font-bold text-[var(--brand-heading)]">Weekend</h3>
               <p className="text-sm text-[var(--brand-muted)] mt-1">Full access to Game Con Junction: Friday, Saturday, and Sunday.</p>
             </div>
-            <div className="text-4xl font-bold text-[var(--brand-primary)] shrink-0">$55</div>
+            <div className="text-4xl font-bold text-[var(--brand-primary)] shrink-0">$65</div>
             <a
               href={TICKET_URL}
               target="_blank"
@@ -96,9 +95,9 @@ export default function Tickets() {
           {/* Single-day passes: 3 columns */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { name: "Friday Only", price: "$35", description: "Entry to Game Con Junction on Friday." },
-              { name: "Saturday Only", price: "$45", description: "Entry to Game Con Junction on Saturday." },
-              { name: "Sunday Only", price: "$35", description: "Entry to Game Con Junction on Sunday." },
+              { name: "Friday Only", price: "$40", description: "Entry to Game Con Junction on Friday." },
+              { name: "Saturday Only", price: "$50", description: "Entry to Game Con Junction on Saturday." },
+              { name: "Sunday Only", price: "$40", description: "Entry to Game Con Junction on Sunday." },
             ].map((tier) => (
               <div
                 key={tier.name}
@@ -106,7 +105,6 @@ export default function Tickets() {
               >
                 <div className="flex items-center gap-2 mb-1">
                   <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest">Single Day</p>
-                  <span className="px-2 py-0.5 rounded-full border border-[var(--brand-secondary)] text-[var(--brand-secondary)] text-xs font-medium">Early Bird</span>
                 </div>
                 <h3 className="text-base font-semibold text-[var(--brand-heading)]">{tier.name}</h3>
                 <p className="text-xs text-[var(--brand-muted)] mt-1 flex-1">{tier.description}</p>
@@ -129,12 +127,11 @@ export default function Tickets() {
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
                   <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest">Ages 6–12</p>
-                  <span className="px-2 py-0.5 rounded-full border border-[var(--brand-secondary)] text-[var(--brand-secondary)] text-xs font-medium">Early Bird</span>
                 </div>
                 <h3 className="text-base font-semibold text-[var(--brand-heading)]">Kids Weekend</h3>
                 <p className="text-xs text-[var(--brand-muted)] mt-1">Full 3-day access for kids ages 6–12.</p>
               </div>
-              <div className="text-2xl font-bold text-[var(--brand-secondary)] shrink-0">$15</div>
+              <div className="text-2xl font-bold text-[var(--brand-secondary)] shrink-0">$20</div>
               <a
                 href={TICKET_URL}
                 target="_blank"
@@ -153,7 +150,6 @@ export default function Tickets() {
           <p className="text-xs text-[var(--brand-muted)]">
             🎟 Early bird pricing ended{" "}
             <strong className="text-[var(--brand-primary)]">October 5, 2026</strong>.
-            Current prices are listed on AfterGame.
           </p>
           <p className="text-xs text-[var(--brand-muted)]">
             All purchases processed through{" "}
