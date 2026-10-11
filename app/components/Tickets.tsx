@@ -54,7 +54,7 @@ export default function Tickets() {
               </ul>
             </div>
             <div className="flex flex-col items-end gap-3 shrink-0">
-              <div className="text-4xl font-bold text-[var(--brand-secondary)]">$135</div>
+              <div className="text-4xl font-bold text-[var(--brand-secondary)]">$145</div>
               <a
                 href={TICKET_URL}
                 target="_blank"
