@@ -15,9 +15,8 @@ export default function Tickets() {
             Get Your Badge
           </h2>
           <p className="text-[var(--brand-muted)] max-w-xl mx-auto">
-            Tickets are sold through AfterGame. Early bird pricing is available
-            through <strong className="text-[var(--brand-secondary)]">October 5, 2026</strong>.
-            Don't wait.
+            Tickets are sold through AfterGame. Early bird sales closed on{" "}
+            <strong className="text-[var(--brand-secondary)]">October 5, 2026</strong>.
           </p>
         </div>
 
@@ -152,9 +151,9 @@ export default function Tickets() {
         {/* Footer notes */}
         <div className="text-center space-y-2">
           <p className="text-xs text-[var(--brand-muted)]">
-            🎟 Early bird pricing ends{" "}
+            🎟 Early bird pricing ended{" "}
             <strong className="text-[var(--brand-primary)]">October 5, 2026</strong>.
-            Prices increase after that date.
+            Current prices are listed on AfterGame.
           </p>
           <p className="text-xs text-[var(--brand-muted)]">
             All purchases processed through{" "}

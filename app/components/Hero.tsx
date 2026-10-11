@@ -1,8 +1,7 @@
 import Image from "next/image";
 
 const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a?utm_source=gcj-website&utm_medium=tickets&utm_campaign=gcj2026";
-const EVENTS_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a?utm_source=gcj-website&utm_medium=events&utm_campaign=gcj2026";
-const EARLY_BIRD_DATE = "October 5, 2026";
+const BROWSE_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a/schedule?utm_source=gcj-website&utm_medium=hero&utm_campaign=gcj2026";
 
 export default function Hero() {
   return (
@@ -149,7 +148,9 @@ export default function Hero() {
           GET YOUR TICKETS
         </a>
         <a
-          href="#events"
+          href={BROWSE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-btn)] border text-base transition-colors"
           style={{
             fontFamily: "var(--font-display)",
@@ -160,7 +161,7 @@ export default function Hero() {
             color: "var(--brand-text)",
           }}
         >
-          RUN A GAME
+          BROWSE EVENTS
         </a>
         <a
           href="#about"
@@ -178,10 +179,11 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* ── Early bird callout ── */}
+      {/* ── Closed callout ── */}
       <p className="mt-8 text-sm text-[var(--brand-muted)]">
-        🎟 Early bird pricing through{" "}
-        <strong style={{ color: "var(--brand-primary)" }}>{EARLY_BIRD_DATE}</strong>
+        <strong style={{ color: "var(--brand-primary)" }}>Early bird sales are closed</strong>
+        {" · "}
+        <strong style={{ color: "var(--brand-primary)" }}>Event submissions are closed</strong>
       </p>
 
       {/* ── Scroll nudge ── */}

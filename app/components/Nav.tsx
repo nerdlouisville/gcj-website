@@ -9,7 +9,6 @@ const navLinks = [
   { label: "About",          href: "#about"   },
   { label: "Tickets",        href: "#tickets" },
   { label: "Browse Events",  href: BROWSE_URL, external: true },
-  { label: "Submit Events",  href: "#events"  },
   { label: "Vendors",        href: "#vendors" },
   { label: "Contact",        href: "#contact" },
 ];
