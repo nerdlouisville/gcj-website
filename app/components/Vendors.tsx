@@ -74,6 +74,11 @@ const silverSponsors = [
     logo: "/images/sponsors/allplay-logo.svg",
     url: `https://www.allplay.com/${UTM}`,
   },
+  {
+    name: "Joey Hamilton, eXp Realty",
+    logo: "/images/sponsors/exp-realty-logo.png",
+    url: `https://josephthamilton.exprealty.com/${UTM}`,
+  },
 ];
 
 
