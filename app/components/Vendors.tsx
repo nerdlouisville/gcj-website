@@ -43,41 +43,49 @@ const silverSponsors = [
     name: "Archania's Workshop",
     logo: "/images/sponsors/archania-workshop.jpg",
     url: `https://archaniaworkshop.com/${UTM}`,
+    description: "Precision-built custom gaming tables, cabinets, and tabletop RPG accessories.",
   },
   {
     name: "Lurking Fears",
     logo: "/images/sponsors/lurking-fears.png",
     url: `https://lurkingfears.com/${UTM}`,
+    description: "Professional tabletop games at cons, connecting publishers, GMs, and players since 2021.",
   },
   {
     name: "Nightfall",
     logo: "/images/sponsors/nightfall.png",
     url: `https://nightfallmusic.live/${UTM}`,
+    description: "Local artists bringing music, theatre, and more to Louisville venues.",
   },
   {
     name: "Thieves Run",
     logo: "/images/sponsors/Thieves_Run_black.png",
     url: `https://www.thievesrun.com/${UTM}`,
+    description: "A tabletop and RPG hangout on Story Avenue in Louisville.",
   },
   {
     name: "Louisville Tourism",
     logo: "/images/sponsors/Louisville-Tourism-Logo-Black.png",
     url: `https://www.gotolouisville.com/${UTM}`,
+    description: "The official travel source for Louisville, where bourbon is just the beginning.",
   },
   {
     name: "Devir",
     logo: "/images/sponsors/devir-logo.jpg",
     url: `https://devirgames.com/${UTM}`,
+    description: "International board game publisher behind The White Castle: Duel, Orloj, and Berlin 1960.",
   },
   {
     name: "AllPlay",
     logo: "/images/sponsors/allplay-logo.svg",
     url: `https://www.allplay.com/${UTM}`,
+    description: "Premium board game tables, bags, playmats, and shelves, plus their own published games.",
   },
   {
     name: "Joey Hamilton, eXp Realty",
     logo: "/images/sponsors/exp-realty-logo.png",
     url: `https://josephthamilton.exprealty.com/${UTM}`,
+    description: "Louisville-area real estate agent helping clients buy, sell, and invest.",
   },
 ];
 
@@ -272,6 +280,7 @@ export default function Vendors() {
                     />
                   </div>
                   <p className="text-base font-semibold text-[var(--brand-heading)] text-center">{s.name}</p>
+                  {s.description && <p className="text-xs text-[var(--brand-muted)] text-center leading-relaxed">{s.description}</p>}
                 </a>
               ))}
             </div>
