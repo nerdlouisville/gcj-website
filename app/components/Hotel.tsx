@@ -21,10 +21,10 @@ export default function Hotel() {
 
           {/* Text block */}
           <div>
-            <p className="text-[var(--brand-primary)] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
               Where to Stay
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--brand-heading)] mb-4 leading-tight">
+            <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-4 leading-tight">
               Louisville Marriott East
             </h2>
             <p className="text-[var(--brand-muted)] leading-relaxed mb-6">
@@ -37,15 +37,15 @@ export default function Hotel() {
               className="p-5 rounded-[var(--radius-card)] border border-[var(--brand-secondary)] bg-[var(--brand-surface)] mb-6"
               style={{ boxShadow: "0 0 20px rgba(153,51,204,0.12)" }}
             >
-              <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest mb-1">Group Rate</p>
+              <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest mb-1">Group Rate Was</p>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold text-[var(--brand-secondary)]">$129</span>
+                <span className="text-4xl font-bold text-[var(--brand-secondary-text)]">$129</span>
                 <span className="text-[var(--brand-muted)] text-sm">/ night</span>
               </div>
               <p className="text-sm text-[var(--brand-muted)] mt-2">
-                Available Nov 5–9 · Book by{" "}
-                <strong className="text-[var(--brand-heading)]">October 16, 2026</strong>{" "}
-                to lock in the group rate.
+                Group rate for Nov 5–9. Booking at this rate closed on{" "}
+                <strong className="text-[var(--brand-heading)]">October 16, 2026</strong>.
+                Availability and rates may vary, so check with the hotel.
               </p>
             </div>
 
@@ -55,7 +55,7 @@ export default function Hotel() {
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 rounded-[var(--radius-btn)] text-sm font-semibold bg-[var(--brand-secondary)] hover:opacity-90 text-white transition-opacity"
             >
-              Book Your Room →
+              Check Availability →
             </a>
           </div>
 

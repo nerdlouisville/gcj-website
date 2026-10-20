@@ -8,10 +8,10 @@ export default function Events() {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-[var(--brand-primary)] text-sm font-semibold uppercase tracking-widest mb-3">
+          <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
             Events
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--brand-heading)] mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-4">
             Event Submissions Are Closed
           </h2>
           <p className="text-[var(--brand-muted)] max-w-xl mx-auto">
@@ -35,7 +35,7 @@ export default function Events() {
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center px-5 py-2.5 rounded-[var(--radius-btn)] bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white text-sm font-semibold transition-colors whitespace-nowrap"
           >
-            Browse the Schedule
+            Browse Events
           </a>
         </div>
 

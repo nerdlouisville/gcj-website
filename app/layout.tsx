@@ -49,6 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
+        <a href="#main" className="skip-link">Skip to content</a>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-964TEEEZD3"
           strategy="beforeInteractive"

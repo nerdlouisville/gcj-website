@@ -32,10 +32,10 @@ export default function About() {
         {/* ── Intro + stats ── */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-[var(--brand-primary)] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
               About the Con
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--brand-heading)] mb-6 leading-tight">
+            <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-6 leading-tight">
               Louisville's Home for Tabletop Gaming
             </h2>
             <div className="space-y-4 text-[var(--brand-muted)] leading-relaxed">
@@ -59,7 +59,7 @@ export default function About() {
                 key={stat.label}
                 className="p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-center"
               >
-                <div className="text-3xl sm:text-4xl font-bold text-[var(--brand-secondary)] mb-1">
+                <div className="text-3xl sm:text-4xl font-bold text-[var(--brand-secondary-text)] mb-1">
                   {stat.value}
                 </div>
                 <div className="text-sm text-[var(--brand-muted)]">{stat.label}</div>
@@ -73,7 +73,7 @@ export default function About() {
 
           {/* Highlights */}
           <div>
-            <p className="text-[var(--brand-primary)] text-sm font-semibold uppercase tracking-widest mb-4">
+            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-4">
               What's at GCJ
             </p>
             <ul className="space-y-2">
@@ -88,7 +88,7 @@ export default function About() {
 
           {/* Hours */}
           <div>
-            <p className="text-[var(--brand-primary)] text-sm font-semibold uppercase tracking-widest mb-4">
+            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-4">
               Convention Hours
             </p>
             <div className="space-y-3">
@@ -98,7 +98,7 @@ export default function About() {
                   className="flex items-center justify-between p-4 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)]"
                 >
                   <span className="text-sm font-medium text-[var(--brand-heading)]">{h.day}</span>
-                  <span className="text-sm text-[var(--brand-secondary)] font-semibold">{h.time}</span>
+                  <span className="text-sm text-[var(--brand-secondary-text)] font-semibold">{h.time}</span>
                 </div>
               ))}
             </div>

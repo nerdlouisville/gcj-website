@@ -8,15 +8,15 @@ export default function Tickets() {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
-          <p className="text-[var(--brand-primary)] text-sm font-semibold uppercase tracking-widest mb-3">
+          <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
             Tickets
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--brand-heading)] mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-4">
             Get Your Badge
           </h2>
           <p className="text-[var(--brand-muted)] max-w-xl mx-auto">
-            Tickets are sold through AfterGame. Early bird sales closed on{" "}
-            <strong className="text-[var(--brand-secondary)]">October 5, 2026</strong>.
+            Buttons open AfterGame in a new tab. Early bird sales closed on{" "}
+            <strong className="text-[var(--brand-secondary-text)]">October 5, 2026</strong>.
           </p>
         </div>
 
@@ -47,14 +47,14 @@ export default function Tickets() {
                   "Our unending thanks ♥",
                 ].map((perk) => (
                   <li key={perk} className="flex items-start gap-2 text-sm text-[var(--brand-text)]">
-                    <span className="mt-0.5 shrink-0 text-[var(--brand-secondary)]">✓</span>
+                    <span className="mt-0.5 shrink-0 text-[var(--brand-secondary-text)]">✓</span>
                     {perk}
                   </li>
                 ))}
               </ul>
             </div>
             <div className="flex flex-col items-end gap-3 shrink-0">
-              <div className="text-4xl font-bold text-[var(--brand-secondary)]">$145</div>
+              <div className="font-display text-3xl text-[var(--brand-secondary-text)]">$145</div>
               <a
                 href={TICKET_URL}
                 target="_blank"
@@ -81,14 +81,14 @@ export default function Tickets() {
               <h3 className="text-xl font-bold text-[var(--brand-heading)]">Weekend</h3>
               <p className="text-sm text-[var(--brand-muted)] mt-1">Full access to Game Con Junction: Friday, Saturday, and Sunday.</p>
             </div>
-            <div className="text-4xl font-bold text-[var(--brand-primary)] shrink-0">$65</div>
+            <div className="font-display text-3xl text-[var(--brand-primary-text)] shrink-0">$65</div>
             <a
               href={TICKET_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 block text-center py-3 px-6 rounded-[var(--radius-btn)] text-sm font-semibold bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white transition-colors"
             >
-              Get Badge
+              Get Weekend Badge
             </a>
           </div>
 
@@ -107,15 +107,15 @@ export default function Tickets() {
                   <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest">Single Day</p>
                 </div>
                 <h3 className="text-base font-semibold text-[var(--brand-heading)]">{tier.name}</h3>
-                <p className="text-xs text-[var(--brand-muted)] mt-1 flex-1">{tier.description}</p>
-                <div className="text-2xl font-bold text-[var(--brand-secondary)] my-3">{tier.price}</div>
+                <p className="text-sm text-[var(--brand-muted)] mt-1 flex-1">{tier.description}</p>
+                <div className="font-display text-xl text-[var(--brand-secondary-text)] my-3">{tier.price}</div>
                 <a
                   href={TICKET_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center py-2 px-3 rounded-[var(--radius-btn)] text-xs font-semibold border border-[var(--brand-border)] text-[var(--brand-text)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors"
+                  className="block text-center py-3 px-3 rounded-[var(--radius-btn)] text-sm font-semibold border border-[var(--brand-border)] text-[var(--brand-text)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors"
                 >
-                  Get Badge
+                  Get {tier.name.replace(" Only", "")} Badge
                 </a>
               </div>
             ))}
@@ -129,16 +129,16 @@ export default function Tickets() {
                   <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest">Ages 6–12</p>
                 </div>
                 <h3 className="text-base font-semibold text-[var(--brand-heading)]">Kids Weekend</h3>
-                <p className="text-xs text-[var(--brand-muted)] mt-1">Full 3-day access for kids ages 6–12.</p>
+                <p className="text-sm text-[var(--brand-muted)] mt-1">Full 3-day access for kids ages 6–12.</p>
               </div>
-              <div className="text-2xl font-bold text-[var(--brand-secondary)] shrink-0">$20</div>
+              <div className="font-display text-xl text-[var(--brand-secondary-text)] shrink-0">$20</div>
               <a
                 href={TICKET_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="shrink-0 block text-center py-2 px-4 rounded-[var(--radius-btn)] text-xs font-semibold border border-[var(--brand-border)] text-[var(--brand-text)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors"
+                className="shrink-0 block text-center py-3 px-4 rounded-[var(--radius-btn)] text-sm font-semibold border border-[var(--brand-border)] text-[var(--brand-text)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors"
               >
-                Get Badge
+                Get Kids Badge
               </a>
             </div>
           </div>
@@ -147,15 +147,11 @@ export default function Tickets() {
 
         {/* Footer notes */}
         <div className="text-center space-y-2">
-          <p className="text-xs text-[var(--brand-muted)]">
-            🎟 Early bird pricing ended{" "}
-            <strong className="text-[var(--brand-primary)]">October 5, 2026</strong>.
-          </p>
-          <p className="text-xs text-[var(--brand-muted)]">
+          <p className="text-sm text-[var(--brand-muted)]">
             All purchases processed through{" "}
-            <a href={TICKET_URL} target="_blank" rel="noopener noreferrer" className="text-[var(--brand-primary)] hover:underline">AfterGame</a>
+            <a href={TICKET_URL} target="_blank" rel="noopener noreferrer" className="text-[var(--brand-primary-text)] hover:underline">AfterGame</a>
             . By purchasing you agree to our{" "}
-            <a href={TERMS_URL} target="_blank" rel="noopener noreferrer" className="text-[var(--brand-primary)] hover:underline">Terms & Conditions</a>
+            <a href={TERMS_URL} target="_blank" rel="noopener noreferrer" className="text-[var(--brand-primary-text)] hover:underline">Terms & Conditions</a>
             .
           </p>
         </div>

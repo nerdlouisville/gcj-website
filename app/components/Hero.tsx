@@ -12,7 +12,7 @@ export default function Hero() {
       {/* ── Background ── */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         {/* Base dark fill */}
-        <div className="absolute inset-0" style={{ background: "#0d0820" }} />
+        <div className="absolute inset-0" style={{ background: "var(--brand-bg-deep)" }} />
 
         {/* Retro synthwave grid: perspective floor */}
         <div className="absolute inset-x-0 bottom-0" style={{ height: "65%", overflow: "hidden" }}>
@@ -82,46 +82,51 @@ export default function Hero() {
         <Image
           src="/images/exe-mascot.png"
           alt="Exe the mascot"
-          width={220}
-          height={220}
+          width={660}
+          height={660}
           className="w-[140px] sm:w-[180px] md:w-[220px] h-auto drop-shadow-[0_0_20px_rgba(232,25,122,0.6)]"
           priority
         />
       </div>
 
-      {/* ── Logo ── */}
-      <div className="mb-6 px-8">
+      {/* ── Logo (page h1) ── */}
+      <h1 className="mb-4 px-8">
         <Image
           src="/images/logo-white.png"
           alt="Game Con Junction"
-          width={480}
-          height={160}
+          width={960}
+          height={305}
           className="w-[220px] sm:w-[320px] md:w-[440px] h-auto"
           priority
         />
-      </div>
+      </h1>
 
       {/* ── Tagline ── */}
-      <div className="mb-8">
+      <div className="mb-4">
         <Image
           src="/images/tagline-white.png"
           alt="Louisville's Ultimate Gaming Weekend"
-          width={400}
-          height={60}
+          width={800}
+          height={223}
           className="w-[240px] sm:w-[300px] md:w-[380px] h-auto opacity-90"
         />
       </div>
 
+      {/* ── Descriptor ── */}
+      <p className="max-w-md mb-8 text-sm sm:text-base text-[var(--brand-text)] leading-relaxed">
+        Tabletop RPGs, board games, megagames, and CCG tournaments, all weekend long.
+      </p>
+
       {/* ── Dates + venue ── */}
       <p
-        className="text-lg sm:text-xl md:text-2xl font-bold mb-1"
+        className="text-base sm:text-xl md:text-2xl font-bold mb-1 whitespace-nowrap"
         style={{ fontFamily: "var(--font-display)", color: "var(--brand-heading)" }}
       >
         FRIDAY NOV. 6 // SUNDAY NOV. 8
       </p>
       <p
         className="text-4xl sm:text-5xl font-bold mb-2"
-        style={{ fontFamily: "var(--font-display)", color: "var(--brand-primary)" }}
+        style={{ fontFamily: "var(--font-display)", color: "var(--brand-primary-text)" }}
       >
         2026
       </p>
@@ -163,31 +168,17 @@ export default function Hero() {
         >
           BROWSE EVENTS
         </a>
-        <a
-          href="#about"
-          className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-btn)] border text-base transition-colors"
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "0.8rem",
-            fontWeight: 900,
-            letterSpacing: "0.08em",
-            borderColor: "var(--brand-border)",
-            color: "var(--brand-muted)",
-          }}
-        >
-          LEARN MORE
-        </a>
       </div>
 
-      {/* ── Closed callout ── */}
+      {/* ── Status ── */}
       <p className="mt-8 text-sm text-[var(--brand-muted)]">
-        <strong style={{ color: "var(--brand-primary)" }}>Early bird sales are closed</strong>
+        <strong style={{ color: "var(--brand-primary-text)" }}>Badges are on sale now</strong>
         {" · "}
-        <strong style={{ color: "var(--brand-primary)" }}>Event submissions are closed</strong>
+        Event schedule is live on AfterGame
       </p>
 
       {/* ── Scroll nudge ── */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[var(--brand-muted)] animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[var(--brand-muted)]">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
           <path d="M8 10.586L2.707 5.293 1.293 6.707 8 13.414l6.707-6.707-1.414-1.414L8 10.586z" />
         </svg>

@@ -160,9 +160,11 @@ function VendorCard({ vendor }: { vendor: Vendor }) {
   return (
     <a href={vendor.url} target="_blank" rel="noopener noreferrer"
       className="flex flex-col rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
-      <div className="bg-white flex items-center justify-center p-4 h-32">
-        <Image src={vendor.logo!} alt={vendor.name} width={160} height={96} className="max-h-24 w-auto object-contain" />
-      </div>
+      {vendor.logo && (
+        <div className="bg-white flex items-center justify-center p-4 h-32">
+          <Image src={vendor.logo} alt={vendor.name} width={160} height={96} className="max-h-24 w-auto object-contain" />
+        </div>
+      )}
       <div className="p-3 flex-1 flex flex-col">
         <p className="text-sm font-semibold text-[var(--brand-heading)] mb-1">{vendor.name}</p>
         {vendor.description && <p className="text-xs text-[var(--brand-muted)] leading-relaxed">{vendor.description}</p>}
@@ -191,10 +193,10 @@ export default function Vendors() {
         {/* ── SPONSORS ───────────────────────────────── */}
         <div className="mb-20">
           <div className="text-center mb-10">
-            <p className="text-[var(--brand-primary)] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
               Thank You
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--brand-heading)] mb-3">
+            <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-3">
               Our Sponsors
             </h2>
             <p className="text-[var(--brand-muted)] max-w-xl mx-auto text-sm">
@@ -212,6 +214,7 @@ export default function Vendors() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`${s.name} (opens in a new tab)`}
                   className="block p-8 rounded-[var(--radius-card)] border-2 border-[var(--brand-secondary)] bg-[var(--brand-bg)] hover:border-[var(--brand-primary)] transition-colors"
                   style={{ boxShadow: "0 0 32px rgba(153,51,204,0.12)" }}
                 >
@@ -246,7 +249,7 @@ export default function Vendors() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col p-6 rounded-[var(--radius-card)] border-2 bg-[var(--brand-bg)] hover:opacity-90 transition-opacity"
-                  style={{ borderColor: "#c9a227", boxShadow: "0 0 24px rgba(201,162,39,0.10)" }}
+                  style={{ borderColor: "var(--brand-gold)", boxShadow: "0 0 24px rgba(201,162,39,0.10)" }}
                 >
                   <div className="bg-white rounded-[var(--radius-card)] p-4 flex items-center justify-center h-32 mb-4">
                     <Image src={s.logo} alt={s.name} width={160} height={96} className="max-h-24 w-auto object-contain" />
@@ -310,14 +313,14 @@ export default function Vendors() {
         {/* ── VENDORS ────────────────────────────────── */}
         <div className="mb-12">
           <div className="text-center mb-10">
-            <p className="text-[var(--brand-primary)] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
               Vendor Hall
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--brand-heading)] mb-3">
+            <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-3">
               Meet Our Vendors
             </h2>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--brand-primary)]/10 border border-[var(--brand-primary)]/30 text-[var(--brand-primary)] text-sm font-medium">
-              🎉 Vendor Hall is Sold Out
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--brand-primary)]/10 border border-[var(--brand-primary)]/30 text-[var(--brand-primary-text)] text-sm font-medium">
+              Vendor Hall is Sold Out
             </div>
           </div>
 

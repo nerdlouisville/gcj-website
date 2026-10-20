@@ -37,7 +37,7 @@ export default function EmailBanner() {
   return (
     <div className="w-full border-b border-[var(--brand-border)] bg-[var(--brand-surface)] py-8 px-4">
       <div className="max-w-xl mx-auto text-center">
-        <p className="text-[var(--brand-primary)] text-xs font-semibold uppercase tracking-widest mb-1">
+        <p className="text-[var(--brand-primary-text)] text-xs font-semibold uppercase tracking-widest mb-1">
           Stay in the Loop
         </p>
         <p className="text-sm text-[var(--brand-muted)] mb-4">

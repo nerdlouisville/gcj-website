@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
 
         {/* Social icons */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1">
           {socials.map((s) => (
             <a
               key={s.label}
@@ -56,7 +56,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="text-[var(--brand-muted)] hover:text-[var(--brand-primary)] transition-colors"
+              className="inline-flex items-center justify-center w-11 h-11 text-[var(--brand-muted)] hover:text-[var(--brand-primary-text)] transition-colors"
             >
               {s.icon}
             </a>
@@ -67,8 +67,8 @@ export default function Footer() {
         <nav aria-label="Footer">
           <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {footerLinks.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--brand-heading)] transition-colors">
+              <li key={link.label}>
+                <a href={link.href} target="_blank" rel="noopener noreferrer" className="inline-block py-2 hover:text-[var(--brand-heading)] transition-colors">
                   {link.label}
                 </a>
               </li>

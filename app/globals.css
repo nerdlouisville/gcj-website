@@ -19,9 +19,13 @@
   --brand-bg:            #130e35;   /* deep navy-purple background  */
   --brand-surface:       #1a1347;   /* card / section bg            */
   --brand-border:        #2d2060;   /* dividers / borders           */
-  --brand-primary:       #e8197a;   /* hot pink — primary accent    */
-  --brand-primary-hover: #c8146a;
-  --brand-secondary:     #9933cc;   /* purple — secondary accent    */
+  --brand-primary:       #d40f6c;   /* hot pink - fills (white text 5.1:1) */
+  --brand-primary-hover: #b80d5c;
+  --brand-primary-text:  #ff4d9e;   /* hot pink - text on navy (6:1) */
+  --brand-secondary:     #9933cc;   /* purple - fills, borders      */
+  --brand-secondary-text:#b967ff;   /* purple - text on navy (5.3:1) */
+  --brand-bg-deep:       #0d0820;   /* hero backdrop                */
+  --brand-gold:          #c9a227;   /* gold sponsor accent          */
   --brand-grid:          #7b1fa2;   /* retro grid line color        */
   --brand-text:          #e8e4f0;   /* body text                    */
   --brand-muted:         #9988bb;   /* secondary text               */
@@ -45,11 +49,19 @@
   --color-brand-border:    var(--brand-border);
   --color-brand-primary:   var(--brand-primary);
   --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-primary-text: var(--brand-primary-text);
   --color-brand-secondary: var(--brand-secondary);
+  --color-brand-secondary-text: var(--brand-secondary-text);
   --color-brand-text:      var(--brand-text);
   --color-brand-muted:     var(--brand-muted);
   --color-brand-heading:   var(--brand-heading);
   --font-sans: var(--font-body);
+}
+
+/* Brand display face for section titles and price numerals */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -57,6 +69,12 @@
    ───────────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  scrollbar-color: var(--brand-secondary) var(--brand-bg);
+}
+
+::selection {
+  background: var(--brand-primary);
+  color: #ffffff;
 }
 
 body {
@@ -66,8 +84,45 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Focus ring — accessible, brand-colored */
+/* Focus ring - accessible, brand-colored */
 :focus-visible {
-  outline: 2px solid var(--brand-primary);
+  outline: 2px solid var(--brand-primary-text);
   outline-offset: 3px;
+}
+
+/* Skip link: first tab stop, visible only on focus */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-btn);
+  background: var(--brand-primary);
+  color: #ffffff;
+  font-weight: 600;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease-out;
+}
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* Neon horizon hairline between sections: carries the hero's grid motif down the page */
+main > section:not(#hero) {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, var(--brand-secondary), var(--brand-primary), var(--brand-secondary), transparent) 1;
+}
+
+/* Reduced motion: stop the decorative loops and hover growth, keep state changes */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-bounce {
+    animation: none !important;
+  }
+  [class*="hover:scale-"]:hover {
+    scale: none !important;
+  }
 }

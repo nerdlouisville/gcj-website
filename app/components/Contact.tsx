@@ -34,10 +34,10 @@ export default function Contact() {
 
           {/* ── CONTACT INFO + SOCIALS ───────────── */}
           <div>
-            <p className="text-[var(--brand-primary)] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
               Get in Touch
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--brand-heading)] mb-6">
+            <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-6">
               Questions?
             </h2>
             <p className="text-[var(--brand-muted)] mb-6 leading-relaxed">
@@ -47,7 +47,7 @@ export default function Contact() {
 
             <a
               href={`mailto:${INQUIRY_EMAIL}`}
-              className="inline-flex items-center gap-2 text-[var(--brand-primary)] hover:underline font-medium mb-10"
+              className="inline-flex items-center gap-2 text-[var(--brand-primary-text)] hover:underline font-medium mb-10"
             >
               {INQUIRY_EMAIL}
             </a>
@@ -65,7 +65,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="w-10 h-10 rounded-full border border-[var(--brand-border)] bg-[var(--brand-surface)] flex items-center justify-center text-[var(--brand-muted)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)] transition-colors"
+                    className="w-10 h-10 rounded-full border border-[var(--brand-border)] bg-[var(--brand-surface)] flex items-center justify-center text-[var(--brand-muted)] hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary-text)] transition-colors"
                   >
                     {s.icon}
                   </a>
