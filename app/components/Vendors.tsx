@@ -36,6 +36,12 @@ const goldSponsors = [
     url: `https://www.cobblehillpuzzles.com/${UTM}`,
     blurb: "Cobble Hill Puzzles has spent years crafting premium jigsaw experiences for puzzlers of every age and ambition. Their signature formula of rich linen print texture, thick blue board, and quirky shaped pieces makes every puzzle something you can feel the quality of before you've placed a single piece. With hundreds of titles and piece counts ranging from 100 to 2,000, they're also a leading force in competitive puzzling. If you've spotted speed puzzling on the GCJ 2026 schedule, Cobble Hill is a big part of why, and we're thrilled to have them at Game Con Junction.",
   },
+  {
+    name: "Perk Program Fitness Guild",
+    logo: "/images/sponsors/perk-program-fitness-guild.png",
+    url: `https://ppfitnessguild.com/${UTM}`,
+    blurb: "Perk Program Fitness Guild (PPFG) is fitness by gamers, for gamers! Launching January 1st, 2027, PPFG brings you full exercise programs, alongside grab-and-go workouts too, for every single experience and fitness level. Follow along on BackerKit today and get ready to train to game for LIFE!",
+  },
 ];
 
 const silverSponsors: { name: string; logo: string; url?: string; description?: string }[] = [
@@ -86,12 +92,6 @@ const silverSponsors: { name: string; logo: string; url?: string; description?: 
     logo: "/images/sponsors/exp-realty-logo.png",
     url: `https://josephthamilton.exprealty.com/${UTM}`,
     description: "Louisville-area real estate agent helping clients buy, sell, and invest.",
-  },
-  {
-    name: "Perk Program Fitness Guild",
-    logo: "/images/sponsors/perk-program-fitness-guild.png",
-    url: `https://ppfitnessguild.com/${UTM}`,
-    description: "Fitness by gamers, for gamers. Full exercise programs and grab-and-go workouts, launching January 1, 2027.",
   },
 ];
 
