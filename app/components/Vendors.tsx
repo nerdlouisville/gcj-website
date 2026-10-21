@@ -38,7 +38,7 @@ const goldSponsors = [
   },
 ];
 
-const silverSponsors = [
+const silverSponsors: { name: string; logo: string; url?: string; description?: string }[] = [
   {
     name: "Archania's Workshop",
     logo: "/images/sponsors/archania-workshop.jpg",
@@ -86,6 +86,12 @@ const silverSponsors = [
     logo: "/images/sponsors/exp-realty-logo.png",
     url: `https://josephthamilton.exprealty.com/${UTM}`,
     description: "Louisville-area real estate agent helping clients buy, sell, and invest.",
+  },
+  {
+    // No website yet: still being verified, add `url` when confirmed.
+    name: "Perk Program Fitness Guild",
+    logo: "/images/sponsors/perk-program-fitness-guild.png",
+    description: "Fitness by gamers, for gamers. Full exercise programs and grab-and-go workouts, launching January 1, 2027.",
   },
 ];
 
@@ -265,27 +271,39 @@ export default function Vendors() {
           <div className="mb-10">
             <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Silver Sponsors</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
-              {silverSponsors.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-3 p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] hover:border-[var(--brand-secondary)] transition-colors"
-                >
-                  <div className="bg-white rounded-[var(--radius-card)] p-4 w-full flex items-center justify-center h-32">
-                    <Image
-                      src={s.logo}
-                      alt={s.name}
-                      width={200}
-                      height={128}
-                      className="max-h-24 w-auto object-contain"
-                    />
+              {silverSponsors.map((s) => {
+                const cardClass = "flex flex-col items-center gap-3 p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)]";
+                const body = (
+                  <>
+                    <div className="bg-white rounded-[var(--radius-card)] p-4 w-full flex items-center justify-center h-32">
+                      <Image
+                        src={s.logo}
+                        alt={s.name}
+                        width={200}
+                        height={128}
+                        className="max-h-24 w-auto object-contain"
+                      />
+                    </div>
+                    <p className="text-base font-semibold text-[var(--brand-heading)] text-center">{s.name}</p>
+                    {s.description && <p className="text-xs text-[var(--brand-muted)] text-center leading-relaxed">{s.description}</p>}
+                  </>
+                );
+                return s.url ? (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${cardClass} hover:border-[var(--brand-secondary)] transition-colors`}
+                  >
+                    {body}
+                  </a>
+                ) : (
+                  <div key={s.name} className={cardClass}>
+                    {body}
                   </div>
-                  <p className="text-base font-semibold text-[var(--brand-heading)] text-center">{s.name}</p>
-                  {s.description && <p className="text-xs text-[var(--brand-muted)] text-center leading-relaxed">{s.description}</p>}
-                </a>
-              ))}
+                );
+              })}
             </div>
           </div>
 
