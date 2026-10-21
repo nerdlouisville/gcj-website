@@ -88,9 +88,9 @@ const silverSponsors: { name: string; logo: string; url?: string; description?: 
     description: "Louisville-area real estate agent helping clients buy, sell, and invest.",
   },
   {
-    // No website yet: still being verified, add `url` when confirmed.
     name: "Perk Program Fitness Guild",
     logo: "/images/sponsors/perk-program-fitness-guild.png",
+    url: `https://ppfitnessguild.com/${UTM}`,
     description: "Fitness by gamers, for gamers. Full exercise programs and grab-and-go workouts, launching January 1, 2027.",
   },
 ];
