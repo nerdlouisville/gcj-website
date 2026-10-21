@@ -4,6 +4,7 @@ import Hero        from "./components/Hero";
 import About      from "./components/About";
 import Tickets    from "./components/Tickets";
 import Events     from "./components/Events";
+import RaffleTeaser from "./components/RaffleTeaser";
 import Hotel      from "./components/Hotel";
 import Vendors    from "./components/Vendors";
 import Contact    from "./components/Contact";
@@ -20,6 +21,7 @@ export default function Home() {
         <About />
         <Tickets />
         <Events />
+        <RaffleTeaser />
         <Hotel />
         <Vendors />
         <Contact />

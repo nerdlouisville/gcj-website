@@ -29,6 +29,7 @@
   --brand-grid:          #7b1fa2;   /* retro grid line color        */
   --brand-text:          #e8e4f0;   /* body text                    */
   --brand-muted:         #9988bb;   /* secondary text               */
+  --brand-text-dim:      #b8add3;   /* 12-13px captions and tags, 8.5:1 on bg */
   --brand-heading:       #ffffff;   /* headings                     */
 
   /* Typography */
@@ -54,6 +55,7 @@
   --color-brand-secondary-text: var(--brand-secondary-text);
   --color-brand-text:      var(--brand-text);
   --color-brand-muted:     var(--brand-muted);
+  --color-brand-text-dim:  var(--brand-text-dim);
   --color-brand-heading:   var(--brand-heading);
   --font-sans: var(--font-body);
 }

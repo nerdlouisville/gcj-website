@@ -1,16 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
 const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a?utm_source=gcj-website&utm_medium=tickets&utm_campaign=gcj2026";
 const BROWSE_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a/schedule?utm_source=gcj-website&utm_medium=nav&utm_campaign=gcj2026";
 
 const navLinks = [
-  { label: "About",          href: "#about"   },
-  { label: "Tickets",        href: "#tickets" },
+  { label: "About",          href: "/#about"   },
+  { label: "Tickets",        href: "/#tickets" },
   { label: "Browse Events",  href: BROWSE_URL, external: true },
-  { label: "Vendors",        href: "#vendors" },
-  { label: "Contact",        href: "#contact" },
+  { label: "Raffle",         href: "/raffle"   },
+  { label: "Vendors",        href: "/#vendors" },
+  { label: "Contact",        href: "/#contact" },
 ];
 
 export default function Nav() {
@@ -51,13 +53,13 @@ export default function Nav() {
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* GCJ26 wordmark as home anchor */}
-        <a
-          href="#hero"
+        <Link
+          href="/"
           className="text-lg font-bold tracking-widest text-[var(--brand-primary-text)] hover:text-[var(--brand-heading)] transition-colors"
           style={{ fontFamily: "var(--font-display)" }}
         >
           GCJ26
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-6">
