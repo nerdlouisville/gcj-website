@@ -107,7 +107,6 @@ type Vendor = {
 };
 
 const VENDOR_UTM     = "?utm_source=gcj-website&utm_medium=vendor-hall&utm_campaign=gcj2026";
-const SPONSOR_EMAIL   = "devin@gameconjunction.com";
 
 const u = (url: string) => `${url}${VENDOR_UTM}`;
 
@@ -305,26 +304,6 @@ export default function Vendors() {
               })}
             </div>
           </div>
-
-          {/* Become a sponsor CTA */}
-          <div className="max-w-2xl mx-auto p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)]">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
-                <h3 className="font-semibold text-[var(--brand-heading)] mb-1">Interested in sponsoring?</h3>
-                <p className="text-sm text-[var(--brand-muted)]">
-                  Multiple tiers available: Title, Platinum, Gold, Community Partner, and more.
-                  Reach 800+ passionate tabletop gamers.
-                </p>
-              </div>
-              <a
-                href={`mailto:${SPONSOR_EMAIL}`}
-                className="shrink-0 inline-flex items-center px-5 py-2.5 rounded-[var(--radius-btn)] bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white text-sm font-semibold transition-colors whitespace-nowrap"
-              >
-                Email Devin
-              </a>
-            </div>
-          </div>
-
         </div>
 
         {/* ── VENDORS ────────────────────────────────── */}
@@ -336,9 +315,6 @@ export default function Vendors() {
             <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-3">
               Meet Our Vendors
             </h2>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--brand-primary)]/10 border border-[var(--brand-primary)]/30 text-[var(--brand-primary-text)] text-sm font-medium">
-              Vendor Hall is Sold Out
-            </div>
           </div>
 
           {/* Primo Vendors */}
