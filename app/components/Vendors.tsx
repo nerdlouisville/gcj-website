@@ -42,6 +42,12 @@ const goldSponsors = [
     url: `https://ppfitnessguild.com/${UTM}`,
     blurb: "Perk Program Fitness Guild (PPFG) is fitness by gamers, for gamers! Launching January 1st, 2027, PPFG brings you full exercise programs, alongside grab-and-go workouts too, for every single experience and fitness level. Follow along on BackerKit today and get ready to train to game for LIFE!",
   },
+  {
+    name: "Joey Hamilton, eXp Realty",
+    logo: "/images/sponsors/exp-realty-logo.png",
+    url: `https://josephthamilton.exprealty.com/${UTM}`,
+    blurb: "Louisville-area real estate agent helping clients buy, sell, and invest.",
+  },
 ];
 
 const silverSponsors: { name: string; logo: string; url?: string; description?: string }[] = [
@@ -87,12 +93,6 @@ const silverSponsors: { name: string; logo: string; url?: string; description?: 
     url: `https://www.allplay.com/${UTM}`,
     description: "Premium board game tables, bags, playmats, and shelves, plus their own published games.",
   },
-  {
-    name: "Joey Hamilton, eXp Realty",
-    logo: "/images/sponsors/exp-realty-logo.png",
-    url: `https://josephthamilton.exprealty.com/${UTM}`,
-    description: "Louisville-area real estate agent helping clients buy, sell, and invest.",
-  },
 ];
 
 
@@ -107,7 +107,6 @@ type Vendor = {
 };
 
 const VENDOR_UTM     = "?utm_source=gcj-website&utm_medium=vendor-hall&utm_campaign=gcj2026";
-const VENDOR_FORM_URL = `https://tally.so/r/lblxBV${VENDOR_UTM}`;
 const SPONSOR_EMAIL   = "devin@gameconjunction.com";
 
 const u = (url: string) => `${url}${VENDOR_UTM}`;
@@ -373,18 +372,6 @@ export default function Vendors() {
             <div className="flex flex-wrap gap-2">
               {artistChipVendors.map((v) => <VendorChip key={v.name} vendor={v} />)}
             </div>
-          </div>
-
-          {/* CTA */}
-          <div className="max-w-md mx-auto p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-center">
-            <h3 className="font-semibold text-[var(--brand-heading)] mb-2">Want a table?</h3>
-            <p className="text-sm text-[var(--brand-muted)] mb-4">
-              <strong className="text-[var(--brand-heading)]">Artist Alley spots are still available.</strong> Vendor tables are sold out, but a waitlist is open, primarily for spots that open up if a current vendor drops out.
-            </p>
-            <a href={VENDOR_FORM_URL} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 rounded-[var(--radius-btn)] border border-[var(--brand-border)] text-[var(--brand-text)] text-sm font-medium hover:border-[var(--brand-primary)] hover:text-[var(--brand-heading)] transition-colors">
-              Apply for Vendor / Artist Alley
-            </a>
           </div>
         </div>
 
