@@ -1,6 +1,7 @@
 import Nav         from "./components/Nav";
 import EmailBanner from "./components/EmailBanner";
 import Hero        from "./components/Hero";
+import CountdownBand from "./components/CountdownBand";
 import About      from "./components/About";
 import Tickets    from "./components/Tickets";
 import Events     from "./components/Events";
@@ -17,6 +18,7 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
+        <CountdownBand />
         <About />
         <Tickets />
         <Events />

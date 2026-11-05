@@ -61,7 +61,7 @@ export default function Tickets() {
                   <p className="text-lg font-semibold text-[var(--brand-heading)]">{b.name}</p>
                   <p className="text-sm text-[var(--brand-muted)]">{b.note}</p>
                 </div>
-                <Flap text={b.price} size="md" />
+                <Flap text={b.price} size="lg" />
               </li>
             ))}
           </ul>
@@ -70,7 +70,7 @@ export default function Tickets() {
           <div className="badge-card badge-card--hot p-6">
             <div className="flex items-baseline justify-between gap-4 mb-4">
               <h3 className="text-lg font-semibold text-[var(--brand-heading)]">VIP Badge</h3>
-              <Flap text="$145" size="md" />
+              <Flap text="$145" size="lg" />
             </div>
             <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 text-sm text-[var(--brand-text)]">
               {vip.map((perk) => (

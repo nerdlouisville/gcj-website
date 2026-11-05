@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Flap from "./Flap";
 
 const steps = [
   {
@@ -12,6 +13,7 @@ const steps = [
   {
     title: "Come to the drawing",
     body: "Sunday at 4 PM.",
+    flap: "SUN 4 PM",
   },
   {
     title: "Collect your prize",
@@ -55,6 +57,11 @@ export default function RaffleInfo() {
                 <div>
                   <h3 className="text-xl font-semibold text-[var(--brand-heading)] mb-1">{s.title}</h3>
                   <p className="text-[var(--brand-text)] leading-relaxed max-w-lg">{s.body}</p>
+                  {"flap" in s && s.flap && (
+                    <div className="mt-3">
+                      <Flap text={s.flap} size="sm" label={s.body} />
+                    </div>
+                  )}
                 </div>
               </li>
             ))}
@@ -78,8 +85,13 @@ export default function RaffleInfo() {
               <tbody>
                 {prices.map((p) => (
                   <tr key={p.spend} className="border-t border-[var(--brand-border)]">
-                    <td className="py-3 text-[var(--brand-text)]">{p.spend}</td>
-                    <td className="py-3 text-right font-bold text-[var(--brand-heading)]">{p.get}</td>
+                    <td className="py-3">
+                      <Flap text={p.spend} size="sm" label={`Spend ${p.spend}`} />
+                    </td>
+                    <td className="py-3 text-right">
+                      <Flap text={p.get.split(" ")[0]} size="sm" label={`Get ${p.get}`} />
+                      <span className="ml-2 text-sm text-[var(--brand-text)]" aria-hidden="true">tickets</span>
+                    </td>
                   </tr>
                 ))}
               </tbody>

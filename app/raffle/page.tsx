@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
 import RaffleInfo from "../components/RaffleInfo";
 import RaffleBundles from "../components/RaffleBundles";
+import FlapStat from "../components/FlapStat";
 import { bundles } from "./raffleData";
 
 export const metadata: Metadata = {
@@ -52,6 +53,11 @@ export default function RafflePage() {
               {bundleCount} bundles of donated board games and tabletop RPGs, plus a giant 3D-printed Castle Ravenloft,
               {" "}{itemCount} items in all. Every ticket supports UP for Women and Children.
             </p>
+            <div className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-8 text-left">
+              <FlapStat text={String(bundleCount)} label="Bundles" size="lg" />
+              <FlapStat text={String(itemCount)} label="Items" size="lg" />
+              <FlapStat text="SUN 4 PM" label="Drawing" size="lg" />
+            </div>
           </div>
           <div
             className="absolute left-0 right-0 bottom-0 h-0.5"

@@ -173,27 +173,95 @@ main > section:not(#hero) {
 .flap--xl { font-size: clamp(1.9rem, 7.5vw, 4.25rem); }
 .flap-tile {
   position: relative;
-  display: inline-block;
-  min-width: 0.95em;
-  padding: 0.3em 0.26em;
+  display: inline-grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0;
   text-align: center;
   color: #fff;
   background: #050310;
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 0.1em;
+  isolation: isolate;
 }
-.flap-tile::after {
+/* Centre line sits behind the glyph, so it never cuts through a digit */
+.flap-tile::before {
   content: "";
   position: absolute;
+  z-index: -1;
   left: 0;
   right: 0;
   top: 50%;
   height: 0.06em;
   min-height: 1px;
-  background: var(--brand-bg-deep);
+  background: rgba(255, 255, 255, 0.28);
 }
-.flap-tile--narrow { min-width: 0.55em; padding-left: 0.12em; padding-right: 0.12em; }
+/* Digits and $ in the body face: Akira's numerals read as letters at small sizes */
+.flap-tile--num {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.12em;
+  /* 1.5em / 1.12 so digit tiles match the height of letter tiles in the same row */
+  height: 1.3393em;
+  width: auto;
+  padding: 0 0.2em;
+  min-width: 0.85em;
+}
+.flap-tile--narrow { width: 0.75em; }
 .flap-gap { display: inline-block; width: 0.5em; }
+/* Slab-serif I, like the JUNCTION logo: fills the tile as much as F or R do */
+.flap-i { display: inline-block; width: 0.7em; height: 0.72em; fill: currentColor; vertical-align: baseline; }
+
+/* Flip animation (only mounted while a tile is mid-flip) */
+.flap-tile--anim::before { display: none; }
+.flap-tile--anim::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 0.06em;
+  min-height: 1px;
+  background: rgba(0, 0, 0, 0.75);
+}
+.ft-size { opacity: 0; }
+.ft-layer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #050310;
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+}
+.ft-top, .ft-flip-top { clip-path: inset(0 0 50% 0); }
+.ft-bottom, .ft-flip-bottom { clip-path: inset(50% 0 0 0); }
+.ft-top { z-index: 1; }
+.ft-bottom { z-index: 1; }
+.ft-flip-bottom {
+  z-index: 2;
+  transform: perspective(280px) rotateX(90deg);
+  animation: ft-land 60ms ease-out 60ms both;
+}
+.ft-flip-top {
+  z-index: 3;
+  animation: ft-fall 60ms ease-in both;
+}
+@keyframes ft-fall {
+  from { transform: perspective(280px) rotateX(0deg); }
+  to   { transform: perspective(280px) rotateX(-90deg); }
+}
+@keyframes ft-land {
+  from { transform: perspective(280px) rotateX(90deg); }
+  to   { transform: perspective(280px) rotateX(0deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ft-flip-top, .ft-flip-bottom { animation: none; }
+}
 
 /* Sender newsletter iframe: white by default, flipped to match the dark page.
    hue-rotate undoes the hue shift from invert so the pink button stays pink. */

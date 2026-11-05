@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FlapStat from "./FlapStat";
 
 const covers = [
   { src: "/images/raffle/09-frosthaven.jpg", alt: "Frosthaven", w: 600, h: 600 },
@@ -26,6 +27,11 @@ export default function RaffleTeaser() {
               Children, a day center in Louisville for women and kids experiencing homelessness.
               Give us your phone number at check-in so we can reach you if you win.
             </p>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-6">
+            <FlapStat text="$2" label="Per ticket" size="md" />
+            <FlapStat text="23" label="Bundles" size="md" />
+            <FlapStat text="SUN 4 PM" label="Drawing" size="md" />
           </div>
           <a
             href="/raffle"
