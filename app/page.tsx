@@ -17,7 +17,6 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-        <EmailBanner />
         <About />
         <Tickets />
         <Events />
@@ -25,6 +24,7 @@ export default function Home() {
         <Hotel />
         <Vendors />
         <Contact />
+        <EmailBanner />
       </main>
       <Footer />
       <BackToTop />

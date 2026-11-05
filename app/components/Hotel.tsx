@@ -21,41 +21,22 @@ export default function Hotel() {
 
           {/* Text block */}
           <div>
-            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
-              Where to Stay
+            <h2 className="section-title mb-6">Staying over</h2>
+            <p className="text-[var(--brand-text)] leading-relaxed max-w-prose mb-4">
+              The con is in the Louisville Marriott East, so a room there puts you a short walk
+              from the tables, which matters when Friday and Saturday run until 4 AM.
             </p>
-            <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-4 leading-tight">
-              Louisville Marriott East
-            </h2>
-            <p className="text-[var(--brand-muted)] leading-relaxed mb-6">
-              The official hotel of Game Con Junction is right where the action is.
-              Stay on-site and roll out of bed straight into the gaming hall.
+            <p className="text-[var(--brand-muted)] leading-relaxed max-w-prose mb-6">
+              The $129 group rate ended October 16. The hotel may still have rooms at regular
+              rates, so check with them.
             </p>
-
-            {/* Rate callout */}
-            <div
-              className="p-5 rounded-[var(--radius-card)] border border-[var(--brand-secondary)] bg-[var(--brand-surface)] mb-6"
-              style={{ boxShadow: "0 0 20px rgba(153,51,204,0.12)" }}
-            >
-              <p className="text-xs text-[var(--brand-muted)] uppercase tracking-widest mb-1">Group Rate Was</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold text-[var(--brand-secondary-text)]">$129</span>
-                <span className="text-[var(--brand-muted)] text-sm">/ night</span>
-              </div>
-              <p className="text-sm text-[var(--brand-muted)] mt-2">
-                Group rate for Nov 5–9. Booking at this rate closed on{" "}
-                <strong className="text-[var(--brand-heading)]">October 16, 2026</strong>.
-                Availability and rates may vary, so check with the hotel.
-              </p>
-            </div>
-
             <a
               href={HOTEL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 rounded-[var(--radius-btn)] text-sm font-semibold bg-[var(--brand-secondary)] hover:opacity-90 text-white transition-opacity"
+              className="inline-flex items-center min-h-12 px-7 rounded-[var(--radius-btn)] border-2 border-[var(--brand-secondary)] hover:bg-[var(--brand-secondary)] text-white font-display text-sm tracking-wider transition-colors"
             >
-              Check Availability →
+              CHECK ROOMS
             </a>
           </div>
 

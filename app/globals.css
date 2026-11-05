@@ -26,7 +26,8 @@
   --brand-secondary-text:#b967ff;   /* purple - text on navy (5.3:1) */
   --brand-bg-deep:       #0d0820;   /* hero backdrop                */
   --brand-gold:          #c9a227;   /* gold sponsor accent          */
-  --brand-grid:          #7b1fa2;   /* retro grid line color        */
+  --brand-grid:          #7b1fa2;
+  --gcj-logo-pink:       #ec1d7f;   /* motif only: brush X, never text or buttons */   /* retro grid line color        */
   --brand-text:          #e8e4f0;   /* body text                    */
   --brand-muted:         #9988bb;   /* secondary text               */
   --brand-text-dim:      #b8add3;   /* 12-13px captions and tags, 8.5:1 on bg */
@@ -37,8 +38,8 @@
   --font-body:    var(--font-geist-sans), Arial, sans-serif;
 
   /* Spacing / radius */
-  --radius-card: 0.75rem;
-  --radius-btn:  0.5rem;
+  --radius-card: 0.25rem;
+  --radius-btn:  0.25rem;
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -110,10 +111,37 @@ body {
   transform: translateY(0);
 }
 
-/* Neon horizon hairline between sections: carries the hero's grid motif down the page */
+/* Plain rule between sections */
 main > section:not(#hero) {
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(90deg, transparent, var(--brand-secondary), var(--brand-primary), var(--brand-secondary), transparent) 1;
+  border-top: 1px solid var(--brand-border);
+}
+
+/* Section heading: left-aligned, short pink bar above */
+.section-title {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  color: var(--brand-heading);
+  font-size: clamp(1.5rem, 3.4vw, 2.25rem);
+  line-height: 1.1;
+}
+.section-title::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 4px;
+  margin-bottom: 0.9rem;
+  background: var(--brand-primary);
+}
+
+/* Hard offset shadow instead of glow: reads like a printed badge */
+.badge-card {
+  border: 1px solid var(--brand-border);
+  background: var(--brand-surface);
+  box-shadow: 4px 4px 0 var(--brand-border);
+}
+.badge-card--hot {
+  border-color: var(--brand-primary);
+  box-shadow: 4px 4px 0 var(--brand-primary);
 }
 
 /* Reduced motion: stop the decorative loops and hover growth, keep state changes */
@@ -127,4 +155,49 @@ main > section:not(#hero) {
   [class*="hover:scale-"]:hover {
     scale: none !important;
   }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   SPLIT-FLAP TILES (from the JUNCTION logo)
+   ───────────────────────────────────────────────────────────────── */
+.flap {
+  display: inline-flex;
+  gap: 0.12em;
+  font-family: var(--font-display);
+  line-height: 1;
+  vertical-align: middle;
+}
+.flap--sm { font-size: 0.9rem; }
+.flap--md { font-size: 1.35rem; }
+.flap--lg { font-size: clamp(1.35rem, 4.4vw, 2.4rem); }
+.flap--xl { font-size: clamp(1.9rem, 7.5vw, 4.25rem); }
+.flap-tile {
+  position: relative;
+  display: inline-block;
+  min-width: 0.95em;
+  padding: 0.3em 0.26em;
+  text-align: center;
+  color: #fff;
+  background: #050310;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 0.1em;
+}
+.flap-tile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 0.06em;
+  min-height: 1px;
+  background: var(--brand-bg-deep);
+}
+.flap-tile--narrow { min-width: 0.55em; padding-left: 0.12em; padding-right: 0.12em; }
+.flap-gap { display: inline-block; width: 0.5em; }
+
+/* Sender newsletter iframe: white by default, flipped to match the dark page.
+   hue-rotate undoes the hue shift from invert so the pink button stays pink. */
+.newsletter-frame iframe {
+  filter: invert(0.92) hue-rotate(180deg);
+  border-radius: var(--radius-card);
 }

@@ -3,7 +3,7 @@ import Image from "next/image";
 const steps = [
   {
     title: "Get your tickets",
-    body: "Tickets are $2 each. Buy them at the merch table or at the UP for Women and Children table next to the raffle display upstairs.",
+    body: "Tickets are $2 each, and every $10 you spend earns a bonus ticket. Buy them at the merch table. UP for Women and Children isn't selling tickets, but every dollar raised goes to them.",
   },
   {
     title: "Pick your bundles",
@@ -15,13 +15,14 @@ const steps = [
   },
   {
     title: "Collect your prize",
-    body: "If your ticket is drawn, we look you up by badge number and contact you once. If we can't reach you, another ticket is drawn. Prizes are picked up at the convention. We can't ship.",
+    body: "If your ticket is drawn, we look up your badge number and call the phone number you gave at check-in, once. You have five minutes to answer or show up, then we draw another ticket. Pick up your prize at the convention by 6 PM Sunday. We can't ship.",
   },
 ];
 
 const prices = [
   { spend: "$10", get: "6 tickets" },
   { spend: "$20", get: "12 tickets" },
+  { spend: "$30", get: "18 tickets" },
   { spend: "$50", get: "30 tickets" },
 ];
 
@@ -44,7 +45,7 @@ export default function RaffleInfo() {
   return (
     <section id="how-it-works" className="py-20 sm:py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-10">How the raffle works</h2>
+        <h2 className="section-title mb-10">How the raffle works</h2>
 
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-start">
           <ol className="border-b border-[var(--brand-border)]">
@@ -62,7 +63,6 @@ export default function RaffleInfo() {
           <aside
             aria-labelledby="ticket-prices"
             className="p-6 rounded-[var(--radius-card)] border border-[var(--brand-primary)] bg-[var(--brand-surface)]"
-            style={{ boxShadow: "0 0 24px rgba(232, 25, 122, 0.15)" }}
           >
             <h3 id="ticket-prices" className="text-xl font-semibold text-[var(--brand-heading)]">Ticket prices</h3>
             <p className="font-display text-4xl text-[var(--brand-primary-text)] mt-1 mb-5">
@@ -85,7 +85,7 @@ export default function RaffleInfo() {
               </tbody>
             </table>
             <p className="mt-4 pt-4 border-t border-[var(--brand-border)] text-sm text-[var(--brand-text)]">
-              Every $10 you spend earns one free ticket.
+              Every $10 you spend earns one bonus ticket: buy 5, get 6.
             </p>
           </aside>
         </div>

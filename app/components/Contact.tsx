@@ -34,15 +34,10 @@ export default function Contact() {
 
           {/* ── CONTACT INFO + SOCIALS ───────────── */}
           <div>
-            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
-              Get in Touch
-            </p>
-            <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-6">
-              Questions?
-            </h2>
-            <p className="text-[var(--brand-muted)] mb-6 leading-relaxed">
-              Have a question about tickets, accessibility, scheduling, or anything else?
-              Drop us a line and we'll get back to you.
+            <h2 className="section-title mb-6">Questions</h2>
+            <p className="text-[var(--brand-text)] mb-6 leading-relaxed max-w-prose">
+              Tickets, accessibility, schedule changes, anything else. Email or use the form
+              and a person will answer.
             </p>
 
             <a

@@ -1,112 +1,82 @@
-const stats = [
-  { value: "800+", label: "Projected attendees" },
-  { value: "95%",  label: "Satisfaction rate" },
-  { value: "94%",  label: "Planning to return" },
-  { value: "40%",  label: "Out-of-state visitors" },
-];
-
-const highlights = [
-  "Tabletop RPGs for new and experienced players",
-  "Board game library with hundreds of titles",
-  "Megagames: unforgettable large-group play",
-  "Play-to-win board games",
-  "CCG / TCG tournaments",
-  "Hot Games demos featuring new & trending titles",
-  "Blood on the Clocktower running non-stop",
-  "Vendor & arts hall packed with games and merch",
-  "Youth-friendly programming for new gamers",
-  "Speed puzzling competitions",
-];
+import Flap from "./Flap";
+import Floor from "./Floor";
 
 const hours = [
-  { day: "Friday, Nov. 6",   time: "5:00 PM – 4:00 AM" },
-  { day: "Saturday, Nov. 7", time: "8:00 AM – 4:00 AM" },
-  { day: "Sunday, Nov. 8",   time: "8:00 AM – 6:00 PM"  },
+  { day: "FRI", label: "Friday",   date: "Nov. 6", open: "5:00 PM", close: "4:00 AM" },
+  { day: "SAT", label: "Saturday", date: "Nov. 7", open: "8:00 AM", close: "4:00 AM" },
+  { day: "SUN", label: "Sunday",   date: "Nov. 8", open: "8:00 AM", close: "6:00 PM" },
+];
+
+const before = [
+  { head: "Check in", body: "Badge pickup opens Friday at 4:30 PM, and events begin at 5 PM. Everyone checks in at registration, even if you bought in the app. Wear your badge all weekend." },
+  { head: "Raffle tickets", body: "Buy them at the merch table. The display is upstairs on the wall of the CCG room, between Artist Alley and the CCG room. Drawing is Sunday at 4 PM." },
+  { head: "Finding things", body: "Open play and event tables are in the Commonwealth Ballroom. Friday-night games are in the Thoroughbred and Steamboat rooms. Artist Alley and the CCG room are upstairs." },
 ];
 
 export default function About() {
   return (
     <section id="about" className="py-20 sm:py-28 px-4 bg-[var(--brand-surface)]">
-      <div className="max-w-6xl mx-auto space-y-16">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-[5fr_7fr] gap-14 lg:gap-20">
 
-        {/* ── Intro + stats ── */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
-              About the Con
+        {/* Left: what it is + hours */}
+        <div>
+          <h2 className="section-title mb-8">The weekend</h2>
+          <div className="space-y-4 text-[var(--brand-text)] leading-relaxed max-w-prose">
+            <p>
+              Game Con Junction is a tabletop convention run by Nerd Louisville and Dukes of
+              Highland, two local groups that spend the rest of the year running game nights
+              around town.
             </p>
-            <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-6 leading-tight">
-              Louisville's Home for Tabletop Gaming
-            </h2>
-            <div className="space-y-4 text-[var(--brand-muted)] leading-relaxed">
-              <p>
-                Game Con Junction is Louisville's dedicated tabletop gaming convention,
-                brought to you by Nerd Louisville and Dukes of Highland, two local organizations
-                committed to growing inclusive, community-driven gaming experiences.
-              </p>
-              <p>
-                Whether you love immersive roleplaying, competitive tabletop strategy, or just want
-                to discover your next favorite game, GCJ has something for you. Your badge does more
-                than get you in the door. It helps support free and reduced-cost community gaming
-                events throughout the year, right here in Louisville.
-              </p>
-            </div>
+            <p>
+              Badge money goes back into that: free and low-cost gaming events in Louisville,
+              all year.
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {stats.map((stat) => (
+          <h3 className="mt-12 mb-4 text-sm uppercase tracking-widest text-[var(--brand-muted)]">
+            Hours
+          </h3>
+          <dl className="border-t border-[var(--brand-border)]">
+            {hours.map((h) => (
               <div
-                key={stat.label}
-                className="p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] text-center"
+                key={h.day}
+                className="grid grid-cols-[auto_1fr] items-center gap-x-5 py-4 border-b border-[var(--brand-border)]"
               >
-                <div className="text-3xl sm:text-4xl font-bold text-[var(--brand-secondary-text)] mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-[var(--brand-muted)]">{stat.label}</div>
+                <dt>
+                  <Flap text={h.day} size="md" label={`${h.label}, ${h.date}`} />
+                </dt>
+                <dd className="text-right sm:text-left">
+                  <span className="block text-lg text-[var(--brand-heading)] font-semibold tabular-nums">
+                    {h.open} – {h.close}
+                  </span>
+                  <span className="text-sm text-[var(--brand-muted)]">{h.date}</span>
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
+          <p className="mt-3 text-sm text-[var(--brand-muted)]">
+            Louisville Marriott East. Friday and Saturday run until 4 AM.
+          </p>
         </div>
 
-        {/* ── Highlights + Hours ── */}
-        <div className="grid md:grid-cols-2 gap-10">
+        {/* Right: what's on the floor */}
+        <div>
+          <h3 className="mb-4 text-sm uppercase tracking-widest text-[var(--brand-muted)]">
+            On the floor
+          </h3>
+          <Floor />
 
-          {/* Highlights */}
-          <div>
-            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-4">
-              What's at GCJ
-            </p>
-            <ul className="space-y-2">
-              {highlights.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-[var(--brand-text)]">
-                  <span className="mt-1 shrink-0 w-4 h-4 rounded-full flex items-center justify-center text-white text-xs" style={{ background: "var(--brand-primary)" }}>✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Hours */}
-          <div>
-            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-4">
-              Convention Hours
-            </p>
-            <div className="space-y-3">
-              {hours.map((h) => (
-                <div
-                  key={h.day}
-                  className="flex items-center justify-between p-4 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)]"
-                >
-                  <span className="text-sm font-medium text-[var(--brand-heading)]">{h.day}</span>
-                  <span className="text-sm text-[var(--brand-secondary-text)] font-semibold">{h.time}</span>
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-[var(--brand-muted)] mt-3">
-              Louisville Marriott East · Louisville, KY
-            </p>
-          </div>
-
+          <h3 className="mt-12 mb-4 text-sm uppercase tracking-widest text-[var(--brand-muted)]">
+            Before you come
+          </h3>
+          <dl className="grid sm:grid-cols-3 gap-6">
+            {before.map((b) => (
+              <div key={b.head}>
+                <dt className="font-display text-sm text-[var(--brand-primary-text)] mb-2">{b.head}</dt>
+                <dd className="text-[var(--brand-text)] leading-relaxed text-sm">{b.body}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
       </div>

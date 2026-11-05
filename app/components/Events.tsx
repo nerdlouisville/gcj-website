@@ -4,41 +4,22 @@ const BROWSE_URL =
 export default function Events() {
   return (
     <section id="events" className="py-20 sm:py-28 px-4 bg-[var(--brand-surface)]">
-      <div className="max-w-6xl mx-auto">
-
-        {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
-            Events
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-20 items-center">
+        <h2 className="section-title">The schedule is live</h2>
+        <div>
+          <p className="text-[var(--brand-text)] leading-relaxed max-w-prose mb-6">
+            Every game, tournament, and demo is on AfterGame. Look it up before Friday and
+            you can plan your weekend around it. Event submissions are closed.
           </p>
-          <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-4">
-            Event Submissions Are Closed
-          </h2>
-          <p className="text-[var(--brand-muted)] max-w-xl mx-auto">
-            Event submissions closed on{" "}
-            <strong className="text-[var(--brand-heading)]">October 1, 2026</strong>.
-            Thank you to everyone who submitted a game! Questions? Use the contact section below.
-          </p>
-        </div>
-
-        {/* See what's playing */}
-        <div className="max-w-5xl mx-auto p-5 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <h3 className="font-semibold text-[var(--brand-heading)] mb-1">Want to see what's playing?</h3>
-            <p className="text-sm text-[var(--brand-muted)]">
-              Browse the full schedule of events at GCJ 2026 on AfterGame.
-            </p>
-          </div>
           <a
             href={BROWSE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center px-5 py-2.5 rounded-[var(--radius-btn)] bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white text-sm font-semibold transition-colors whitespace-nowrap"
+            className="inline-flex items-center min-h-12 px-7 rounded-[var(--radius-btn)] border-2 border-[var(--brand-primary)] hover:bg-[var(--brand-primary)] text-white font-display text-sm tracking-wider transition-colors"
           >
-            Browse Events
+            OPEN THE SCHEDULE
           </a>
         </div>
-
       </div>
     </section>
   );

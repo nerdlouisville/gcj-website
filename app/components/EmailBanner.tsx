@@ -35,18 +35,21 @@ export default function EmailBanner() {
   }, []);
 
   return (
-    <div className="w-full border-b border-[var(--brand-border)] bg-[var(--brand-surface)] py-8 px-4">
-      <div className="max-w-xl mx-auto text-center">
-        <p className="text-[var(--brand-primary-text)] text-xs font-semibold uppercase tracking-widest mb-1">
-          Stay in the Loop
-        </p>
-        <p className="text-sm text-[var(--brand-muted)] mb-4">
-          Get GCJ 2026 updates, schedules, announcements, and more delivered to your inbox.
-        </p>
-        {mounted && (
-          <div className="sender-form-field" data-sender-form-id="egJoMG" />
-        )}
+    <section id="newsletter" className="px-4 py-16 sm:py-20 bg-[var(--brand-surface)]">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-20 items-center">
+        <div>
+          <h2 className="section-title mb-5">Stay in the loop</h2>
+          <p className="text-[var(--brand-text)] leading-relaxed max-w-prose">
+            Schedule changes and announcements go out by email.
+          </p>
+        </div>
+        {/* The Sender form is a white iframe we can't style from here, so it is
+            inverted to sit on the dark page. Better long-term fix: set the
+            form's colors in Sender's dashboard, then delete the filter. */}
+        <div className="newsletter-frame min-h-[480px]">
+          {mounted && <div className="sender-form-field" data-sender-form-id="egJoMG" />}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -196,22 +196,17 @@ export default function Vendors() {
 
         {/* ── SPONSORS ───────────────────────────────── */}
         <div className="mb-20">
-          <div className="text-center mb-10">
-            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
-              Thank You
-            </p>
-            <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-3">
-              Our Sponsors
-            </h2>
-            <p className="text-[var(--brand-muted)] max-w-xl mx-auto text-sm">
-              GCJ wouldn't happen without the support of these folks.
+          <div className="mb-10">
+            <h2 className="section-title mb-3">Sponsors</h2>
+            <p className="text-[var(--brand-muted)] max-w-xl">
+              The con doesn&apos;t happen without them.
             </p>
           </div>
 
           {/* Platinum: full width featured */}
           <div className="mb-10">
-            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Platinum Sponsors</p>
-            <div className="flex flex-col gap-6 max-w-3xl mx-auto">
+            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider mb-4">Platinum Sponsors</p>
+            <div className="flex flex-col gap-6 max-w-4xl">
               {platinumSponsors.map((s) => (
                 <a
                   key={s.name}
@@ -219,8 +214,8 @@ export default function Vendors() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${s.name} (opens in a new tab)`}
-                  className="block p-8 rounded-[var(--radius-card)] border-2 border-[var(--brand-secondary)] bg-[var(--brand-bg)] hover:border-[var(--brand-primary)] transition-colors"
-                  style={{ boxShadow: "0 0 32px rgba(153,51,204,0.12)" }}
+                  className="block p-8 rounded-[var(--radius-card)] border border-[var(--brand-secondary)] bg-[var(--brand-bg)] hover:border-[var(--brand-primary)] transition-colors"
+                  
                 >
                   <div className="flex flex-col sm:flex-row items-center gap-8">
                     <div className="bg-white rounded-[var(--radius-card)] p-4 shrink-0">
@@ -244,16 +239,16 @@ export default function Vendors() {
 
           {/* Gold: 2-col grid */}
           <div className="mb-10">
-            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Gold Sponsors</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider mb-4">Gold Sponsors</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl">
               {goldSponsors.map((s) => (
                 <a
                   key={s.name}
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col p-6 rounded-[var(--radius-card)] border-2 bg-[var(--brand-bg)] hover:opacity-90 transition-opacity"
-                  style={{ borderColor: "var(--brand-gold)", boxShadow: "0 0 24px rgba(201,162,39,0.10)" }}
+                  className="flex flex-col p-6 rounded-[var(--radius-card)] border bg-[var(--brand-bg)] hover:opacity-90 transition-opacity"
+                  style={{ borderColor: "var(--brand-gold)" }}
                 >
                   <div className="bg-white rounded-[var(--radius-card)] p-4 flex items-center justify-center h-32 mb-4">
                     <Image src={s.logo} alt={s.name} width={160} height={96} className="max-h-24 w-auto object-contain" />
@@ -267,8 +262,8 @@ export default function Vendors() {
 
           {/* Silver: logo cards in a row */}
           <div className="mb-10">
-            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider text-center mb-4">Silver Sponsors</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
+            <p className="text-xs text-[var(--brand-muted)] uppercase tracking-wider mb-4">Silver Sponsors</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
               {silverSponsors.map((s) => {
                 const cardClass = "flex flex-col items-center gap-3 p-6 rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)]";
                 const body = (
@@ -308,13 +303,8 @@ export default function Vendors() {
 
         {/* ── VENDORS ────────────────────────────────── */}
         <div className="mb-12">
-          <div className="text-center mb-10">
-            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
-              Vendor Hall
-            </p>
-            <h2 className="font-display text-2xl sm:text-3xl text-[var(--brand-heading)] mb-3">
-              Meet Our Vendors
-            </h2>
+          <div className="mb-10">
+            <h2 className="section-title">Vendors and artists</h2>
           </div>
 
           {/* Primo Vendors */}
