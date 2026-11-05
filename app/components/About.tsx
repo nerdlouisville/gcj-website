@@ -10,7 +10,7 @@ const hours = [
 const before = [
   { head: "Check in", body: "Badge pickup opens Friday at 4:30 PM, and events begin at 5 PM. Everyone checks in at registration, even if you bought in the app. Wear your badge all weekend." },
   { head: "Raffle tickets", body: "Buy them at the merch table. The display is upstairs on the wall of the CCG room, between Artist Alley and the CCG room. Drawing is Sunday at 4 PM." },
-  { head: "Finding things", body: "Open play and event tables are in the Commonwealth Ballroom. Friday-night games are in the Thoroughbred and Steamboat rooms. Artist Alley and the CCG room are upstairs." },
+  { head: "Finding things", body: "The Commonwealth Ballroom has vendors, the board game library, Play to Win, Hot Games, and open gaming. More vendors line the hallway around it. Friday-night games are in the Thoroughbred and Steamboat rooms by registration. Artist Alley, the CCG room, the raffle display, and the Golden Keep Room for RPGs are upstairs. The hotel bar has informal tables, no reservations." },
 ];
 
 export default function About() {

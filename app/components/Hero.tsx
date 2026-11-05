@@ -68,8 +68,8 @@ export default function Hero() {
       </div>
 
       {/* ── Poster block: brush X behind logo and tagline ── */}
-      <div className="relative w-full max-w-[560px] px-6 py-10 sm:py-14">
-        <BrushX className="absolute inset-0 w-full h-full -rotate-2" />
+      <div className="relative w-full max-w-[420px] aspect-square flex flex-col items-center justify-center px-5 -my-6 sm:-my-8">
+        <BrushX className="-rotate-2" />
         <h1 className="relative px-2">
           <Image
             src="/images/logo-white.png"

@@ -13,27 +13,40 @@ type Item = {
 
 // Only fill `where`, `join` and `when` with things that are confirmed.
 // An empty field is simply not shown.
+const VENUE_URL =
+  "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a/venue?utm_source=gcj-website&utm_medium=floor&utm_campaign=gcj2026";
+
 const items: Item[] = [
   {
     name: "Tabletop RPGs",
     summary: "One game master, a few players, a story you make up together.",
     what:
       "In a roleplaying game one person, the game master, describes the world and everyone else speaks as a character in it. Dice settle what's uncertain. There's no board and nothing to memorize. Dungeons & Dragons is the best known.",
+    where: "Mostly upstairs, including the Golden Keep Room. Friday night games also run in the Thoroughbred and Steamboat rooms.",
     join: "Pick a table on the AfterGame schedule and sign up. New players are welcome.",
+  },
+  {
+    name: "High School Dungeoneering Tournament",
+    summary: "Student teams, one dungeon, six tables.",
+    what:
+      "Teams of high school students play through the same Dungeons & Dragons dungeon at six tables, each with its own dungeon master. Nerd Louisville runs it to bring the game to local schools, and the teams are already set.",
+    where: "The Golden Keep Room, upstairs with the other RPGs.",
+    when: "Friday from 6 to 9 PM.",
   },
   {
     name: "Board game library",
     summary: "Hundreds of games, ready to play.",
     what:
       "Pull a game off the shelf, find a seat, and play. Library staff can help you choose something that fits your group and teach it if you ask.",
-    where: "Next to Play to Win.",
+    where: "Commonwealth Ballroom, next to Play to Win.",
+    when: "Opens Friday at 5 PM.",
   },
   {
     name: "Play to Win",
     summary: "Try a game, maybe take it home.",
     what:
       "Play games from the Play to Win selection and enter the prize draw for a free copy. It's all digital: if you win, you get a notification in AfterGame and collect your game.",
-    where: "Next to the board game library.",
+    where: "Commonwealth Ballroom, next to the board game library. It's self-serve, so just pick a game and play.",
     when: "Prize draw Sunday at 3 PM.",
   },
   {
@@ -55,6 +68,14 @@ const items: Item[] = [
     summary: "New and trending games, taught by someone who knows them.",
     what:
       "Sit down and learn a recent release in a few minutes, with no rulebook to read first. It's the easiest way to find out whether a game is for you before you buy it.",
+    where: "Commonwealth Ballroom.",
+  },
+  {
+    name: "Minis Paint & Take",
+    summary: "Paint a miniature and keep it.",
+    what:
+      "Pick up a brush, paint a miniature at the table, and take it home with you. No experience needed.",
+    where: "Commonwealth Ballroom.",
   },
   {
     name: "Blood on the Clocktower",
@@ -76,7 +97,7 @@ const items: Item[] = [
     summary: "Dice, minis, books, prints, plushies.",
     what:
       "Local and traveling vendors sell games, dice, and accessories. In Artist Alley the artists are at their tables and happy to talk about the work, and you can buy straight from them.",
-    where: "Artist Alley is upstairs.",
+    where: "Vendors fill the Commonwealth Ballroom and the hallway behind and around it. Artist Alley is upstairs.",
   },
   {
     name: "Youth programming",
@@ -155,6 +176,13 @@ export default function Floor() {
           </div>
         </details>
       ))}
+      <p className="pt-4 text-sm text-[var(--brand-muted)]">
+        Maps and room listings are on{" "}
+        <a href={VENUE_URL} target="_blank" rel="noopener noreferrer" className="text-[var(--brand-primary-text)] underline underline-offset-2">
+          AfterGame
+        </a>
+        .
+      </p>
     </div>
   );
 }
