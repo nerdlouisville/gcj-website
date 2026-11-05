@@ -22,7 +22,7 @@ const items: Item[] = [
     summary: "One game master, a few players, a story you make up together.",
     what:
       "In a roleplaying game one person, the game master, describes the world and everyone else speaks as a character in it. Dice settle what's uncertain. There's no board and nothing to memorize. Dungeons & Dragons is the best known.",
-    where: "Mostly upstairs, including the Golden Keep Room. Friday night games also run in the Thoroughbred and Steamboat rooms.",
+    where: "Mostly upstairs, including the Golden Keep Game Suite. Friday night games also run in the Thoroughbred and Steamboat rooms.",
     join: "Pick a table on the AfterGame schedule and sign up. New players are welcome.",
   },
   {
@@ -30,7 +30,7 @@ const items: Item[] = [
     summary: "Student teams, one dungeon, six tables.",
     what:
       "Teams of high school students play through the same Dungeons & Dragons dungeon at six tables, each with its own dungeon master. Nerd Louisville runs it to bring the game to local schools, and the teams are already set.",
-    where: "The Golden Keep Room, upstairs with the other RPGs.",
+    where: "The Golden Keep Game Suite, upstairs with the other RPGs.",
     when: "Friday from 6 to 9 PM.",
   },
   {
@@ -54,6 +54,7 @@ const items: Item[] = [
     summary: "One huge game with a lot of players.",
     what:
       "Everyone gets a role, such as a nation, a faction, or a company, and negotiates, bluffs, and schemes with the others across a shared map or scenario. A single game runs for hours, and a story comes out of it that nobody planned.",
+    where: "Upstairs, in the Bluegrass Ballroom.",
     join: "Sign up through the AfterGame schedule.",
   },
   {
@@ -82,7 +83,7 @@ const items: Item[] = [
     summary: "A bluffing game about finding the liars.",
     what:
       "A storyteller runs a small town where a few players secretly work against everyone else. You talk, accuse, and defend yourself until the town decides who to put on trial. It's a social deduction game, with no board to learn.",
-    where: "The social deduction room.",
+    where: "The Cardinal Room, upstairs.",
     link: { label: "About the game", href: "https://bloodontheclocktower.com" },
   },
   {

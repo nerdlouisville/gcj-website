@@ -3,6 +3,7 @@ import EmailBanner from "./components/EmailBanner";
 import Hero        from "./components/Hero";
 import CountdownBand from "./components/CountdownBand";
 import About      from "./components/About";
+import Maps       from "./components/Maps";
 import Tickets    from "./components/Tickets";
 import Events     from "./components/Events";
 import RaffleTeaser from "./components/RaffleTeaser";
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <CountdownBand />
         <About />
+        <Maps />
         <Tickets />
         <Events />
         <RaffleTeaser />
