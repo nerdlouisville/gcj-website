@@ -7,6 +7,7 @@ import Maps       from "./components/Maps";
 import Tickets    from "./components/Tickets";
 import Events     from "./components/Events";
 import RaffleTeaser from "./components/RaffleTeaser";
+import CastleFeature from "./components/CastleFeature";
 import Hotel      from "./components/Hotel";
 import Vendors    from "./components/Vendors";
 import Contact    from "./components/Contact";
@@ -25,6 +26,7 @@ export default function Home() {
         <Tickets />
         <Events />
         <RaffleTeaser />
+        <CastleFeature />
         <Hotel />
         <Vendors />
         <Contact />

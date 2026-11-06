@@ -24,8 +24,10 @@ export const metadata: Metadata = {
 };
 
 export default function RafflePage() {
-  const itemCount = bundles.reduce((n, b) => n + b.items.length, 0);
-  const bundleCount = bundles.filter((b) => b.id !== "special").length;
+  // The castle is a silent auction item, so it is not counted as a raffle prize.
+  const raffleBundles = bundles.filter((b) => b.id !== "special");
+  const itemCount = raffleBundles.reduce((n, b) => n + b.items.length, 0);
+  const bundleCount = raffleBundles.length;
 
   return (
     <>
@@ -51,8 +53,12 @@ export default function RafflePage() {
             <p className="font-display text-base text-[var(--brand-primary-text)] mb-1">FRIDAY NOV. 6 // SUNDAY NOV. 8</p>
             <p className="text-[var(--brand-text)] mb-5">Louisville Marriott East · Louisville, KY</p>
             <p className="text-[var(--brand-text)] leading-relaxed max-w-xl mx-auto">
-              {bundleCount} bundles of donated board games and tabletop RPGs, plus a giant 3D-printed Castle Ravenloft,
-              {" "}{itemCount} items in all. Every ticket supports UP for Women and Children.
+              {bundleCount} bundles of donated board games and tabletop RPGs, {itemCount} items in all. Every ticket
+              supports UP for Women and Children. The giant 3D-printed Castle Ravenloft is a separate{" "}
+              <a href="#ravenloft" className="text-[var(--brand-primary-text)] underline underline-offset-2">
+                silent auction
+              </a>{" "}
+              for the same cause.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-8 text-left">
               <FlapStat text={String(bundleCount)} label="Bundles" size="lg" />
@@ -70,8 +76,8 @@ export default function RafflePage() {
           />
         </section>
         <RaffleInfo />
-        <RavenloftGallery />
         <RaffleBundles />
+        <RavenloftGallery />
         <section className="px-4 pb-20 text-center">
           <p className="max-w-xl mx-auto text-sm text-[var(--brand-muted)]">
             Product images are publisher and retailer cover art, shown to identify the raffle prizes.

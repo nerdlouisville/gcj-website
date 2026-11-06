@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import { bundles, type RaffleItem } from "../raffle/raffleData";
+import { bundles as allBundles, type RaffleItem } from "../raffle/raffleData";
 
-const KIND_ORDER = ["Board / card game", "Party game", "TTRPG", "Accessory", "Starter set", "Special item"];
+// Castle Ravenloft is a silent auction item, not a raffle prize. It has its own section on the page.
+const bundles = allBundles.filter((b) => b.id !== "special");
+
+const KIND_ORDER = ["Board / card game", "Party game", "TTRPG", "Accessory", "Starter set"];
 
 type Filters = { q: string; kind: string; company: string; series: string };
 const EMPTY: Filters = { q: "", kind: "", company: "", series: "" };

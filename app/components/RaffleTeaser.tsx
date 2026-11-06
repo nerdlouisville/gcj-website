@@ -18,8 +18,7 @@ export default function RaffleTeaser() {
           <h2 className="section-title mb-6">Charity raffle</h2>
           <div className="space-y-4 text-[var(--brand-text)] leading-relaxed max-w-prose">
             <p>
-              23 bundles of donated board games and tabletop RPGs, plus a giant 3D-printed Castle
-              Ravenloft. Tickets are $2 each, and every $10 you spend earns a bonus ticket: buy 5,
+              23 bundles of donated board games and tabletop RPGs. Tickets are $2 each, and every $10 you spend earns a bonus ticket: buy 5,
               get 6. Spend $30 and you have 18. Buy them at the merch table.
             </p>
             <p>
