@@ -746,10 +746,10 @@ export const bundles: RaffleBundle[] = [
     "group": "Tabletop RPGs",
     "items": [
       {
-        "title": "Ion Harvest Quickstart x3",
-        "img": null,
-        "w": 0,
-        "h": 0,
+        "title": "Ion Heart Quickstart x3",
+        "img": "/images/raffle/11-ion-heart-quickstart.jpg",
+        "w": 600,
+        "h": 776,
         "kinds": [
           "TTRPG"
         ],
@@ -807,9 +807,9 @@ export const bundles: RaffleBundle[] = [
     "items": [
       {
         "title": "2 Mimic Dice blind boxes",
-        "img": null,
-        "w": 0,
-        "h": 0,
+        "img": "/images/raffle/12-mimic-dice-blind-boxes.jpg",
+        "w": 800,
+        "h": 800,
         "kinds": [
           "Accessory"
         ],
@@ -1361,9 +1361,9 @@ export const bundles: RaffleBundle[] = [
     "items": [
       {
         "title": "Castle Ravenloft (3D-printed)",
-        "img": null,
-        "w": 0,
-        "h": 0,
+        "img": "/images/raffle/ravenloft-exterior.jpg",
+        "w": 1275,
+        "h": 1700,
         "kinds": [
           "Special item"
         ],

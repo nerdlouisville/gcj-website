@@ -4,7 +4,7 @@ import Flap from "./Flap";
 const steps = [
   {
     title: "Get your tickets",
-    body: "Tickets are $2 each, and every $10 you spend earns a bonus ticket. Buy them at the merch table. UP for Women and Children isn't selling tickets, but every dollar raised goes to them.",
+    body: "Tickets are $2 each, and every $10 you spend earns a bonus ticket. Buy them at the merch table.",
   },
   {
     title: "Pick your bundles",

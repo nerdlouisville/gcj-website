@@ -5,6 +5,7 @@ import BackToTop from "../components/BackToTop";
 import RaffleInfo from "../components/RaffleInfo";
 import RaffleBundles from "../components/RaffleBundles";
 import FlapStat from "../components/FlapStat";
+import RavenloftGallery from "../components/RavenloftGallery";
 import { bundles } from "./raffleData";
 
 export const metadata: Metadata = {
@@ -69,6 +70,7 @@ export default function RafflePage() {
           />
         </section>
         <RaffleInfo />
+        <RavenloftGallery />
         <RaffleBundles />
         <section className="px-4 pb-20 text-center">
           <p className="max-w-xl mx-auto text-sm text-[var(--brand-muted)]">
