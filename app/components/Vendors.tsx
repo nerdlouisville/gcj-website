@@ -139,6 +139,7 @@ const regularLogoVendors: Vendor[] = [
 ];
 
 const artistLogoVendors: Vendor[] = [
+  { name: "Infinite Horizon", logo: "/images/vendors/infinite-horizon.png", url: u("https://camerondavisart.com"), description: "Infinite Horizon is a visionary art brand specializing in cosmic fantasy artwork, original paintings, fine art prints, and imaginative merchandise inspired by the boundless possibilities of creativity." },
   { name: "Lyneartt", logo: "/images/vendors/lyneartt.png", url: u("https://www.artstation.com/lyneartt"), description: "Bold lines and comic-style character art for indie tabletop game creators." },
   { name: "Cams Creations",       logo: "/images/vendors/cams-creations-logo.jpg",      url: u("http://shop-cams-creations.square.site"), description: "Handmade crocheted plushies, bags, and car plants: cozy, playful crafts for every gamer's shelf." },
 ];
@@ -154,7 +155,6 @@ const regularChipVendors: { name: string; url?: string }[] = [
 ];
 
 const artistChipVendors:  { name: string; url?: string }[] = [
-  { name: "Infinite Horizon",  url: u("https://infinitehorizonart.com") },
   { name: "Connan Bell Arts",  url: u("https://cara.app/connanbell") },
   { name: "Naomi Fowler" },
 ];
@@ -166,7 +166,7 @@ function VendorCard({ vendor }: { vendor: Vendor }) {
       className="flex flex-col rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
       {vendor.logo && (
         <div className="bg-white flex items-center justify-center p-4 h-32">
-          <Image src={vendor.logo} alt={vendor.name} width={160} height={96} className="max-h-24 w-auto object-contain" />
+          <Image src={vendor.logo} alt={vendor.name} width={160} height={96} className="max-h-24 max-w-full w-auto object-contain" />
         </div>
       )}
       <div className="p-3 flex-1 flex flex-col">
