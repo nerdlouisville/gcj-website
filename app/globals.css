@@ -262,10 +262,3 @@ main > section:not(#hero) {
 @media (prefers-reduced-motion: reduce) {
   .ft-flip-top, .ft-flip-bottom { animation: none; }
 }
-
-/* Sender newsletter iframe: white by default, flipped to match the dark page.
-   hue-rotate undoes the hue shift from invert so the pink button stays pink. */
-.newsletter-frame iframe {
-  filter: invert(0.92) hue-rotate(180deg);
-  border-radius: var(--radius-card);
-}

@@ -47,9 +47,7 @@ export default function EmailBanner() {
           <p className="mb-3 text-sm uppercase tracking-widest text-[var(--brand-text-dim)]">Follow along</p>
           <Socials />
         </div>
-        {/* The Sender form is a white iframe we can't style from here, so it is
-            inverted to sit on the dark page. Better long-term fix: set the
-            form's colors in Sender's dashboard, then delete the filter. */}
+        {/* Sender form: styled in the Sender dashboard to match the site */}
         <div className="newsletter-frame min-h-[480px]">
           {mounted && <div className="sender-form-field" data-sender-form-id="egJoMG" />}
         </div>

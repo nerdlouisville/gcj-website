@@ -103,6 +103,7 @@ type Vendor = {
   logo?: string;
   url?: string;
   description?: string;
+  instagram?: string;
   tier?: Tier;
 };
 
@@ -140,6 +141,7 @@ const regularLogoVendors: Vendor[] = [
 
 const artistLogoVendors: Vendor[] = [
   { name: "Infinite Horizon", logo: "/images/vendors/infinite-horizon.png", url: u("https://camerondavisart.com"), description: "Infinite Horizon is a visionary art brand specializing in cosmic fantasy artwork, original paintings, fine art prints, and imaginative merchandise inspired by the boundless possibilities of creativity." },
+  { name: "ArtStrosity", logo: "/images/vendors/artstrosity.jpg", url: u("https://www.etsy.com/shop/Artstrosity"), instagram: u("https://www.instagram.com/artstrosity/"), description: "Fine art for nerds." },
   { name: "Lyneartt", logo: "/images/vendors/lyneartt.png", url: u("https://www.artstation.com/lyneartt"), description: "Bold lines and comic-style character art for indie tabletop game creators." },
   { name: "Cams Creations",       logo: "/images/vendors/cams-creations-logo.jpg",      url: u("http://shop-cams-creations.square.site"), description: "Handmade crocheted plushies, bags, and car plants: cozy, playful crafts for every gamer's shelf." },
 ];
@@ -161,9 +163,8 @@ const artistChipVendors:  { name: string; url?: string }[] = [
 
 
 function VendorCard({ vendor }: { vendor: Vendor }) {
-  return (
-    <a href={vendor.url} target="_blank" rel="noopener noreferrer"
-      className="flex flex-col rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors">
+  const body = (
+    <>
       {vendor.logo && (
         <div className="bg-white flex items-center justify-center p-4 h-32">
           <Image src={vendor.logo} alt={vendor.name} width={160} height={96} className="max-h-24 max-w-full w-auto object-contain" />
@@ -173,6 +174,28 @@ function VendorCard({ vendor }: { vendor: Vendor }) {
         <p className="text-sm font-semibold text-[var(--brand-heading)] mb-1">{vendor.name}</p>
         {vendor.description && <p className="text-xs text-[var(--brand-muted)] leading-relaxed">{vendor.description}</p>}
       </div>
+    </>
+  );
+  const frame = "flex flex-col rounded-[var(--radius-card)] border border-[var(--brand-border)] bg-[var(--brand-bg)] overflow-hidden hover:border-[var(--brand-primary)] transition-colors";
+
+  if (vendor.instagram) {
+    return (
+      <div className={frame}>
+        <a href={vendor.url} target="_blank" rel="noopener noreferrer" className="flex flex-col flex-1">
+          {body}
+        </a>
+        <a href={vendor.instagram} target="_blank" rel="noopener noreferrer"
+          aria-label={`${vendor.name} on Instagram`}
+          className="px-3 pb-3 pt-1 text-xs text-[var(--brand-primary-text)] underline underline-offset-2 hover:text-[var(--brand-heading)] transition-colors">
+          Instagram
+        </a>
+      </div>
+    );
+  }
+
+  return (
+    <a href={vendor.url} target="_blank" rel="noopener noreferrer" className={frame}>
+      {body}
     </a>
   );
 }
