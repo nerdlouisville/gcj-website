@@ -13,7 +13,7 @@ const platinumSponsors = [
     name: "Do502",
     logo: "/images/sponsors/do502-logo.png",
     url: `https://do502.com/${UTM}`,
-    blurb: "Do502 is Louisville's go-to guide for music, nightlife, and events, connecting locals to everything happening around the city: concerts, festivals, food, and more. As part of the DoStuff Network, spanning more than 20 cities nationwide, Do502 reaches a passionate, plugged-in local audience through their website, newsletter, and social channels. As Game Con Junction's platinum sponsor, Do502 is putting the word out to their 30,000-person email list, helping bring even more of Louisville's gaming community through our doors, and they're running a giveaway in the lead-up to the con, so keep an eye on their channels for your chance to win. We're thrilled to have Do502 in our corner, championing local events like GCJ and helping Louisville discover its next favorite thing to do.",
+    blurb: "Do502 is Louisville's go-to guide for music, nightlife, and events, connecting locals to everything happening around the city: concerts, festivals, food, and more. As part of the DoStuff Network, spanning more than 20 cities nationwide, Do502 reaches a passionate, plugged-in local audience through their website, newsletter, and social channels. As Game Con Junction's platinum sponsor, Do502 put the word out to their 30,000-person email list, helping bring even more of Louisville's gaming community through our doors. We're thrilled to have had Do502 in our corner, championing local events like GCJ and helping Louisville discover its next favorite thing to do.",
   },
 ];
 
@@ -34,7 +34,7 @@ const goldSponsors = [
     name: "Cobble Hill Puzzles",
     logo: "/images/sponsors/cobble-hill-logo.png",
     url: `https://www.cobblehillpuzzles.com/${UTM}`,
-    blurb: "Cobble Hill Puzzles has spent years crafting premium jigsaw experiences for puzzlers of every age and ambition. Their signature formula of rich linen print texture, thick blue board, and quirky shaped pieces makes every puzzle something you can feel the quality of before you've placed a single piece. With hundreds of titles and piece counts ranging from 100 to 2,000, they're also a leading force in competitive puzzling. If you've spotted speed puzzling on the GCJ 2026 schedule, Cobble Hill is a big part of why, and we're thrilled to have them at Game Con Junction.",
+    blurb: "Cobble Hill Puzzles has spent years crafting premium jigsaw experiences for puzzlers of every age and ambition. Their signature formula of rich linen print texture, thick blue board, and quirky shaped pieces makes every puzzle something you can feel the quality of before you've placed a single piece. With hundreds of titles and piece counts ranging from 100 to 2,000, they're also a leading force in competitive puzzling. If you tried speed puzzling at Game Con Junction, Cobble Hill is a big part of why, and we were thrilled to have them.",
   },
   {
     name: "Perk Program Fitness Guild",
@@ -195,11 +195,11 @@ export default function Vendors() {
       <div className="max-w-6xl mx-auto">
 
         {/* ── SPONSORS ───────────────────────────────── */}
-        <div className="mb-20">
+        <div id="sponsors" className="mb-20 scroll-mt-20">
           <div className="mb-10">
-            <h2 className="section-title mb-3">Sponsors</h2>
+            <h2 className="section-title mb-3">2026 sponsors</h2>
             <p className="text-[var(--brand-muted)] max-w-xl">
-              The con doesn&apos;t happen without them.
+              Thank you. The con doesn&apos;t happen without them.
             </p>
           </div>
 
@@ -304,7 +304,7 @@ export default function Vendors() {
         {/* ── VENDORS ────────────────────────────────── */}
         <div className="mb-12">
           <div className="mb-10">
-            <h2 className="section-title">Vendors and artists</h2>
+            <h2 className="section-title">2026 vendors and artists</h2>
           </div>
 
           {/* Primo Vendors */}

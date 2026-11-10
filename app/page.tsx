@@ -1,18 +1,11 @@
 import Nav         from "./components/Nav";
-import EmailBanner from "./components/EmailBanner";
 import Hero        from "./components/Hero";
-import CountdownBand from "./components/CountdownBand";
-import About      from "./components/About";
-import Maps       from "./components/Maps";
-import Tickets    from "./components/Tickets";
-import Events     from "./components/Events";
-import RaffleTeaser from "./components/RaffleTeaser";
-import CastleFeature from "./components/CastleFeature";
-import Hotel      from "./components/Hotel";
-import Vendors    from "./components/Vendors";
-import Contact    from "./components/Contact";
-import Footer     from "./components/Footer";
-import BackToTop  from "./components/BackToTop";
+import EmailBanner from "./components/EmailBanner";
+import About       from "./components/About";
+import Vendors     from "./components/Vendors";
+import Contact     from "./components/Contact";
+import Footer      from "./components/Footer";
+import BackToTop   from "./components/BackToTop";
 
 export default function Home() {
   return (
@@ -20,17 +13,10 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-        <CountdownBand />
+        <EmailBanner />
         <About />
-        <Maps />
-        <Tickets />
-        <Events />
-        <RaffleTeaser />
-        <CastleFeature />
-        <Hotel />
         <Vendors />
         <Contact />
-        <EmailBanner />
       </main>
       <Footer />
       <BackToTop />

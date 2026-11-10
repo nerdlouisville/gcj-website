@@ -1,5 +1,3 @@
-const currentYear = new Date().getFullYear();
-
 const footerLinks = [
   { label: "Policies & Waiver", href: "https://nerdlouisville.org/gcj-policies-releases-and-waiver/" },
   { label: "Code of Conduct",   href: "https://nerdlouisville.org/gcj-policies-releases-and-waiver/" },
@@ -34,7 +32,7 @@ export default function Footer() {
 
         {/* Org credit */}
         <div className="text-center sm:text-left">
-          <p className="font-medium text-[var(--brand-text)]">Game Con Junction {currentYear}</p>
+          <p className="font-medium text-[var(--brand-text)]">Game Con Junction</p>
           <p>
             Produced by{" "}
             <a href="https://nerdlouisville.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--brand-heading)] transition-colors">

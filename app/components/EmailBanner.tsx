@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Socials from "./Socials";
 
 export default function EmailBanner() {
   const [mounted, setMounted] = useState(false);
@@ -38,10 +39,13 @@ export default function EmailBanner() {
     <section id="newsletter" className="px-4 py-16 sm:py-20 bg-[var(--brand-surface)]">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-20 items-center">
         <div>
-          <h2 className="section-title mb-5">Stay in the loop</h2>
-          <p className="text-[var(--brand-text)] leading-relaxed max-w-prose">
-            Schedule changes and announcements go out by email.
+          <h2 className="section-title mb-5">Get 2027 updates</h2>
+          <p className="text-[var(--brand-text)] leading-relaxed max-w-prose mb-8">
+            Game Con Junction is coming back in 2027. Sign up for the newsletter and we&apos;ll tell you as soon as we
+            have details.
           </p>
+          <p className="mb-3 text-sm uppercase tracking-widest text-[var(--brand-text-dim)]">Follow along</p>
+          <Socials />
         </div>
         {/* The Sender form is a white iframe we can't style from here, so it is
             inverted to sit on the dark page. Better long-term fix: set the

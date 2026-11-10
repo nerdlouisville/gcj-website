@@ -3,16 +3,10 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
-const TICKET_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a?utm_source=gcj-website&utm_medium=tickets&utm_campaign=gcj2026";
-const BROWSE_URL = "https://aftergame.app/events/2455a998-bf33-4e6f-8b51-72ca1fb6ab5a/schedule?utm_source=gcj-website&utm_medium=nav&utm_campaign=gcj2026";
-
 const navLinks = [
-  { label: "About",          href: "/#about"   },
-  { label: "Tickets",        href: "/#tickets" },
-  { label: "Browse Events",  href: BROWSE_URL, external: true },
-  { label: "Raffle",         href: "/raffle"   },
-  { label: "Vendors",        href: "/#vendors" },
-  { label: "Contact",        href: "/#contact" },
+  { label: "About",    href: "/#about"    },
+  { label: "Sponsors", href: "/#sponsors" },
+  { label: "Contact",  href: "/#contact"  },
 ];
 
 export default function Nav() {
@@ -52,13 +46,13 @@ export default function Nav() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* GCJ26 wordmark as home anchor */}
+        {/* GCJ wordmark as home anchor */}
         <Link
           href="/"
           className="text-lg font-bold tracking-widest text-[var(--brand-primary-text)] hover:text-[var(--brand-heading)] transition-colors"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          GCJ26
+          GCJ
         </Link>
 
         {/* Desktop nav */}
@@ -67,7 +61,6 @@ export default function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="text-sm text-[var(--brand-muted)] hover:text-[var(--brand-heading)] transition-colors"
               >
                 {link.label}
@@ -78,14 +71,12 @@ export default function Nav() {
 
         {/* CTA */}
         <div className="flex items-center gap-3">
-          <a
-            href={TICKET_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/#newsletter"
             className="inline-flex items-center px-4 py-2.5 rounded-[var(--radius-btn)] bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white text-sm font-medium transition-colors"
           >
-            Get Tickets
-          </a>
+            Get Updates
+          </Link>
 
           {/* Mobile hamburger */}
           <button
@@ -109,7 +100,6 @@ export default function Nav() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="block py-1 text-[var(--brand-text)] hover:text-[var(--brand-heading)] transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >

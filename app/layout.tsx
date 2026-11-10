@@ -10,9 +10,9 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Game Con Junction 2026 | Louisville's Tabletop Gaming Convention",
+  title: "Game Con Junction | Louisville's Tabletop Gaming Convention",
   description:
-    "Game Con Junction: November 6–8, 2026 at the Louisville Marriott East. Three days of tabletop gaming, vendors, tournaments, and community.",
+    "Game Con Junction, Louisville's tabletop gaming convention, is coming back in 2027. Sign up for the newsletter to hear when we have details.",
   icons: {
     icon: [
       { url: "/favicon/favicon.ico" },
@@ -23,19 +23,10 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon/site.webmanifest",
   openGraph: {
-    title: "Game Con Junction 2026",
-    description:
-      "Louisville's ultimate gaming weekend returns Nov 6–8, 2026 to the Louisville Marriott East.",
+    title: "Game Con Junction",
+    description: "Louisville's tabletop gaming convention is coming back in 2027.",
     url: "https://gameconjunction.com",
     siteName: "Game Con Junction",
-    images: [
-      {
-        url: "https://gameconjunction.com/BizCard_Front--splash.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Game Con Junction 2026: Louisville's Tabletop Gaming Convention",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },

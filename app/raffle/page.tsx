@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
-import RaffleInfo from "../components/RaffleInfo";
-import RaffleBundles from "../components/RaffleBundles";
-import FlapStat from "../components/FlapStat";
-import RavenloftGallery from "../components/RavenloftGallery";
-import { bundles } from "./raffleData";
 
 export const metadata: Metadata = {
-  title: "Charity Raffle Bundles | Game Con Junction 2026",
+  title: "Thank you | Game Con Junction",
   description:
-    "Win a bundle of donated board games and tabletop RPGs at Game Con Junction 2026. Tickets are $2 and every ticket supports UP for Women and Children.",
+    "Thank you to everyone who supported the Game Con Junction charity raffle and the Castle Ravenloft silent auction, which benefited UP for Women and Children.",
   alternates: { canonical: "https://gameconjunction.com/raffle" },
   openGraph: {
-    title: "Charity Raffle Bundles | Game Con Junction 2026",
-    description:
-      "Donated board games and tabletop RPGs, with every ticket supporting UP for Women and Children. Drawing Sunday, Nov. 8 at 4 PM.",
+    title: "Thank you | Game Con Junction",
+    description: "Thank you to everyone who supported the charity raffle and the Castle Ravenloft silent auction.",
     url: "https://gameconjunction.com/raffle",
     siteName: "Game Con Junction",
     type: "website",
@@ -24,64 +20,58 @@ export const metadata: Metadata = {
 };
 
 export default function RafflePage() {
-  // The castle is a silent auction item, so it is not counted as a raffle prize.
-  const raffleBundles = bundles.filter((b) => b.id !== "special");
-  const itemCount = raffleBundles.reduce((n, b) => n + b.items.length, 0);
-  const bundleCount = raffleBundles.length;
-
   return (
     <>
       <Nav />
       <main id="main">
-        <section
-          id="hero"
-          className="relative px-4 pt-32 pb-16 text-center overflow-hidden"
-          style={{
-            backgroundColor: "var(--brand-bg-deep)",
-            backgroundImage:
-              "linear-gradient(rgba(153,51,204,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(232,25,122,0.25) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-          }}
-        >
-          <div className="max-w-3xl mx-auto">
-            <p className="text-[var(--brand-primary-text)] text-sm font-semibold uppercase tracking-widest mb-3">
-              Game Con Junction 2026
-            </p>
-            <h1 className="font-display text-3xl sm:text-5xl text-[var(--brand-heading)] uppercase leading-tight mb-4">
-              Charity Raffle Bundles
-            </h1>
-            <p className="font-display text-base text-[var(--brand-primary-text)] mb-1">FRIDAY NOV. 6 // SUNDAY NOV. 8</p>
-            <p className="text-[var(--brand-text)] mb-5">Louisville Marriott East · Louisville, KY</p>
-            <p className="text-[var(--brand-text)] leading-relaxed max-w-xl mx-auto">
-              {bundleCount} bundles of donated board games and tabletop RPGs, {itemCount} items in all. Every ticket
-              supports UP for Women and Children. The giant 3D-printed Castle Ravenloft is a separate{" "}
-              <a href="#ravenloft" className="text-[var(--brand-primary-text)] underline underline-offset-2">
-                silent auction
-              </a>{" "}
-              for the same cause.
-            </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-8 text-left">
-              <FlapStat text={String(bundleCount)} label="Bundles" size="lg" />
-              <FlapStat text={String(itemCount)} label="Items" size="lg" />
-              <FlapStat text="SUN 4 PM" label="Drawing" size="lg" />
+        <section id="hero" className="px-4 pt-36 pb-24 sm:pb-32">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-[7fr_5fr] gap-12 lg:gap-20 items-center">
+            <div>
+              <h1 className="section-title mb-8">Thank you</h1>
+              <div className="space-y-4 text-[var(--brand-text)] text-lg leading-relaxed max-w-prose">
+                <p>
+                  Thank you to everyone who bought a raffle ticket, donated a prize, bid on Castle Ravenloft, or helped
+                  run it all.
+                </p>
+                <p>
+                  The raffle and the silent auction both benefited UP for Women and Children, a drop-in day center in
+                  Louisville for women and children experiencing homelessness.
+                </p>
+              </div>
+              <div className="mt-10 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://www.uplouisville.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center min-h-12 px-7 rounded-[var(--radius-btn)] border-2 border-[var(--brand-primary)] hover:bg-[var(--brand-primary)] text-white font-display text-sm tracking-wider transition-colors"
+                >
+                  VISIT UP FOR WOMEN AND CHILDREN
+                </a>
+                <Link
+                  href="/#newsletter"
+                  className="inline-flex items-center justify-center min-h-12 px-7 rounded-[var(--radius-btn)] bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white font-display text-sm tracking-wider transition-colors"
+                >
+                  GET 2027 UPDATES
+                </Link>
+              </div>
             </div>
+
+            <a
+              href="https://www.uplouisville.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="UP for Women and Children website"
+              className="block p-6 rounded-[var(--radius-card)] bg-white max-w-sm"
+            >
+              <Image
+                src="/images/raffle/up-logo.jpg"
+                alt="UP for Women and Children logo"
+                width={640}
+                height={538}
+                className="w-full h-auto"
+              />
+            </a>
           </div>
-          <div
-            className="absolute left-0 right-0 bottom-0 h-0.5"
-            aria-hidden="true"
-            style={{
-              background: "linear-gradient(90deg, transparent 0%, rgba(232,25,122,.8) 20%, rgba(232,25,122,1) 50%, rgba(232,25,122,.8) 80%, transparent 100%)",
-              boxShadow: "0 0 20px 4px rgba(232,25,122,0.5), 0 0 60px 10px rgba(153,51,204,0.3)",
-            }}
-          />
-        </section>
-        <RaffleInfo />
-        <RaffleBundles />
-        <RavenloftGallery />
-        <section className="px-4 pb-20 text-center">
-          <p className="max-w-xl mx-auto text-sm text-[var(--brand-muted)]">
-            Product images are publisher and retailer cover art, shown to identify the raffle prizes.
-          </p>
         </section>
       </main>
       <Footer />
