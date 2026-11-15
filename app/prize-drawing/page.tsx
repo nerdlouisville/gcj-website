@@ -20,7 +20,8 @@ export default function PrizeDrawingPage() {
           <div className="max-w-2xl mx-auto">
             <h1 className="section-title mb-8">Prize drawing and volunteer interest</h1>
             <p className="text-[var(--brand-text)] text-lg leading-relaxed max-w-prose mb-10">
-              Enter the prize drawing, and let us know if you&apos;d like to help out next year.
+              Enter the prize drawing, and let us know if you&apos;d like to help out next year. The form closes
+              December 1.
             </p>
             <TallyEmbed formId="4aJJad" title="Prize drawing and volunteer interest form" />
           </div>

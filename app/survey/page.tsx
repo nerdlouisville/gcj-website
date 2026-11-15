@@ -21,7 +21,7 @@ export default function SurveyPage() {
             <h1 className="section-title mb-8">How did we do?</h1>
             <p className="text-[var(--brand-text)] text-lg leading-relaxed max-w-prose mb-10">
               Thanks for spending the weekend with us. Tell us what worked and what didn&apos;t, and we&apos;ll use it
-              to plan 2027. It takes a few minutes.
+              to plan 2027. It takes a few minutes, and it closes December 1.
             </p>
             <TallyEmbed formId="rDaaDp" title="Game Con Junction 2026 feedback survey" />
           </div>
